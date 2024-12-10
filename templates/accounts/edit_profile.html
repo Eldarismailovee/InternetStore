@@ -1,0 +1,152 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+{% load crispy_forms_filters %}
+<!-- templates/accounts/edit_profile.html -->
+{% load crispy_forms_tags %}
+
+{% block title %}Редактирование профиля{% endblock %}
+
+{% block content %}
+<main class="container mt-5">
+    <h2>Редактирование профиля</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row">
+            <!-- Левая колонка: Основные поля пользователя -->
+            <div class="col-md-6">
+                {{ user_form|crispy }}
+            </div>
+            
+            <!-- Правая колонка: Аватар и профильные поля -->
+            <div class="col-md-6">
+                <!-- Аватар пользователя -->
+                <div class="text-center mb-4">
+                    {% if user.profile.avatar %}
+                        <img src="{{ user.profile.avatar.url }}" alt="Аватар" id="currentAvatar" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover; cursor: pointer;" data-toggle="modal" data-target="#avatarModal">
+                    {% else %}
+                        <img src="{% static 'images/default_avatar.jpg' %}" alt="Аватар" id="currentAvatar" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover; cursor: pointer;" data-toggle="modal" data-target="#avatarModal">
+                    {% endif %}
+                    <p class="mt-2">Нажмите на аватар для изменения</p>
+                </div>
+                
+                <!-- Поля профиля -->
+                {{ profile_form|crispy }}
+            </div>
+        </div>
+        
+        <!-- Кнопки формы -->
+        <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+        <a href="{% url 'accounts:profile' %}" class="btn btn-secondary">Отмена</a>
+        
+        <!-- Скрытое поле для хранения обрезанного изображения -->
+        {{ profile_form.cropped_avatar }}
+    </form>
+</main>
+
+<!-- Модальное окно для изменения аватара -->
+<div class="modal fade" id="avatarModal" tabindex="-1" role="dialog" aria-labelledby="avatarModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="avatarModalLabel">Изменить аватар</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Поле для загрузки нового аватара -->
+        <div class="form-group">
+            <input type="file" id="avatarInput" accept="image/*" class="form-control">
+        </div>
+        
+        <!-- Предварительный просмотр и обрезка -->
+        <div class="form-group">
+            <img id="cropImage" src="#" alt="Обрезка аватара" style="max-width: 100%; display: none;">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="confirmCrop" class="btn btn-success">Подтвердить</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<!-- Подключение необходимых скриптов -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        let cropper;
+        const avatarInput = document.getElementById('avatarInput');
+        const cropImage = document.getElementById('cropImage');
+        const confirmCrop = document.getElementById('confirmCrop');
+        const croppedAvatarInput = document.getElementById('id_cropped_avatar');
+        const currentAvatar = document.getElementById('currentAvatar');
+        const avatarModal = $('#avatarModal');
+
+        // Обработчик загрузки нового аватара
+        avatarInput.addEventListener('change', function(e) {
+            const files = e.target.files;
+            if (files && files.length > 0) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    cropImage.src = event.target.result;
+                    cropImage.style.display = 'block';
+                    // Инициализация Cropper.js
+                    if (cropper) {
+                        cropper.destroy();
+                    }
+                    cropper = new Cropper(cropImage, {
+                        aspectRatio: 1, // Квадратное соотношение
+                        viewMode: 1,
+                        autoCropArea: 1,
+                        movable: true,
+                        zoomable: true,
+                        rotatable: false,
+                        scalable: false,
+                    });
+                };
+                reader.readAsDataURL(files[0]);
+            }
+        });
+
+        // Обработчик подтверждения обрезки
+        confirmCrop.addEventListener('click', function() {
+            if (cropper) {
+                const canvas = cropper.getCroppedCanvas({
+                    width: 300,
+                    height: 300,
+                });
+                canvas.toBlob(function(blob) {
+                    const reader = new FileReader();
+                    reader.onloadend = function() {
+                        croppedAvatarInput.value = reader.result;
+                        currentAvatar.src = reader.result;
+                        avatarModal.modal('hide');
+                        // Очистка Cropper.js
+                        cropper.destroy();
+                        cropper = null;
+                        // Очистка поля ввода файла
+                        avatarInput.value = '';
+                        cropImage.src = '#';
+                        cropImage.style.display = 'none';
+                    };
+                    reader.readAsDataURL(blob);
+                }, 'image/jpeg');
+            }
+        });
+
+        // Очистка Cropper.js при закрытии модального окна
+        avatarModal.on('hidden.bs.modal', function () {
+            if (cropper) {
+                cropper.destroy();
+                cropper = null;
+            }
+            cropImage.src = '#';
+            cropImage.style.display = 'none';
+            avatarInput.value = '';
+        });
+    });
+</script>
+{% endblock %}

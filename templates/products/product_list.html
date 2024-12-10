@@ -1,0 +1,269 @@
+<!-- templates/products/product_list.html -->
+
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}Каталог товаров{% endblock %}
+
+{% block content %}
+<main class="container mt-5">
+    <h2 class="mb-4 text-center">Каталог товаров</h2>
+
+    <div class="row">
+        <!-- Левая боковая панель с фильтрами -->
+        <aside class="col-md-3 mb-4">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Фильтры</h5>
+                </div>
+                <div class="card-body">
+                    <form id="filter-form" method="get">
+                        <!-- Фильтр по цене -->
+                        <div class="mb-4">
+                            <h6>Цена (руб.)</h6>
+                            <div id="price-slider"></div>
+                            <div class="d-flex justify-content-between">
+                                <span id="price-min"></span>
+                                <span id="price-max"></span>
+                            </div>
+                            <input type="hidden" name="price_min" id="id_price_min" value="{{ filter.form.price_min.value }}">
+                            <input type="hidden" name="price_max" id="id_price_max" value="{{ filter.form.price_max.value }}">
+                        </div>
+
+                        <!-- Фильтр по бренду -->
+                        <div class="mb-4">
+                            <h6>Бренд</h6>
+                            {% for brand in brands %}
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="brand" value="{{ brand.id }}" id="brand{{ brand.id }}"
+                                    {% if brand.id in selected_brands %}checked{% endif %}>
+                                    <label class="form-check-label" for="brand{{ brand.id }}">
+                                        {{ brand.name }}
+                                    </label>
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                        <!-- Фильтр по платформе -->
+                        <div class="mb-4">
+                            <h6>Платформа</h6>
+                            {% for platform in platforms %}
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="platform" value="{{ platform.id }}" id="platform{{ platform.id }}"
+                                    {% if platform.id in selected_platforms %}checked{% endif %}>
+                                    <label class="form-check-label" for="platform{{ platform.id }}">
+                                        {{ platform.name }}
+                                    </label>
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                        <!-- Фильтр по цвету -->
+                        <div class="mb-4">
+                            <h6>Цвет</h6>
+                            {% for color in colors %}
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="color" value="{{ color.id }}" id="color{{ color.id }}"
+                                    {% if color.id in selected_colors %}checked{% endif %}>
+                                    <label class="form-check-label" for="color{{ color.id }}">
+                                        {{ color.name }}
+                                    </label>
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                        <!-- Дополнительные характеристики (пример: объем памяти) -->
+                        <div class="mb-4">
+                            <h6>Объем памяти</h6>
+                            {% for memory in memories %}
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="memory" value="{{ memory.id }}" id="memory{{ memory.id }}"
+                                    {% if memory.id in selected_memories %}checked{% endif %}>
+                                    <label class="form-check-label" for="memory{{ memory.id }}">
+                                        {{ memory.value }} ГБ
+                                    </label>
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <i class="fas fa-filter"></i> Применить
+                        </button>
+                        <a href="{% url 'products:product_list' %}" class="btn btn-secondary btn-block mt-2">
+                            <i class="fas fa-sync-alt"></i> Сбросить
+                        </a>
+                    </form>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Основная область контента -->
+        <div class="col-md-9">
+            <!-- Верхняя панель с сортировкой и поиском -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <!-- Сортировка -->
+                <div>
+                    <form method="get" id="sort-form">
+                        <!-- Скрытые поля для сохранения текущих фильтров -->
+                        {% for key, value in request.GET.items %}
+                            {% if key != 'ordering' and key != 'page' %}
+                                <input type="hidden" name="{{ key }}" value="{{ value }}">
+                            {% endif %}
+                        {% endfor %}
+                        <div class="form-group">
+                            <label for="ordering">Сортировка:</label>
+                            <select name="ordering" id="ordering" class="form-control" onchange="document.getElementById('sort-form').submit();">
+                                <option value="">По умолчанию</option>
+                                <option value="price" {% if request.GET.ordering == 'price' %}selected{% endif %}>По цене (от дешевых)</option>
+                                <option value="-price" {% if request.GET.ordering == '-price' %}selected{% endif %}>По цене (от дорогих)</option>
+                                <option value="rating" {% if request.GET.ordering == 'rating' %}selected{% endif %}>По рейтингу</option>
+                                <option value="-rating" {% if request.GET.ordering == '-rating' %}selected{% endif %}>По рейтингу (от высокого)</option>
+                                <option value="popularity" {% if request.GET.ordering == 'popularity' %}selected{% endif %}>По популярности</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Поиск -->
+                <div class="w-50">
+                    <form method="get" class="form-inline">
+                        <!-- Скрытые поля для сохранения текущих фильтров -->
+                        {% for key, value in request.GET.items %}
+                            {% if key != 'q' and key != 'page' %}
+                                <input type="hidden" name="{{ key }}" value="{{ value }}">
+                            {% endif %}
+                        {% endfor %}
+                        <input class="form-control mr-sm-2 w-75" type="search" placeholder="Поиск" aria-label="Поиск" name="q" value="{{ request.GET.q }}">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Список товаров -->
+            <div class="row">
+                {% for product in products %}
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="position-relative">
+                                <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}" style="height: 200px; object-fit: cover;" loading="lazy">
+                                {% if product.is_hit %}
+                                    <span class="badge badge-danger position-absolute" style="top: 10px; left: 10px;">
+                                        Хит
+                                    </span>
+                                {% endif %}
+                                {% if product.is_new %}
+                                    <span class="badge badge-success position-absolute" style="top: 10px; right: 10px;">
+                                        Новинка
+                                    </span>
+                                {% endif %}
+                                {% if product.is_preorder %}
+                                    <span class="badge badge-warning position-absolute" style="bottom: 10px; left: 10px;">
+                                        Предзаказ
+                                    </span>
+                                {% endif %}
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">{{ product.name }}</h5>
+                                <p class="card-text text-muted">{{ product.category.name }}</p>
+                                {% if product.old_price %}
+                                    <p class="card-text">
+                                        <span class="text-muted"><s>{{ product.old_price|floatformat:2 }} руб.</s></span>
+                                        <span class="text-danger font-weight-bold">{{ product.price|floatformat:2 }} руб.</span>
+                                        <span class="badge badge-danger ml-2">-{{ product.discount_percentage }}%</span>
+                                    </p>
+                                {% else %}
+                                    <p class="card-text font-weight-bold">{{ product.price|floatformat:2 }} руб.</p>
+                                {% endif %}
+                                <p class="card-text">
+                                    {% for i in "12345"|slice:":product.rating" %}
+                                        <i class="fas fa-star text-warning"></i>
+                                    {% endfor %}
+                                    {% for i in "12345"|slice:"product.rating:" %}
+                                        <i class="far fa-star text-warning"></i>
+                                    {% endfor %}
+                                    <small class="text-muted">({{ product.review_count }})</small>
+                                </p>
+                                {% if product.is_preorder %}
+                                    <p class="text-warning">0% на 12 месяцев</p>
+                                {% endif %}
+                                <div class="mt-auto">
+                                    <a href="{% url 'products:product_detail' product.id %}" class="btn btn-primary btn-block mb-2">
+                                        <i class="fas fa-info-circle"></i> Подробнее
+                                    </a>
+                                    {% if user.is_authenticated %}
+                                        {% if product.id in wishlist_product_ids %}
+                                            <a href="{% url 'products:remove_from_wishlist' product.id %}" class="btn btn-warning btn-block mb-2">
+                                                <i class="fas fa-heart-broken"></i> Убрать из избранного
+                                            </a>
+                                        {% else %}
+                                            <a href="{% url 'products:add_to_wishlist' product.id %}" class="btn btn-outline-warning btn-block mb-2">
+                                                <i class="fas fa-heart"></i> В избранное
+                                            </a>
+                                        {% endif %}
+                                    {% endif %}
+                                    {% if product.is_available %}
+                                        <a href="{% url 'cart:add_to_cart' product.id %}" class="btn btn-success btn-block">
+                                            <i class="fas fa-cart-plus"></i> В корзину
+                                        </a>
+                                    {% else %}
+                                        <a href="{#% url 'products:preorder' product.id %#}" class="btn btn-secondary btn-block">
+                                            <i class="fas fa-box-open"></i> Предзаказ
+                                        </a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% empty %}
+                    <div class="col-12">
+                        <p class="text-center">Товары не найдены.</p>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <!-- Пагинация -->
+            {% if is_paginated %}
+                <nav aria-label="Навигация по страницам">
+                    <ul class="pagination justify-content-center">
+                        {% if page_obj.has_previous %}
+                            <li class="page-item">
+                                <a class="page-link" href="?{% querystring page=page_obj.previous_page_number %}" aria-label="Предыдущая">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                        {% else %}
+                            <li class="page-item disabled">
+                                <span class="page-link" aria-hidden="true">&laquo;</span>
+                            </li>
+                        {% endif %}
+
+                        {% for num in paginator.page_range %}
+                            {% if num == page_obj.number %}
+                                <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+                            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                                <li class="page-item"><a class="page-link" href="?{% querystring page=num %}">{{ num }}</a></li>
+                            {% endif %}
+                        {% endfor %}
+
+                        {% if page_obj.has_next %}
+                            <li class="page-item">
+                                <a class="page-link" href="?{% querystring page=page_obj.next_page_number %}" aria-label="Следующая">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        {% else %}
+                            <li class="page-item disabled">
+                                <span class="page-link" aria-hidden="true">&raquo;</span>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            {% endif %}
+        </div>
+    </div>
+</main>
+{% endblock %}

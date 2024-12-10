@@ -1,0 +1,26 @@
+{% extends 'accounts/base.html' %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+<!-- templates/accounts/register.html -->
+
+{% block title %}Регистрация{% endblock %}
+
+{% block content %}
+<main class="container mt-5">
+    <h2>Регистрация</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="acceptTerms" required>
+            <label class="form-check-label" for="acceptTerms">
+                Регистрируясь на сайте я принимаю
+                <a href="{#% url 'terms' %#}">правила сайта</a> и
+                <a href="{#% url 'privacy_policy' %#}">политику конфиденциальности</a>
+            </label>
+        </div>
+        <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+    </form>
+    <p class="mt-3">Уже есть аккаунт? <a href="{% url 'accounts:login' %}">Войти</a></p>
+</main>
+{% endblock %}

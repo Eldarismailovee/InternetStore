@@ -1,0 +1,215 @@
+<!-- templates/order_create.html -->
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5 mb-5">
+    <h2 class="mb-4 text-center">Оформление заказа</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form method="post" novalidate>
+                {% csrf_token %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Закрыть"></button>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                
+                <!-- Персональная информация -->
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h5>Персональная информация</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            {{ form.first_name.label_tag }}
+                            {{ form.first_name }}
+                            {% if form.first_name.errors %}
+                                <div class="text-danger">
+                                    {{ form.first_name.errors }}
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="mb-3">
+                            {{ form.last_name.label_tag }}
+                            {{ form.last_name }}
+                            {% if form.last_name.errors %}
+                                <div class="text-danger">
+                                    {{ form.last_name.errors }}
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="mb-3">
+                            {{ form.email.label_tag }}
+                            {{ form.email }}
+                            {% if form.email.errors %}
+                                <div class="text-danger">
+                                    {{ form.email.errors }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Адрес доставки -->
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h5>Адрес доставки</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            {{ form.address.label_tag }}
+                            {{ form.address }}
+                            {% if form.address.errors %}
+                                <div class="text-danger">
+                                    {{ form.address.errors }}
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="mb-3">
+                            {{ form.postal_code.label_tag }}
+                            {{ form.postal_code }}
+                            {% if form.postal_code.errors %}
+                                <div class="text-danger">
+                                    {{ form.postal_code.errors }}
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="mb-3">
+                            {{ form.city.label_tag }}
+                            {{ form.city }}
+                            {% if form.city.errors %}
+                                <div class="text-danger">
+                                    {{ form.city.errors }}
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="mb-3">
+                            {{ form.country.label_tag }}
+                            {{ form.country }}
+                            {% if form.country.errors %}
+                                <div class="text-danger">
+                                    {{ form.country.errors }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Способ оплаты -->
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h5>Способ оплаты</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            {{ form.payment_method.label_tag }}
+                            {{ form.payment_method }}
+                            {% if form.payment_method.errors %}
+                                <div class="text-danger">
+                                    {{ form.payment_method.errors }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Обзор заказа -->
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h5>Обзор заказа</h5>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Товар</th>
+                                    <th scope="col">Цена</th>
+                                    <th scope="col">Количество</th>
+                                    <th scope="col">Итого</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in cart %}
+                                    <tr>
+                                        <td>{{ item.product.name }}</td>
+                                        <td>{{ item.price }} руб.</td>
+                                        <td>{{ item.quantity }}</td>
+                                        <td>{{ item.total_price }} руб.</td>
+                                    </tr>
+                                {% endfor %}
+                                <tr>
+                                    <th colspan="3" class="text-end">Общая сумма:</th>
+                                    <th>{{ cart.get_total_price }} руб.</th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Примечания к заказу -->
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h5>Примечания к заказу</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            {{ form.notes.label_tag }}
+                            {{ form.notes }}
+                            {% if form.notes.errors %}
+                                <div class="text-danger">
+                                    {{ form.notes.errors }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Кнопка оформления заказа -->
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-success btn-lg">
+                        <i class="fas fa-check-circle"></i> Оформить заказ
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Модальное окно подтверждения заказа -->
+<div class="modal fade" id="orderConfirmationModal" tabindex="-1" aria-labelledby="orderConfirmationModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title" id="orderConfirmationModalLabel">Заказ оформлен</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+      </div>
+      <div class="modal-body">
+        Ваш заказ успешно оформлен! Мы свяжемся с вами для подтверждения.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        <a href="{% url 'products:home' %}" class="btn btn-primary">Перейти на главную</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Скрипт для отображения модального окна после успешной отправки формы -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        {% if messages %}
+            {% for message in messages %}
+                {% if message.tags == 'success' %}
+                    var myModal = new bootstrap.Modal(document.getElementById('orderConfirmationModal'), {})
+                    myModal.show()
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    });
+</script>
+{% endblock %}

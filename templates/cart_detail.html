@@ -1,0 +1,244 @@
+    <!-- templates/cart_detail.html -->
+
+    {% extends 'base.html' %}
+
+    {% block title %}Корзина - Electronic Store{% endblock %}
+
+    {% block content %}
+
+    <main class="container mt-5">
+        <!-- Breadcrumbs -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'products:product_list' %}">Главная</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Корзина</li>
+            </ol>
+        </nav>
+
+        <h2 class="mb-4">Ваша корзина</h2>
+
+        <!-- Currency Selector -->
+        <div class="mb-3">
+            <form id="currency-form" method="post">
+                {% csrf_token %}
+                <label for="currency-select">Выберите валюту:</label>
+                <select id="currency-select" name="currency" class="form-control" style="width: auto; display: inline-block;">
+                    <option value="MDL" {% if currency == 'MDL' %}selected{% endif %}>Молдавские леи</option>
+                    <option value="EUR" {% if currency == 'EUR' %}selected{% endif %}>Евро</option>
+                    <option value="USD" {% if currency == 'USD' %}selected{% endif %}>Доллар США</option>
+                </select>
+            </form>
+        </div>
+
+        {% if cart|length > 0 %}
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>Товар</th>
+                            <th>Цена за единицу</th>
+                            <th>Количество</th>
+                            <th>Всего</th>
+                            <th>Действия</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in cart %}
+                        <tr id="item-{{ item.product.id }}">
+                            <td>
+                                <div class="media">
+                                    <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="mr-3" style="width: 80px; height: 80px; object-fit: cover;">
+                                    <div class="media-body">
+                                        <h5 class="mt-0">{{ item.product.name }}</h5>
+                                        <p class="text-muted">{{ item.product.category.name }}</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="unit-price">{{ item.price|floatformat:2 }}</span> {{ currency_symbol }}</td>
+                            <td>
+                                <div class="input-group" style="width: 120px;">
+                                    <div class="input-group-prepend">
+                                        <button class="btn btn-outline-secondary btn-sm quantity-minus" data-product-id="{{ item.product.id }}">-</button>
+                                    </div>
+                                    <label>
+                                        <input type="text" class="form-control form-control-sm text-center quantity-input" value="{{ item.quantity }}" data-product-id="{{ item.product.id }}" min="1" max="{{ item.product.stock }}">
+                                    </label>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary btn-sm quantity-plus" data-product-id="{{ item.product.id }}">+</button>
+                                    </div>
+                                </div>
+                            </td>
+                           <td><span class="item-total-price">{{ item.total_price|floatformat:2 }}</span> {{ currency_symbol }}</td>
+                            <td>
+                                <button class="btn btn-danger btn-sm remove-item" data-product-id="{{ item.product.id }}">
+                                    <i class="fas fa-trash-alt"></i> Удалить
+                                </button>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3" class="text-right"><strong>Итого:</strong></td>
+                            <td><strong><span id="cart-total-price">{{ cart.get_total_price|floatformat:2 }}</span> {{ currency_symbol }}</strong></td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="d-flex justify-content-between mt-4">
+                <a href="{% url 'products:product_list' %}" class="btn btn-outline-primary">
+                    <i class="fas fa-arrow-left"></i> Продолжить покупки
+                </a>
+                <a href="{% url 'products:order_create' %}" class="btn btn-success">
+                    Оформить заказ <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        {% else %}
+            <div class="text-center">
+                <p class="lead">Ваша корзина пуста.</p>
+                <a href="{% url 'products:product_list' %}" class="btn btn-primary btn-lg">
+                    <i class="fas fa-shopping-bag"></i> Начать покупки
+                </a>
+            </div>
+        {% endif %}
+    </main>
+
+    <!-- Include necessary scripts -->
+    {% block extra_scripts %}
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Include Toastr for notifications -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <!-- Include any necessary CSS for smooth animations -->
+    <style>
+
+    </style>
+
+    <script>
+    $(document).ready(function() {
+        function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+var csrftoken = getCookie('csrftoken');
+        
+        $.ajaxSetup({
+    beforeSend: function(xhr, settings) {
+        if (!(/^GET|HEAD|OPTIONS|TRACE$/.test(settings.type))) {
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+        }
+    }
+});
+        // Handle currency change
+        $('#currency-select').change(function() {
+            $('#currency-form').submit();
+        });
+
+        // Quantity minus button
+        $('.quantity-minus').click(function() {
+            var productId = $(this).data('product-id');
+            var quantityInput = $('input.quantity-input[data-product-id="' + productId + '"]');
+            var quantity = parseInt(quantityInput.val());
+            if (quantity > 1) {
+                quantityInput.val(quantity - 1);
+                updateQuantity(productId, quantity - 1);
+            }
+        });
+
+        // Quantity plus button
+        $('.quantity-plus').click(function() {
+            var productId = $(this).data('product-id');
+            var quantityInput = $('input.quantity-input[data-product-id="' + productId + '"]');
+            var quantity = parseInt(quantityInput.val());
+            var maxQuantity = parseInt(quantityInput.attr('max'));
+            if (quantity < maxQuantity) {
+                quantityInput.val(quantity + 1);
+                updateQuantity(productId, quantity + 1);
+            }
+        });
+
+        // Direct input change
+        $('.quantity-input').change(function() {
+            var productId = $(this).data('product-id');
+            var quantity = parseInt($(this).val());
+            var maxQuantity = parseInt($(this).attr('max'));
+            if (quantity < 1) quantity = 1;
+            if (quantity > maxQuantity) quantity = maxQuantity;
+            $(this).val(quantity);
+            updateQuantity(productId, quantity);
+        });
+
+        // Remove item
+        $('.remove-item').click(function() {
+            var productId = $(this).data('product-id');
+            removeItem(productId);
+        });
+
+        function updateQuantity(productId, quantity) {
+    $.ajax({
+        url: '{% url "products:update_quantity" %}',
+        method: 'POST',
+        data: {
+            'product_id': productId,
+            'quantity': quantity,
+        },
+        success: function(response) {
+            // Update item total price
+            var itemRow = $('#item-' + productId);
+            itemRow.find('.item-total-price').text(response.item_total_price.toFixed(2));
+            // Update cart total price
+            $('#cart-total-price').text(response.cart_total_price.toFixed(2));
+            // Show notification
+            toastr.success('Количество товаров было изменено');
+        },
+        error: function(xhr) {
+            console.error(xhr.responseText);
+            toastr.error('Произошла ошибка при обновлении количества.');
+        }
+    });
+}
+
+        function removeItem(productId) {
+            $.ajax({
+        url: '{% url "products:remove_item" %}',
+        method: 'POST',
+        data: {
+            'product_id': productId,
+        },
+        success: function(response) {
+            // Remove item row with animation
+            var itemRow = $('#item-' + productId);
+            itemRow.fadeOut(500, function() {
+                itemRow.remove();
+                // Update cart total price
+                $('#cart-total-price').text(response.cart_total_price.toFixed(2));
+                // If cart is empty, reload page to show empty cart message
+                if (response.cart_empty) {
+                    location.reload();
+                }
+            });
+            // Show notification
+            toastr.success('Товар был удалён из корзины');
+        },
+        error: function(xhr) {
+            console.error(xhr.responseText);
+            toastr.error('Произошла ошибка при удалении товара.');
+        }
+    });
+        }
+    });
+    </script>
+    {% endblock %}
+    {% endblock %}

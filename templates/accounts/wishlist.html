@@ -1,0 +1,34 @@
+<!-- templates/accounts/wishlist.html -->
+
+{% extends 'accounts/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}Мой список желаний{% endblock %}
+
+{% block content %}
+<main class="container mt-5">
+    <h2>Мой список желаний</h2>
+    {% if wishlist_items %}
+        <div class="row">
+            {% for item in wishlist_items %}
+                <div class="col-md-3">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="{{ item.product.image.url }}" class="card-img-top" alt="{{ item.product.name }}" style="height: 200px; object-fit: cover;" loading="lazy">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ item.product.name }}</h5>
+                            <p class="card-text">{{ item.product.price }} руб.</p>
+                            <a href="{% url 'products:product_detail' item.product.id %}" class="btn btn-primary btn-sm">Подробнее</a>
+                            <a href="{% url 'accounts:remove_from_wishlist' item.product.id %}" class="btn btn-danger btn-sm">
+                                <i class="fas fa-trash-alt"></i> Удалить
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>Ваш список желаний пуст.</p>
+    {% endif %}
+</main>
+{% endblock %}

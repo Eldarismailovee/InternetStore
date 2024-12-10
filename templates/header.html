@@ -1,0 +1,110 @@
+{% load static %}
+<!-- Верхнее меню с логотипом, навигацией и иконками -->
+<header>
+    <!-- Верхний бар с контактами и приветствием -->
+    <div class="top-bar bg-dark text-white py-1">
+        <div class="container d-flex justify-content-between">
+            <div>
+                <small><i class="fas fa-phone-alt"></i> +7 (123) 456-78-90</small>
+                <small class="ml-3"><i class="fas fa-envelope"></i> support@electronicstore.com</small>
+            </div>
+            <div>
+                {% if user.is_authenticated %}
+                    <small>Здравствуйте, {{ user.username }}!</small>
+                {% else %}
+                    <small>Добро пожаловать в Electronic Store!</small>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <!-- Основной хедер с логотипом и навигацией -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <!-- Логотип -->
+            <a class="navbar-brand" href="{% url 'products:home' %}">
+                <img src="{% static 'images/logo.png' %}" alt="Electronic Store" height="50">
+            </a>
+            <!-- Кнопка для мобильного меню -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Переключение навигации">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Навигационное меню -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Пункты меню -->
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'products:home' %}">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{#% url 'categories' %#}">Категории</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about'%}">О нас</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact'%}">Контакты</a>
+                    </li>
+                </ul>
+                <!-- Поиск -->
+                <form class="form-inline my-2 my-lg-0" method="get" action="{#% url 'search' %#}">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Поиск" aria-label="Поиск" name="q">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
+                </form>
+                <!-- Иконки пользователя и корзины -->
+                <ul class="navbar-nav ml-3">
+                    {% if user.is_authenticated %}
+                        <!-- Ссылка на профиль пользователя -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'accounts:profile' %}" title="Профиль">
+                                <i class="fas fa-user"></i>
+                            </a>
+                        </li>
+                        <!-- Ссылка на выход из системы -->
+                        {% if user.is_authenticated %}
+    <!-- Форма для выхода из аккаунта -->
+    <form action="{% url 'accounts:logout' %}" method="post" style="display: inline;">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-link" style="display: inline; padding: 0; border: none; background: none;">
+            <i class="fas fa-sign-out-alt"></i> 
+        </button>
+    </form>
+{% else %}
+    <!-- Ссылка на вход -->
+    <a href="#" data-toggle="modal" data-target="#loginModal">
+        <i class="fas fa-user"></i> Войти
+    </a>
+{% endif %}
+                    {% else %}
+                        <!-- Ссылка на вход -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal" title="Войти">
+                                <i class="fas fa-user"></i>
+                            </a>
+                        </li>
+                    {% endif %}
+                    <!-- Иконка сравнения товаров -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" title="Сравнить">
+                            <i class="fas fa-exchange-alt"></i>
+                        </a>
+                    </li>
+                    <!-- Иконка списка желаний -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" title="Избранное">
+                            <i class="fas fa-heart"></i>
+                        </a>
+                    </li>
+                    <!-- Иконка корзины -->
+                    <li class="nav-item">
+                        <a class="nav-link position-relative" href="{% url 'products:cart_detail' %}" title="Корзина">
+                            <i class="fas fa-shopping-cart"></i>
+                            {% if cart_total_items > 0 %}
+                                <span class="badge badge-pill badge-danger position-absolute cart-badge">{{ cart_total_items }}</span>
+                            {% endif %}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

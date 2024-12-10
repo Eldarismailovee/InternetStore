@@ -1,0 +1,200 @@
+<!-- templates/product_detail.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}{{ product.name }} - Electronic Store{% endblock %}
+
+{% block content %}
+<main class="container mt-5">
+    <!-- Навигационная цепочка (хлебные крошки) -->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'products:product_list' %}">Главная</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'products:category_detail' product.category.slug %}">{{ product.category.name }}</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ product.name }}</li>
+        </ol>
+    </nav>
+
+    <div class="row">
+        <!-- Галерея изображений -->
+        <div class="col-md-6">
+            <div id="productCarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    {% for image in product.images.all %}
+                        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                            <img src="{{ image.image.url }}" class="d-block w-100" alt="{{ product.name }}" style="height: 500px; object-fit: cover;">
+                        </div>
+                    {% empty %}
+                        <div class="carousel-item active">
+                            <img src="{{ product.image.url }}" class="d-block w-100" alt="{{ product.name }}" style="height: 500px; object-fit: cover;">
+                        </div>
+                    {% endfor %}
+                </div>
+                {% if product.images.count > 1 %}
+                    <a class="carousel-control-prev" href="#productCarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Предыдущий</span>
+                    </a>
+                    <a class="carousel-control-next" href="#productCarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Следующий</span>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Информация о продукте -->
+        <div class="col-md-6">
+            <h2>{{ product.name }}</h2>
+            <p class="text-muted">Артикул: {{ product.sku }}</p>
+            <h3 class="text-danger">{{ product.price|floatformat:2 }} руб.</h3>
+            {% if product.old_price %}
+                <p class="text-muted"><del>{{ product.old_price|floatformat:2 }} руб.</del></p>
+            {% endif %}
+            <p>{{ product.short_description }}</p>
+            <!-- Рейтинг продукта -->
+            <div class="mb-3">
+                {% with product.get_average_rating as rating %}
+                    {% for i in "12345"|slice:":rating"|make_list %}
+                        <i class="fas fa-star text-warning"></i>
+                    {% endfor %}
+                    {% for i in "12345"|slice:rating|stringformat:"s"|make_list %}
+                        <i class="far fa-star text-warning"></i>
+                    {% endfor %}
+                    <span class="ml-2">({{ product.reviews.count }} отзывов)</span>
+                {% endwith %}
+            </div>
+            <form action="{% url 'products:add_to_cart' product_id=product.id %}" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="quantity">Количество:</label>
+                    <input type="hidden" name="quantity" id="quantity" value="1" min="1" max="{{ product.stock }}" class="form-control" style="width: 100px;">
+                </div>
+                {% if product.stock > 0 %}
+                    <button type="submit" class="btn btn-success btn-lg">
+                        <i class="fas fa-shopping-cart"></i> Добавить в корзину
+                    </button>
+                {% else %}
+                    <button type="button" class="btn btn-secondary btn-lg" disabled>
+                        Нет в наличии
+                    </button>
+                {% endif %}
+            </form>
+            <!-- Кнопки действий -->
+            <div class="mt-3">
+                <a href="{% url 'products:add_to_wishlist' product.id %}" class="btn btn-outline-danger">
+                    <i class="fas fa-heart"></i> Добавить в желания
+                </a>
+                <a href="#" class="btn btn-outline-primary">
+                    <i class="fas fa-share-alt"></i> Поделиться
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Вкладки с дополнительной информацией -->
+    <div class="mt-5">
+        <ul class="nav nav-tabs" id="productTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">Описание</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="specifications-tab" data-toggle="tab" href="#specifications" role="tab" aria-controls="specifications" aria-selected="false">Характеристики</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="reviews-tab" data-toggle="tab" href="#reviews" role="tab" aria-controls="reviews" aria-selected="false">Отзывы ({{ product.reviews.count }})</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="productTabContent">
+            <!-- Описание -->
+            <div class="tab-pane fade show active p-4" id="description" role="tabpanel" aria-labelledby="description-tab">
+                {{ product.description|safe }}
+            </div>
+            <!-- Характеристики -->
+            <div class="tab-pane fade p-4" id="specifications" role="tabpanel" aria-labelledby="specifications-tab">
+                <table class="table table-striped">
+                    <tbody>
+                        {% for spec in product.specifications.all %}
+                            <tr>
+                                <th>{{ spec.name }}</th>
+                                <td>{{ spec.value }}</td>
+                            </tr>
+                        {% empty %}
+                            <tr>
+                                <td colspan="2">Характеристики не указаны.</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <!-- Отзывы -->
+            <div class="tab-pane fade p-4" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
+                {% if product.reviews.exists %}
+                    {% for review in product.reviews.all %}
+                        <div class="media mb-4">
+                            <img src="{{ review.user.profile.avatar.url }}" class="mr-3 rounded-circle" alt="{{ review.user.username }}" style="width: 50px; height: 50px; object-fit: cover;">
+                            <div class="media-body">
+                                <h5 class="mt-0">{{ review.user.username }} <small class="text-muted">{{ review.created_at|date:"d.m.Y" }}</small></h5>
+                                <!-- Рейтинг отзыва -->
+                                {% for i in "12345"|slice:":review.rating"|make_list %}
+                                    <i class="fas fa-star text-warning"></i>
+                                {% endfor %}
+                                {% for i in "12345"|slice:review.rating|stringformat:"s"|make_list %}
+                                    <i class="far fa-star text-warning"></i>
+                                {% endfor %}
+                                <p>{{ review.comment }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>Отзывов пока нет. Будьте первым!</p>
+                {% endif %}
+                <!-- Форма добавления отзыва -->
+                {% if user.is_authenticated %}
+                    <hr>
+                    <h5>Оставить отзыв</h5>
+                    <form method="post" action="{% url 'products:add_review' product.id %}">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="rating">Рейтинг:</label>
+                            <select name="rating" id="rating" class="form-control" style="width: 100px;">
+                                {% for i in "12345"|make_list %}
+                                    <option value="{{ i }}">{{ i }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="comment">Комментарий:</label>
+                            <textarea name="comment" id="comment" rows="4" class="form-control"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Отправить отзыв</button>
+                    </form>
+                {% else %}
+                    <p><a href="{% url 'accounts:login' %}">Войдите</a>, чтобы оставить отзыв.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Рекомендуемые товары -->
+    <div class="mt-5">
+        <h3>Похожие товары</h3>
+        <div class="row">
+            {% for related_product in product.get_related_products %}
+                <div class="col-md-3">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="{{ related_product.image.url }}" class="card-img-top" alt="{{ related_product.name }}" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ related_product.name }}</h5>
+                            <p class="card-text">{{ related_product.price|floatformat:2 }} руб.</p>
+                            <a href="{% url 'products:product_detail' related_product.id %}" class="btn btn-outline-primary btn-sm">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <p>Нет похожих товаров.</p>
+            {% endfor %}
+        </div>
+    </div>
+</main>
+{% endblock %}

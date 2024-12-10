@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Главная - Electronic Store{% endblock %}
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+{% block content %}
+<!-- Меню категорий и баннер -->
+<div class="container mt-3">
+    <div class="row">
+        <!-- Меню категорий -->
+        <div class="col-md-3">
+            <ul class="list-group">
+                {% for category in categories %}
+                    <li class="list-group-item">
+                        <a href="{{ category.get_absolute_url }}" class="text-decoration-none text-dark">
+                            <i class="{{ category.icon }}"></i> {{ category.name }}
+                        </a>
+                    </li>
+                {% empty %}
+                    <li class="list-group-item">Категорий нет.</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <!-- Баннер -->
+        <div class="col-md-9">
+            <div id="mainBanner" class="carousel slide" data-ride="carousel">
+                <!-- Индикаторы -->
+                <ul class="carousel-indicators">
+                    <li data-target="#mainBanner" data-slide-to="0" class="active"></li>
+                    <li data-target="#mainBanner" data-slide-to="1"></li>
+                    <li data-target="#mainBanner" data-slide-to="2"></li>
+                </ul>
+                <!-- Слайды -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/banner1.jpg' %}" alt="Баннер 1" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/banner2.jpg' %}" alt="Баннер 2" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/banner3.jpg' %}" alt="Баннер 3" class="d-block w-100">
+                    </div>
+                </div>
+                <!-- Элементы управления -->
+                <a class="carousel-control-prev" href="#mainBanner" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#mainBanner" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Популярные товары -->
+<main class="container mt-5">
+    <h2 class="mb-4">Популярные товары</h2>
+    <div class="row">
+        {% for product in featured_products %}
+            <div class="col-md-3 col-sm-6 mb-4">
+                <div class="card h-100">
+                    <a href="{% url 'products:product_detail' product.id %}">
+                        <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}">
+                    </a>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{ product.name }}</h5>
+                        <p class="card-text">{{ product.price }} руб.</p>
+                        <form action="{% url 'products:add_to_cart' product.id %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="quantity" value="1">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-shopping-cart"></i> В корзину
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</main>
+
+<!-- Чат поддержки -->
+<div class="chat-widget">
+    <button class="btn btn-primary">
+        <i class="fas fa-comments"></i> Вам нужна помощь?
+    </button>
+</div>
+{% endblock %}

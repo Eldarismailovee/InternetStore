@@ -1,0 +1,42 @@
+<!-- templates/accounts/order_history.html -->
+
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}История заказов{% endblock %}
+
+{% block content %}
+<main class="container mt-5">
+    <h2>История заказов</h2>
+    {% if orders %}
+        <div class="accordion" id="ordersAccordion">
+            {% for order in orders %}
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading{{ order.id }}">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ order.id }}" aria-expanded="false" aria-controls="collapse{{ order.id }}">
+                            Заказ №{{ order.id }} - {{ order.created_at|date:"d.m.Y H:i" }} - <span class="badge bg-{{ order.status_color }}">{{ order.get_status_display }}</span>
+                        </button>
+                    </h2>
+                    <div id="collapse{{ order.id }}" class="accordion-collapse collapse" aria-labelledby="heading{{ order.id }}" data-bs-parent="#ordersAccordion">
+                        <div class="accordion-body">
+                            <h5>Детали заказа:</h5>
+                            <ul class="list-group mb-3">
+                                {% for item in order.items.all %}
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        {{ item.product.name }}
+                                        <span>{{ item.quantity }} x {{ item.price }} руб.</span>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                            <p><strong>Итого:</strong> {{ order.get_total_cost }} руб.</p>
+                            <p><strong>Адрес доставки:</strong> {{ order.address }}, {{ order.postal_code }}, {{ order.city }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>У вас пока нет заказов.</p>
+    {% endif %}
+</main>
+{% endblock %}

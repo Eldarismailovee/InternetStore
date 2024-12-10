@@ -1,0 +1,14 @@
+<!-- products/templates/products/staticpage_preview.html -->
+
+{% extends "base.html" %}
+
+{% block title %}Предпросмотр - {{ static_page.title }}{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>{{ static_page.title }}</h1>
+    <div>
+        {{ static_page.content|safe }}
+    </div>
+</div>
+{% endblock %}

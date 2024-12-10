@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+<!-- templates/accounts/notification_settings.html -->
+{% load crispy_forms_tags %}
+
+{% block title %}Настройки уведомлений{% endblock %}
+
+{% block content %}
+<main class="container mt-5">
+    <h2>Настройки уведомлений</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-primary">Сохранить настройки</button>
+    </form>
+</main>
+{% endblock %}

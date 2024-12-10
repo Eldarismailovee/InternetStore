@@ -1,0 +1,24 @@
+<!-- templates/accounts/activity_history.html -->
+
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}История активности{% endblock %}
+
+{% block content %}
+<main class="container mt-5">
+    <h2>История активности</h2>
+    {% if activities %}
+        <ul class="list-group">
+            {% for activity in activities %}
+                <li class="list-group-item">
+                    <strong>{{ activity.activity_type }}</strong>: {{ activity.description }}
+                    <span class="text-muted float-end">{{ activity.timestamp|date:"d.m.Y H:i" }}</span>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>У вас пока нет активности.</p>
+    {% endif %}
+</main>
+{% endblock %}

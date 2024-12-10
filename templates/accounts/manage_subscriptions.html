@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+<!-- templates/accounts/manage_subscriptions.html -->
+{% load crispy_forms_tags %}
+
+{% block title %}Управление подписками{% endblock %}
+
+{% block content %}
+<main class="container mt-5">
+    <h2>Мои подписки</h2>
+    <ul class="list-group mb-4">
+        {% for subscription in subscriptions %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                {{ subscription.category.name }}
+                <form action="{% url 'accounts:unsubscribe' subscription.id %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger btn-sm">Отписаться</button>
+                </form>
+            </li>
+        {% empty %}
+            <li class="list-group-item">У вас нет подписок.</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Добавить подписку</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-success">Подписаться</button>
+    </form>
+</main>
+{% endblock %}

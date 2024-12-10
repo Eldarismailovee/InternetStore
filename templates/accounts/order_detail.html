@@ -1,0 +1,33 @@
+<!-- templates/accounts/order_detail.html -->
+
+{% extends 'accounts/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}Детали заказа{% endblock %}
+
+{% block content %}
+<main class="container mt-5">
+    <h2>Детали заказа №{{ order.id }}</h2>
+    <p><strong>Дата заказа:</strong> {{ order.created_at|date:"d.m.Y H:i" }}</p>
+    <p><strong>Статус:</strong> 
+        {% if order.paid %}
+            <span class="badge bg-success">Оплачен</span>
+        {% else %}
+            <span class="badge bg-warning">В обработке</span>
+        {% endif %}
+    </p>
+    <h4>Товары в заказе:</h4>
+    <ul class="list-group mb-3">
+        {% for item in order.items.all %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                {{ item.product.name }}
+                <span>{{ item.quantity }} x {{ item.price }} руб.</span>
+            </li>
+        {% endfor %}
+    </ul>
+    <p><strong>Итого:</strong> {{ order.get_total_cost }} руб.</p>
+    <p><strong>Адрес доставки:</strong> {{ order.address }}, {{ order.postal_code }}, {{ order.city }}</p>
+    <a href="{% url 'accounts:order_history' %}" class="btn btn-secondary">Вернуться к истории заказов</a>
+</main>
+{% endblock %}

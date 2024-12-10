@@ -1,0 +1,36 @@
+<!-- templates/category_detail.html -->
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ category.name }} - Electronic Store{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4">{{ category.name }}</h2>
+    <div class="row">
+        {% for product in products %}
+            <div class="col-md-3 col-sm-6 mb-4">
+                <div class="card h-100">
+                    <a href="{{ product.get_absolute_url }}">
+                        <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}">
+                    </a>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{ product.name }}</h5>
+                        <p class="card-text">{{ product.price }} руб.</p>
+                        <form action="{% url 'products:add_to_cart' product.id %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="quantity" value="1">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-shopping-cart"></i> В корзину
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <p>В этой категории нет товаров.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

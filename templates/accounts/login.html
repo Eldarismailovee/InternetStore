@@ -1,0 +1,36 @@
+{% extends 'accounts/base.html' %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+<!-- templates/accounts/login.html -->
+
+{% block title %}Вход{% endblock %}
+
+{% block content %}
+<main class="container mt-5">
+    <h2>Вход</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="rememberMe" name="remember_me">
+            <label class="form-check-label" for="rememberMe">Запомнить меня</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Войти</button>
+    </form>
+    <p class="mt-3">
+        Забыли пароль? <a href="{% url 'accounts:password_reset' %}">Сбросить пароль</a>
+    </p>
+    <p>Нет аккаунта? <a href="{% url 'accounts:register' %}">Зарегистрироваться</a></p>
+
+    <!-- Social Login Buttons -->
+    <div class="mt-4">
+        <p>Или войдите через социальные сети:</p>
+        <a href="{#% url 'social:begin' 'google-oauth2' %#}" class="btn btn-outline-danger mb-2">
+            <i class="fab fa-google"></i> Войти через Google
+        </a>
+        <a href="{#% url 'social:begin' 'facebook' %#}" class="btn btn-outline-primary">
+            <i class="fab fa-facebook-f"></i> Войти через Facebook
+        </a>
+    </div>
+</main>
+{% endblock %}

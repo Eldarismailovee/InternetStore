@@ -1,0 +1,51 @@
+<!-- wishlist/templates/wishlist/wishlist.html -->
+
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Мой Список Желаний{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="mb-4">Мой Список Желаний</h1>
+
+    {% if wishlist.products.all %}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Изображение</th>
+                    <th scope="col">Название</th>
+                    <th scope="col">Цена</th>
+                    <th scope="col">Действия</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in wishlist.products.all %}
+                    <tr>
+                        <td>
+                            <a href="{% url 'products:product_detail' product_id=product.id %}">
+                                <img src="{{ product.image.url }}" alt="{{ product.name }}" width="100">
+                            </a>
+                        </td>
+                        <td>
+                            <a href="{% url 'products:product_detail' product_id=product.id %}">
+                                {{ product.name }}
+                            </a>
+                        </td>
+                        <td>{{ product.price }} ₽</td>
+                        <td>
+                            <form action="{% url 'products:remove_from_wishlist' product_id=product.id %}" method="post">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-danger btn-sm">Удалить</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Ваш список желаний пуст. <a href="{% url 'products:product_list' %}">Добавьте товары</a>!</p>
+    {% endif %}
+</div>
+{% endblock %}

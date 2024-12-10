@@ -1,0 +1,10 @@
+<!-- templates/admin/base_site.html -->
+
+{% extends "admin/base_site.html" %}
+
+{% block footer %}
+{{ block.super }}
+<div style="text-align: center; margin-top: 20px;">
+    <a href="{% url 'admin:preview_homepage' %}" target="_blank">Предпросмотр Главной Страницы</a>
+</div>
+{% endblock %}

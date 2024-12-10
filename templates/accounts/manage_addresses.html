@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_filters %}
+<!-- templates/accounts/manage_addresses.html -->
+{% load crispy_forms_tags %}
+
+{% block title %}Управление адресами{% endblock %}
+
+{% block content %}
+<main class="container mt-5">
+    <h2>Мои адреса</h2>
+    <ul class="list-group mb-4">
+        {% for address in addresses %}
+            <li class="list-group-item">
+                {{ address.address_line1 }}, {{ address.city }}, {{ address.country }}
+                {% if address.is_default %}
+                    <span class="badge bg-primary">По умолчанию</span>
+                {% endif %}
+            </li>
+        {% empty %}
+            <li class="list-group-item">У вас нет сохранённых адресов.</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Добавить новый адрес</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-success">Сохранить адрес</button>
+    </form>
+</main>
+{% endblock %}
