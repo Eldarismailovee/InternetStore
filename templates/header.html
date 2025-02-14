@@ -1,31 +1,38 @@
 {% load static %}
 <!-- Верхнее меню с логотипом, навигацией и иконками -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.8.1/nouislider.css" integrity="sha512-MKxcSu/LDtbIYHBNAWUQwfB3iVoG9xeMCm32QV5hZ/9lFaQZJVaXfz9aFa0IZExWzCpm7OWvp9zq9gVip/nLMg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <header>
     <!-- Верхний бар с контактами и приветствием -->
-    <div class="top-bar bg-dark text-white py-1">
-        <div class="container d-flex justify-content-between">
-            <div>
-                <small><i class="fas fa-phone-alt"></i> +7 (123) 456-78-90</small>
-                <small class="ml-3"><i class="fas fa-envelope"></i> support@electronicstore.com</small>
-            </div>
-            <div>
-                {% if user.is_authenticated %}
-                    <small>Здравствуйте, {{ user.username }}!</small>
-                {% else %}
-                    <small>Добро пожаловать в Electronic Store!</small>
-                {% endif %}
-            </div>
+    <div class="top-bar bg-white text-dark py-1">
+    <div class="container d-flex justify-content-between align-items-center" style="font-size: 0.9rem;">
+        <div>
+            <small><i class="fas fa-phone-alt"></i> +7 (123) 456-78-90</small>
+            <small class="ml-3"><i class="fas fa-envelope"></i> support@electronicstore.com</small>
+        </div>
+        <div>
+            {% if user.is_authenticated %}
+                <small>Здравствуйте, {{ user.username }}!</small>
+            {% else %}
+                <small>Добро пожаловать в Electronic Store!</small>
+            {% endif %}
         </div>
     </div>
+</div>
     <!-- Основной хедер с логотипом и навигацией -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="box-shadow: 0 2px 5px rgba(0,0,0,0.5);">
         <div class="container">
             <!-- Логотип -->
-            <a class="navbar-brand" href="{% url 'products:home' %}">
-                <img src="{% static 'images/logo.png' %}" alt="Electronic Store" height="50">
+            <a class="navbar-brand d-flex align-items-center" href="{% url 'products:home' %}">
+                {% if admin_settings.site_logo %}
+                    <img src="{{ admin_settings.site_logo.url }}" alt="Site Logo" height="50" class="mr-2">
+                {% else %}
+                    <img src="{% static 'images/logo.png' %}" alt="Default Logo" height="50" class="mr-2">
+                {% endif %}
+                <span style="font-weight: 500; font-size:1.2rem;">Electronic Store</span>
             </a>
             <!-- Кнопка для мобильного меню -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Переключение навигации">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Переключение навигации">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <!-- Навигационное меню -->
@@ -36,7 +43,7 @@
                         <a class="nav-link" href="{% url 'products:home' %}">Главная</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{#% url 'categories' %#}">Категории</a>
+                        <a class="nav-link" href="#">Категории</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'about'%}">О нас</a>
@@ -44,14 +51,24 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'contact'%}">Контакты</a>
                     </li>
+                     {% if user.is_staff or user.is_superuser %}
+            <!-- Ссылка на админ-панель -->
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="{% url 'admin:index' %}" title="Админ-панель">
+                                <i class="fas fa-cog"></i> Admin
+                            </a>
+                        </li>
+                    {% endif %}
                 </ul>
                 <!-- Поиск -->
-                <form class="form-inline my-2 my-lg-0" method="get" action="{#% url 'search' %#}">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Поиск" aria-label="Поиск" name="q">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
+                <form class="d-flex position-relative mx-auto w-50" method="get" action="{% url 'products:product_search' %}">
+                    <input class="form-control me-2" type="text" name="q" id="searchInput" placeholder="Поиск товаров..." aria-label="Поиск" autocomplete="off"
+                           style="border-radius: 20px 0 0 20px;">
+                    <button class="btn btn-outline-light" type="submit" style="border-radius: 0 20px 20px 0;">Найти</button>
+                    <div id="searchSuggestions" class="list-group position-absolute bg-white text-dark" style="top:100%; left:0; right:0; z-index:999; display:none;"></div>
                 </form>
                 <!-- Иконки пользователя и корзины -->
-                <ul class="navbar-nav ml-3">
+                <ul class="navbar-nav ml-3 align-items-center">
                     {% if user.is_authenticated %}
                         <!-- Ссылка на профиль пользователя -->
                         <li class="nav-item">
@@ -59,21 +76,15 @@
                                 <i class="fas fa-user"></i>
                             </a>
                         </li>
-                        <!-- Ссылка на выход из системы -->
-                        {% if user.is_authenticated %}
-    <!-- Форма для выхода из аккаунта -->
-    <form action="{% url 'accounts:logout' %}" method="post" style="display: inline;">
-        {% csrf_token %}
-        <button type="submit" class="btn btn-link" style="display: inline; padding: 0; border: none; background: none;">
-            <i class="fas fa-sign-out-alt"></i> 
-        </button>
-    </form>
-{% else %}
-    <!-- Ссылка на вход -->
-    <a href="#" data-toggle="modal" data-target="#loginModal">
-        <i class="fas fa-user"></i> Войти
-    </a>
-{% endif %}
+                        <!-- Ссылка на выход -->
+                        <li class="nav-item">
+                            <form action="{% url 'accounts:logout' %}" method="post" class="d-inline">
+                                {% csrf_token %}
+                                <button type="submit" class="btn nav-link p-0 text-white" style="background:none; border:none;">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                </button>
+                            </form>
+                        </li>
                     {% else %}
                         <!-- Ссылка на вход -->
                         <li class="nav-item">
@@ -83,23 +94,23 @@
                         </li>
                     {% endif %}
                     <!-- Иконка сравнения товаров -->
-                    <li class="nav-item">
+                    <li class="nav-item mx-2">
                         <a class="nav-link" href="#" title="Сравнить">
                             <i class="fas fa-exchange-alt"></i>
                         </a>
                     </li>
                     <!-- Иконка списка желаний -->
-                    <li class="nav-item">
+                    <li class="nav-item mx-2">
                         <a class="nav-link" href="#" title="Избранное">
                             <i class="fas fa-heart"></i>
                         </a>
                     </li>
                     <!-- Иконка корзины -->
-                    <li class="nav-item">
-                        <a class="nav-link position-relative" href="{% url 'products:cart_detail' %}" title="Корзина">
+                    <li class="nav-item mx-2 position-relative">
+                        <a class="nav-link" href="{% url 'products:cart_detail' %}" title="Корзина">
                             <i class="fas fa-shopping-cart"></i>
                             {% if cart_total_items > 0 %}
-                                <span class="badge badge-pill badge-danger position-absolute cart-badge">{{ cart_total_items }}</span>
+                                <span class="badge badge-pill badge-danger position-absolute cart-badge" style="top:-5px; right:-10px;">{{ cart_total_items }}</span>
                             {% endif %}
                         </a>
                     </li>
@@ -108,3 +119,50 @@
         </div>
     </nav>
 </header>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.8.1/nouislider.min.js" integrity="sha512-g/feAizmeiVKSwvfW0Xk3ZHZqv5Zs8PEXEBKzL15pM0SevEvoX8eJ4yFWbqakvRj7vtw1Q97bLzEpG2IVWX0Mg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('searchInput');
+    const suggestionsBox = document.getElementById('searchSuggestions');
+
+    searchInput.addEventListener('input', function() {
+        const query = this.value.trim();
+        if (query.length > 0) {
+            fetch(`{% url 'products:search_suggestions' %}?q=` + encodeURIComponent(query))
+                .then(response => response.json())
+                .then(data => {
+                    let html = '';
+                    const products = data.products;
+                    const categories = data.categories;
+
+                    if (products.length === 0 && categories.length === 0) {
+                        html = '<div class="list-group-item text-dark">Ничего не найдено</div>';
+                    } else {
+                        if (products.length > 0) {
+                            html += '<div class="list-group-item fw-bold bg-light">Товары:</div>';
+                            products.forEach(product => {
+                                html += `<a href="{% url 'products:product_detail' 0 %}`.replace('0', product.id) + `" class="list-group-item list-group-item-action text-dark">${product.name}</a>`;
+                            });
+                        }
+                        if (categories.length > 0) {
+                            html += '<div class="list-group-item fw-bold bg-light">Категории:</div>';
+                            categories.forEach(category => {
+                                html += `<a href="{% url 'products:category_detail' 'slugplaceholder' %}`.replace('slugplaceholder', category.slug) + `" class="list-group-item list-group-item-action text-dark">${category.name}</a>`;
+                            });
+                        }
+                    }
+                    suggestionsBox.innerHTML = html;
+                    suggestionsBox.style.display = 'block';
+                });
+        } else {
+            suggestionsBox.style.display = 'none';
+        }
+    });
+
+    document.addEventListener('click', function(e) {
+        if (!searchInput.contains(e.target)) {
+            suggestionsBox.style.display = 'none';
+        }
+    });
+});
+</script>

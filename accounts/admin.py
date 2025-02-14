@@ -1,4 +1,6 @@
-# accounts/admin.py
+import logging
+import ipaddress
+from zoneinfo import available_timezones  # Для формирования списка часовых поясов
 
 from django.contrib import admin
 from django.contrib.auth import get_user_model
@@ -7,26 +9,28 @@ from django.db.models import Count, Sum, Avg, F, FloatField, ExpressionWrapper
 from django.utils.html import format_html
 from django.utils import timezone
 from django.core.cache import cache
+
 from geopy import Nominatim
 from geopy.exc import GeocoderTimedOut, GeocoderUnavailable
-import ipaddress
-import pytz
+
+from solo.admin import SingletonModelAdmin
 
 from .models import (
     Profile,
     UserLoginHistory,
     Address,
     Subscription,
-    PaymentMethod, AdminSettings,
+    PaymentMethod,
+    AdminSettings,
 )
 from products.models import Order, Review, Wishlist
 
-from solo.admin import SingletonModelAdmin  # Импортируем SingletonModelAdmin
-
 User = get_user_model()
+logger = logging.getLogger(__name__)
 
-# Кортеж с выбором часовых поясов (опционально, если не используете django-timezone-field)
-TIME_ZONE_CHOICES = tuple(zip(pytz.all_timezones, pytz.all_timezones))
+TIME_ZONE_CHOICES = [(tz, tz) for tz in sorted(available_timezones())]
+
+# --- Inlines ---
 
 class UserLoginHistoryInline(admin.TabularInline):
     model = UserLoginHistory
@@ -36,6 +40,10 @@ class UserLoginHistoryInline(admin.TabularInline):
     can_delete = False
 
     def location_display(self, obj):
+        """
+        Попытка получить геолокацию по IP через Nominatim (OpenStreetMap).
+        Результат кешируется на 24 часа.
+        """
         ip = obj.ip_address
 
         # Проверка на localhost
@@ -48,7 +56,7 @@ class UserLoginHistoryInline(admin.TabularInline):
             if ip_obj.is_private:
                 return "Private IP"
         except ValueError:
-            pass  # Некорректный IP, продолжаем попытку геокодирования
+            pass  # Некорректный IP, продолжаем
 
         cache_key = f"geolocation_{ip}"
         location = cache.get(cache_key)
@@ -61,17 +69,18 @@ class UserLoginHistoryInline(admin.TabularInline):
                     location_str = f"{location_result.latitude}, {location_result.longitude}"
                 else:
                     location_str = "Location not found"
-                cache.set(cache_key, location_str, 60*60*24)  # Кэшировать на 1 день
+                cache.set(cache_key, location_str, 60 * 60 * 24)  # Кэшируем на 24 часа
                 return location_str
-            except GeocoderTimedOut:
-                return "Geocoding timed out"
-            except GeocoderUnavailable:
-                return "Geocoding service unavailable"
+            except (GeocoderTimedOut, GeocoderUnavailable):
+                return "Geocoding service issue"
             except Exception as e:
-                return f"Error: {e}"
+                logger.error(f"Geocoding error: {e}")
+                return "Geocoding error"
+
         return location
 
     location_display.short_description = "User Location"
+
 
 class AddressInline(admin.TabularInline):
     model = Address
@@ -80,6 +89,7 @@ class AddressInline(admin.TabularInline):
     extra = 0
     can_delete = False
 
+
 class SubscriptionInline(admin.TabularInline):
     model = Subscription
     fields = ('category', 'subscribed_at')
@@ -87,12 +97,14 @@ class SubscriptionInline(admin.TabularInline):
     extra = 0
     can_delete = False
 
+
 class PaymentMethodInline(admin.TabularInline):
     model = PaymentMethod
     fields = ('type', 'details', 'added_at')
     readonly_fields = ('type', 'details', 'added_at')
     extra = 0
     can_delete = False
+
 
 class RecentOrdersInline(admin.TabularInline):
     model = Order
@@ -103,16 +115,12 @@ class RecentOrdersInline(admin.TabularInline):
     show_change_link = True
     verbose_name = "Последний заказ"
     verbose_name_plural = "Последние заказы"
-    max_num = 5  # Отображать до 5 заказов
-
-    def get_formset(self, request, obj=None, **kwargs):
-        formset = super().get_formset(request, obj, **kwargs)
-        formset.max_num = self.max_num
-        return formset
+    max_num = 5
 
     def get_queryset(self, request):
         qs = super().get_queryset(request)
-        return qs.order_by('-created_at')  # Без среза
+        return qs.order_by('-created_at')
+
 
 class RecentReviewsInline(admin.TabularInline):
     model = Review
@@ -123,16 +131,12 @@ class RecentReviewsInline(admin.TabularInline):
     show_change_link = True
     verbose_name = "Последний отзыв"
     verbose_name_plural = "Последние отзывы"
-    max_num = 5  # Отображать до 5 отзывов
-
-    def get_formset(self, request, obj=None, **kwargs):
-        formset = super().get_formset(request, obj, **kwargs)
-        formset.max_num = self.max_num
-        return formset
+    max_num = 5
 
     def get_queryset(self, request):
         qs = super().get_queryset(request)
-        return qs.order_by('-created_at')  # Без среза
+        return qs.order_by('-created_at')
+
 
 class WishlistInline(admin.TabularInline):
     model = Wishlist
@@ -143,12 +147,14 @@ class WishlistInline(admin.TabularInline):
     show_change_link = True
     verbose_name = "Список желаний"
     verbose_name_plural = "Списки желаний"
-    max_num = 10  # Отображать до 10 товаров
+    max_num = 10
 
-    def get_formset(self, request, obj=None, **kwargs):
-        formset = super().get_formset(request, obj, **kwargs)
-        formset.max_num = self.max_num
-        return formset
+    def get_queryset(self, request):
+        qs = super().get_queryset(request)
+        return qs.order_by('-added_at')
+
+
+# --- Фильтр "Онлайн / Оффлайн" ---
 
 class OnlineFilter(admin.SimpleListFilter):
     title = 'Статус пользователя'
@@ -162,10 +168,15 @@ class OnlineFilter(admin.SimpleListFilter):
 
     def queryset(self, request, queryset):
         if self.value() == 'online':
-            return queryset.filter(profile__last_activity__gte=timezone.now() - Profile.ONLINE_THRESHOLD)
+            return queryset.filter(
+                profile__last_activity__gte=timezone.now() - Profile.ONLINE_THRESHOLD
+            )
         if self.value() == 'offline':
-            return queryset.filter(profile__last_activity__lt=timezone.now() - Profile.ONLINE_THRESHOLD)
+            return queryset.filter(
+                profile__last_activity__lt=timezone.now() - Profile.ONLINE_THRESHOLD
+            )
         return queryset
+
 
 class ProfileInline(admin.StackedInline):
     model = Profile
@@ -173,6 +184,9 @@ class ProfileInline(admin.StackedInline):
     readonly_fields = ('last_activity',)
     can_delete = False
     verbose_name_plural = 'Profile'
+
+
+# --- Кастомный UserAdmin ---
 
 class CustomUserAdmin(DefaultUserAdmin):
     list_display = (
@@ -185,7 +199,7 @@ class CustomUserAdmin(DefaultUserAdmin):
         'last_activity',
         'last_login',
         'date_joined',
-        'user_login_info'
+        'user_login_info',
     )
     search_fields = ('username', 'email')
     list_filter = ('is_staff', 'is_superuser', 'is_active', 'groups', OnlineFilter)
@@ -198,32 +212,37 @@ class CustomUserAdmin(DefaultUserAdmin):
         RecentOrdersInline,
         RecentReviewsInline,
         WishlistInline,
-        ProfileInline  # Добавляем инлайн для Profile
+        ProfileInline,
     ]
     readonly_fields = ('last_login', 'date_joined', 'user_login_info', 'last_activity')
 
     def user_login_info(self, obj):
-        # Отображение последнего IP и времени входа, если доступно
         latest_login = obj.login_history.first()
         if latest_login:
             return format_html(
                 "<div><strong>IP:</strong> {}<br><strong>Last Login:</strong> {}</div>",
-                latest_login.ip_address or "N/A", latest_login.login_datetime
+                latest_login.ip_address or "N/A",
+                latest_login.login_datetime
             )
         return "Нет истории входов"
     user_login_info.short_description = "Информация о последнем входе"
 
     def order_count(self, obj):
-        return obj.order_count
+        return obj.order_count or 0
     order_count.short_description = 'Количество заказов'
+    order_count.admin_order_field = 'order_count'
 
     def total_spent(self, obj):
-        return obj.total_spent
+        return round(obj.total_spent or 0, 2)
     total_spent.short_description = 'Общая сумма покупок'
+    total_spent.admin_order_field = 'total_spent'
 
     def average_wishlist_rating(self, obj):
-        return obj.average_wishlist_rating
+        if obj.average_wishlist_rating is None:
+            return "-"
+        return round(obj.average_wishlist_rating, 2)
     average_wishlist_rating.short_description = 'Средний рейтинг в списке желаний'
+    average_wishlist_rating.admin_order_field = 'average_wishlist_rating'
 
     def is_online(self, obj):
         profile = getattr(obj, 'profile', None)
@@ -240,14 +259,25 @@ class CustomUserAdmin(DefaultUserAdmin):
     last_activity.short_description = 'Последняя активность'
 
     def get_queryset(self, request):
+        """
+        Кешируем аннотированный QuerySet при отсутствии фильтров (GET-параметров).
+        При наличии параметров (поиск, фильтр) — используем «живые» данные без кеша,
+        чтобы не ломать пагинацию и фильтрацию.
+        """
+        # Генерируем уникальный ключ на основе параметров поиска/фильтра
+        cache_key = f"admin_user_qs:{request.GET.urlencode()}"
+        cached_qs = cache.get(cache_key)
+        if cached_qs:
+            return cached_qs
+
         qs = super().get_queryset(request).select_related('profile').prefetch_related(
             'orders__items',
             'wishlist__product__reviews',
-            'wishlist__product__category',  # Если необходимо
-            'wishlist__product__related_products',  # Если необходимо
-            'payment_methods',  # Если существует
+            'wishlist__product__category',
+            'wishlist__product__related_products',
+            'payment_methods',
         )
-        # Вычисляем общую сумму покупок
+
         total_spent_expression = ExpressionWrapper(
             F('orders__items__price') * F('orders__items__quantity'),
             output_field=FloatField()
@@ -255,12 +285,16 @@ class CustomUserAdmin(DefaultUserAdmin):
         qs = qs.annotate(
             order_count=Count('orders', distinct=True),
             total_spent=Sum(total_spent_expression),
-            average_wishlist_rating=Avg('wishlist__product__reviews__rating')
+            average_wishlist_rating=Avg('wishlist__product__reviews__rating'),
         )
+
+        # Можно задать TTL или оставить до перезаписи при следующих фильтрах
+        cache.set(cache_key, qs, 300)  # например, 5 минут
         return qs
 
     def get_urls(self):
         from django.urls import path
+        # Пример — если у вас есть .admin_views с таким методом
         from .admin_views import preview_homepage
 
         urls = super().get_urls()
@@ -269,22 +303,30 @@ class CustomUserAdmin(DefaultUserAdmin):
         ]
         return custom_urls + urls
 
-# Отменяем регистрацию стандартного UserAdmin
-admin.site.unregister(User)
 
-# Регистрируем User с CustomUserAdmin
+# Убираем стандартный UserAdmin, регистрируем свой
+admin.site.unregister(User)
 admin.site.register(User, CustomUserAdmin)
 
-# Регистрация модели AdminSettings
+
+# --- AdminSettings ---
+
 class AdminSettingsAdmin(SingletonModelAdmin):
     """
-    Админ-класс для модели AdminSettings.
+    Кеширование настроек сайта. При сохранении сбрасываем/обновляем кеш.
     """
     fieldsets = (
         (None, {
             'fields': ('site_logo', 'contact_email', 'site_timezone', 'welcome_message')
         }),
     )
-    # Добавьте поиск или фильтры, если необходимо
 
-admin.site.register(AdminSettings, AdminSettingsAdmin)  # Регистрация модели настроек
+    def save_model(self, request, obj, form, change):
+        """
+        При сохранении экземпляра AdminSettings — обновляем кеш.
+        """
+        super().save_model(request, obj, form, change)
+        # Сохраняем объект в кеш (можно и отдельные поля)
+        cache.set('admin_settings', obj, 60 * 60 * 24)  # 24 часа
+
+admin.site.register(AdminSettings, AdminSettingsAdmin)

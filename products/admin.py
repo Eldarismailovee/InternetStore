@@ -1,16 +1,46 @@
+# admin.py
 from django.contrib import admin
+from django.db.models import Sum, F
 from django.urls import reverse
 from django.utils.html import format_html
 from django.utils.safestring import mark_safe
-# Ensure django-imagekit is installed and configured
 from imagekit.admin import AdminThumbnail
 
-from .models import Product, Category, OrderItem, Order, StaticPage
+from .models import Product, Category, OrderItem, Order, StaticPage, SubCategory
+
+
+class SubCategoryInline(admin.TabularInline):
+    model = SubCategory
+    extra = 1
+    fields = ('name', 'slug', 'icon')
+    prepopulated_fields = {'slug': ('name',)}
+
+
+class ProductInline(admin.TabularInline):
+    model = Product
+    extra = 1
+    fields = ('name', 'price', 'stock')
+
+
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('name', 'icon')
+    search_fields = ('name',)
+    prepopulated_fields = {'slug': ('name',)}
+    inlines = [SubCategoryInline, ProductInline]
+    ordering = ['name']
+
+
+@admin.register(SubCategory)
+class SubCategoryAdmin(admin.ModelAdmin):
+    list_display = ('name', 'category', 'icon')
+    search_fields = ('name',)
+    prepopulated_fields = {'slug': ('name',)}
+    list_filter = ('category',)
 
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    # If 'image_thumbnail' is correctly defined in your model
     admin_thumbnail = AdminThumbnail(image_field='image_thumbnail')
     list_display = (
         'name', 'price', 'admin_thumbnail', 'price_with_currency', 'category',
@@ -24,10 +54,7 @@ class ProductAdmin(admin.ModelAdmin):
     ordering = ('-created_at',)
     save_on_top = True
     list_per_page = 20
-
-    # Ensure 'related_products' is a ManyToManyField in your model
     filter_horizontal = ('related_products',)
-
     readonly_fields = ('image_preview', 'price_with_currency')
     fieldsets = (
         (None, {
@@ -51,7 +78,6 @@ class ProductAdmin(admin.ModelAdmin):
                 '<img src="{}" style="max-width: 300px; max-height: 300px;" />'.format(obj.image.url)
             )
         return "Нет изображения"
-
     image_preview.short_description = 'Предпросмотр изображения'
 
     def image_tag(self, obj):
@@ -60,12 +86,10 @@ class ProductAdmin(admin.ModelAdmin):
                 '<img src="{}" style="max-width: 50px; max-height: 50px;" />', obj.image.url
             )
         return '-'
-
     image_tag.short_description = 'Изображение'
 
     def price_with_currency(self, obj):
         return f"{obj.price} руб."
-
     price_with_currency.short_description = 'Цена (с валютой)'
     price_with_currency.admin_order_field = 'price'
 
@@ -82,23 +106,12 @@ class ProductAdmin(admin.ModelAdmin):
 
     actions = ['make_featured', 'make_not_featured']
 
-class ProductInline(admin.TabularInline):
-    model = Product
-    extra = 1
-    fields = ('name', 'price', 'stock')
-
-@admin.register(Category)
-class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('name', 'icon')
-    search_fields = ('name',)
-    prepopulated_fields = {'slug': ('name',)}
-    inlines = [ProductInline]
-    ordering = ['name']
 
 class OrderItemInline(admin.TabularInline):
     model = OrderItem
     raw_id_fields = ['product']
     extra = 0
+
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
@@ -111,19 +124,22 @@ class OrderAdmin(admin.ModelAdmin):
     autocomplete_fields = ['user']
     list_select_related = ('user',)
 
+    def get_queryset(self, request):
+        return super().get_queryset(request).annotate(
+            total_amount=Sum(F('items__price') * F('items__quantity')))
+
     def total_amount(self, obj):
         return sum(item.product.price * item.quantity for item in obj.items.all())
-
     total_amount.short_description = 'Общая сумма'
 
 
 @admin.register(StaticPage)
 class StaticPageAdmin(admin.ModelAdmin):
     list_display = ('title', 'slug', 'updated_at', 'preview_link')
-    search_fields = ('title', 'slug', 'content')  # Убедитесь, что поле 'content' существует в модели
+    search_fields = ('title', 'slug', 'content')
     prepopulated_fields = {'slug': ('title',)}
     list_filter = ('updated_at',)
-    readonly_fields = ('preview', 'updated_at')  # Добавлено 'updated_at' в readonly_fields
+    readonly_fields = ('preview', 'updated_at')
     fieldsets = (
         (None, {
             'fields': ('title', 'slug', 'content', 'updated_at', 'preview')

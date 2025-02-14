@@ -1,30 +1,43 @@
 # accounts/middleware.py
-
 from django.utils import timezone
-import pytz
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
+import logging
 
+from accounts.models import Profile
 
-class UpdateLastActivityMiddleware:
+logger = logging.getLogger(__name__)
+
+class TimezoneMiddleware:
     def __init__(self, get_response):
         self.get_response = get_response
 
     def __call__(self, request):
-        # Установка часового пояса
         if request.user.is_authenticated:
-            profile = getattr(request.user, 'profile', None)
-            if profile and profile.time_zone:
-                try:
-                    timezone.activate(pytz.timezone(profile.time_zone))
-                except pytz.UnknownTimeZoneError:
+            try:
+                profile = request.user.profile
+                if profile.time_zone:
+                    timezone.activate(ZoneInfo(profile.time_zone))
+                else:
                     timezone.deactivate()
-            else:
+            except (Profile.DoesNotExist, AttributeError, ZoneInfoNotFoundError) as e:
                 timezone.deactivate()
+                logger.warning(f"Timezone error for user {request.user}: {e}")
+        else:
+            timezone.deactivate()
 
-        # Обновление last_activity
+        return self.get_response(request)
+
+class LastActivityMiddleware:
+    def __init__(self, get_response):
+        self.get_response = get_response
+
+    def __call__(self, request):
         response = self.get_response(request)
+
         if request.user.is_authenticated:
-            profile = getattr(request.user, 'profile', None)
-            if profile:
-                profile.last_activity = timezone.now()
-                profile.save(update_fields=['last_activity'])
+            # Оптимизированный запрос без загрузки объекта
+            Profile.objects.filter(user=request.user).update(
+                last_activity=timezone.now()
+            )
+
         return response

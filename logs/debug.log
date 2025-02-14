@@ -2149,3 +2149,1593 @@ INFO 2024-12-10 15:24:05,255 basehttp 22052 18492 "GET /admin/auth/group/add/ HT
 INFO 2024-12-10 15:24:05,388 basehttp 22052 18492 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
 INFO 2024-12-10 15:24:13,443 basehttp 22052 18492 "GET /admin/auth/user/ HTTP/1.1" 200 40219
 INFO 2024-12-10 15:24:13,551 basehttp 22052 18492 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2024-12-10 16:00:22,508 basehttp 22052 8740 "GET /admin/ HTTP/1.1" 200 43943
+INFO 2024-12-10 16:00:23,707 basehttp 22052 8740 "GET /admin/accounts/adminsettings/ HTTP/1.1" 200 67371
+INFO 2024-12-10 16:00:23,861 basehttp 22052 8740 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2024-12-10 16:00:37,488 basehttp 22052 8740 "GET /admin/auth/user/ HTTP/1.1" 200 40219
+INFO 2024-12-10 16:00:37,610 basehttp 22052 8740 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2024-12-10 16:00:44,479 basehttp 22052 8740 "GET /admin/accounts/adminsettings/ HTTP/1.1" 200 67370
+INFO 2024-12-10 16:00:44,617 basehttp 22052 8740 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2024-12-10 16:00:45,352 basehttp 22052 8740 "GET /admin/ HTTP/1.1" 200 43958
+INFO 2024-12-10 16:00:47,926 basehttp 22052 8740 "GET /admin/products/category/ HTTP/1.1" 200 32839
+INFO 2024-12-10 16:00:48,050 basehttp 22052 8740 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2024-12-10 16:00:49,554 basehttp 22052 8740 "GET /admin/products/category/1/change/ HTTP/1.1" 200 54228
+INFO 2024-12-10 16:00:49,672 basehttp 22052 8740 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2024-12-10 16:00:54,359 basehttp 22052 8740 "GET /admin/r/8/1/ HTTP/1.1" 302 0
+INFO 2024-12-10 16:00:54,435 basehttp 22052 8740 "GET /category/noutbuki/ HTTP/1.1" 200 27943
+INFO 2024-12-10 16:00:54,650 basehttp 22052 4612 "GET /media/products/logo_PERlXjP.png HTTP/1.1" 200 27077
+INFO 2024-12-10 16:00:54,652 basehttp 22052 8740 "GET /media/products/logo_lROYikF.png HTTP/1.1" 200 27077
+INFO 2024-12-10 16:00:54,727 basehttp 22052 4612 "GET /media/products/sample.jpg HTTP/1.1" 200 60860
+INFO 2024-12-10 16:00:54,754 basehttp 22052 8740 "GET /media/products/sample_eyP2G3l.jpg HTTP/1.1" 200 60860
+INFO 2024-12-10 16:00:56,269 basehttp 22052 8740 "GET /admin/products/category/1/change/ HTTP/1.1" 200 54227
+INFO 2024-12-10 16:01:30,641 basehttp 22052 8740 "GET /admin/products/staticpage/ HTTP/1.1" 200 34670
+INFO 2024-12-10 16:01:30,763 basehttp 22052 8740 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2024-12-10 16:01:33,134 basehttp 22052 8740 "GET /admin/products/staticpage/2/change/ HTTP/1.1" 200 62868
+INFO 2024-12-10 16:01:33,280 basehttp 22052 8740 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2024-12-10 16:01:37,636 basehttp 22052 8740 "GET /admin/products/staticpage/ HTTP/1.1" 200 34669
+INFO 2024-12-10 16:01:39,016 basehttp 22052 8740 "GET /staticpage/2/preview/ HTTP/1.1" 200 39561
+INFO 2024-12-10 16:01:42,798 basehttp 22052 8740 "GET /staticpage/1/preview/ HTTP/1.1" 200 23914
+INFO 2024-12-10 16:02:35,155 basehttp 22052 8740 "GET / HTTP/1.1" 200 30760
+INFO 2024-12-10 16:02:40,141 basehttp 22052 8740 "GET /product/2/ HTTP/1.1" 200 32873
+INFO 2024-12-10 16:02:40,297 basehttp 22052 8740 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-10 16:02:42,722 basehttp 22052 8740 "GET /product/2/?q=23 HTTP/1.1" 200 32878
+INFO 2024-12-10 16:02:42,879 basehttp 22052 8740 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-10 16:02:45,018 basehttp 22052 8740 "GET /category/noutbuki/ HTTP/1.1" 200 27943
+INFO 2024-12-10 16:02:49,861 basehttp 22052 8740 "GET / HTTP/1.1" 200 30759
+INFO 2024-12-10 16:02:51,207 basehttp 22052 8740 "GET /category/stiralnye-mashiny/ HTTP/1.1" 200 23939
+INFO 2024-12-10 16:02:52,149 basehttp 22052 8740 "GET / HTTP/1.1" 200 30760
+INFO 2024-12-10 16:02:53,217 basehttp 22052 8740 "GET / HTTP/1.1" 200 30759
+INFO 2024-12-10 16:02:53,960 basehttp 22052 8740 "GET /about/ HTTP/1.1" 200 24660
+INFO 2024-12-10 16:02:55,839 basehttp 22052 8740 "GET /contact/ HTTP/1.1" 200 24186
+INFO 2024-12-10 16:02:56,771 basehttp 22052 8740 "GET /about/ HTTP/1.1" 200 24661
+INFO 2024-12-10 16:03:34,255 basehttp 22052 8740 "GET /contact/ HTTP/1.1" 200 24186
+INFO 2024-12-10 16:03:41,264 basehttp 22052 8740 "GET / HTTP/1.1" 200 30759
+INFO 2024-12-10 16:03:51,206 basehttp 22052 8740 "GET /cart/ HTTP/1.1" 200 33405
+INFO 2024-12-10 16:04:17,993 basehttp 22052 8740 "GET /order/create/ HTTP/1.1" 200 42481
+INFO 2024-12-11 22:56:14,776 autoreload 14172 9644 Watching for file changes with StatReloader
+INFO 2024-12-11 22:56:52,788 basehttp 14172 8164 "GET / HTTP/1.1" 200 30762
+INFO 2024-12-11 22:56:52,895 basehttp 14172 8164 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2024-12-11 22:56:52,970 basehttp 14172 17048 "GET /static/images/banner2.jpg HTTP/1.1" 304 0
+INFO 2024-12-11 22:56:52,971 basehttp 14172 8164 "GET /static/images/banner3.jpg HTTP/1.1" 304 0
+INFO 2024-12-11 22:56:52,975 basehttp 14172 8164 "GET /static/css/styles.css HTTP/1.1" 304 0
+INFO 2024-12-11 22:56:52,978 basehttp 14172 17048 "GET /static/images/banner1.jpg HTTP/1.1" 304 0
+INFO 2024-12-11 22:56:52,981 basehttp 14172 8164 "GET /static/images/logo.png HTTP/1.1" 304 0
+INFO 2024-12-11 22:56:53,000 basehttp 14172 8164 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2024-12-11 22:56:53,110 basehttp 14172 8164 "GET /media/products/sample_eyP2G3l.jpg HTTP/1.1" 304 0
+INFO 2024-12-11 22:56:53,285 basehttp 14172 8164 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2024-12-11 22:56:53,287 basehttp 14172 17048 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+WARNING 2024-12-11 22:56:53,581 basehttp 14172 17048 "GET /favicon.ico HTTP/1.1" 404 23150
+INFO 2024-12-11 22:56:55,424 basehttp 14172 17048 "GET /cart/ HTTP/1.1" 200 33407
+INFO 2024-12-11 22:56:57,660 basehttp 14172 17048 "GET / HTTP/1.1" 200 30759
+INFO 2024-12-11 22:56:58,865 basehttp 14172 17048 "GET / HTTP/1.1" 200 30760
+INFO 2024-12-11 22:56:59,577 basehttp 14172 17048 "GET / HTTP/1.1" 200 30759
+INFO 2024-12-11 22:57:00,437 basehttp 14172 17048 "GET /about/ HTTP/1.1" 200 24660
+INFO 2024-12-11 22:57:00,874 basehttp 14172 17048 "GET /contact/ HTTP/1.1" 200 24186
+INFO 2024-12-11 22:57:01,580 basehttp 14172 17048 "GET /contact/ HTTP/1.1" 200 24187
+INFO 2024-12-11 22:57:02,628 basehttp 14172 17048 "GET / HTTP/1.1" 200 30761
+INFO 2024-12-11 23:00:50,252 basehttp 14172 17048 "GET / HTTP/1.1" 200 30759
+INFO 2024-12-11 23:08:11,321 basehttp 14172 16480 "GET /accounts/profile/ HTTP/1.1" 200 29377
+INFO 2024-12-11 23:08:11,515 basehttp 14172 16480 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-11 23:09:17,897 basehttp 14172 16480 "GET /accounts/password_change/ HTTP/1.1" 200 25426
+INFO 2024-12-11 23:09:37,992 basehttp 14172 16480 "GET / HTTP/1.1" 200 30759
+ERROR 2024-12-11 23:12:17,395 basehttp 14172 18552 "GET /accounts/profile/ HTTP/1.1" 500 117139
+ERROR 2024-12-11 23:13:14,686 basehttp 14172 18552 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:13:15,831 basehttp 14172 18552 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:13:18,884 basehttp 14172 18552 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-11 23:13:27,420 basehttp 14172 18552 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:13:28,710 basehttp 14172 18552 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-11 23:13:30,997 basehttp 14172 18552 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-11 23:13:34,129 basehttp 14172 18552 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-11 23:13:35,214 basehttp 14172 18552 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:13:37,863 basehttp 14172 18552 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-11 23:13:38,687 basehttp 14172 18552 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-11 23:13:39,766 basehttp 14172 18552 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:13:41,228 basehttp 14172 18552 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:13:52,565 basehttp 14172 18552 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:13:59,076 basehttp 14172 16480 "GET /accounts/profile/ HTTP/1.1" 500 261025
+ERROR 2024-12-11 23:14:00,881 basehttp 14172 16480 "GET /accounts/profile/ HTTP/1.1" 500 261163
+ERROR 2024-12-11 23:14:45,611 basehttp 14172 18552 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-11 23:14:51,158 basehttp 14172 16480 "GET /accounts/profile/ HTTP/1.1" 500 262128
+ERROR 2024-12-11 23:15:19,582 basehttp 14172 18552 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:15:22,655 basehttp 14172 18552 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:15:34,360 basehttp 14172 18552 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:15:35,506 basehttp 14172 18552 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:15:35,965 basehttp 14172 18552 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:15:36,893 basehttp 14172 18552 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:15:38,219 basehttp 14172 18552 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:15:39,261 basehttp 14172 18552 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:15:40,595 basehttp 14172 18552 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:15:41,770 basehttp 14172 18552 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:15:43,541 basehttp 14172 18552 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:15:44,613 basehttp 14172 18552 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:15:45,900 basehttp 14172 18552 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:15:49,357 basehttp 14172 18552 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:15:53,672 basehttp 14172 18552 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:15:54,895 basehttp 14172 18552 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:15:56,110 basehttp 14172 18552 "GET /accounts/profile/ HTTP/1.1" 500 117276
+INFO 2024-12-11 23:15:57,047 basehttp 14172 18552 - Broken pipe from ('127.0.0.1', 55819)
+INFO 2024-12-11 23:15:58,018 basehttp 14172 11480 - Broken pipe from ('127.0.0.1', 56405)
+ERROR 2024-12-11 23:15:58,076 basehttp 14172 14196 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:15:59,059 basehttp 14172 14196 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:15:59,344 basehttp 14172 14196 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:16:00,322 basehttp 14172 14196 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:16:00,855 basehttp 14172 14196 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:16:01,407 basehttp 14172 14196 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:16:01,922 basehttp 14172 14196 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:16:02,520 basehttp 14172 14196 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:16:03,015 basehttp 14172 14196 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:16:09,628 basehttp 14172 14196 "GET /accounts/profile/ HTTP/1.1" 500 117276
+INFO 2024-12-11 23:16:12,503 basehttp 14172 16480 "GET /accounts/profile/ HTTP/1.1" 200 31724
+WARNING 2024-12-11 23:16:12,624 basehttp 14172 16480 "GET /static/media/default_avatar.jpg HTTP/1.1" 404 1887
+INFO 2024-12-11 23:16:23,505 basehttp 14172 1632 "GET / HTTP/1.1" 200 30760
+INFO 2024-12-11 23:16:24,345 basehttp 14172 1632 "GET /accounts/profile/ HTTP/1.1" 200 31725
+WARNING 2024-12-11 23:16:24,441 basehttp 14172 1632 "GET /static/media/default_avatar.jpg HTTP/1.1" 404 1887
+INFO 2024-12-11 23:22:29,814 autoreload 14172 9644 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\views.py changed, reloading.
+INFO 2024-12-11 23:22:36,103 autoreload 16344 20840 Watching for file changes with StatReloader
+INFO 2024-12-11 23:22:40,880 autoreload 16344 20840 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\views.py changed, reloading.
+INFO 2024-12-11 23:22:53,235 autoreload 12380 19992 Watching for file changes with StatReloader
+INFO 2024-12-11 23:23:02,911 autoreload 12380 19992 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\views.py changed, reloading.
+INFO 2024-12-11 23:23:09,451 autoreload 4884 12240 Watching for file changes with StatReloader
+ERROR 2024-12-11 23:23:19,901 basehttp 4884 4176 "GET /accounts/profile/ HTTP/1.1" 500 117279
+INFO 2024-12-11 23:23:28,124 basehttp 4884 15480 "GET /accounts/profile/ HTTP/1.1" 200 40168
+INFO 2024-12-11 23:23:28,285 basehttp 4884 15480 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+ERROR 2024-12-11 23:25:17,111 basehttp 4884 4176 "GET /accounts/profile/ HTTP/1.1" 500 117276
+INFO 2024-12-11 23:25:21,661 basehttp 4884 15480 "GET /accounts/profile/ HTTP/1.1" 200 40502
+INFO 2024-12-11 23:25:21,855 basehttp 4884 15480 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-11 23:25:46,235 basehttp 4884 15480 "POST /accounts/profile/ HTTP/1.1" 200 40502
+INFO 2024-12-11 23:25:46,390 basehttp 4884 15480 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+ERROR 2024-12-11 23:27:14,624 basehttp 4884 4176 "GET /accounts/profile/ HTTP/1.1" 500 117275
+INFO 2024-12-11 23:27:19,129 basehttp 4884 15480 "POST /accounts/profile/ HTTP/1.1" 200 31358
+INFO 2024-12-11 23:27:19,286 basehttp 4884 15480 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-11 23:27:40,900 basehttp 4884 15480 "POST /accounts/profile/ HTTP/1.1" 200 31360
+INFO 2024-12-11 23:27:41,087 basehttp 4884 15480 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-11 23:27:46,235 basehttp 4884 15480 "GET / HTTP/1.1" 200 30761
+INFO 2024-12-11 23:27:47,669 basehttp 4884 15480 "GET /accounts/profile/ HTTP/1.1" 200 31358
+INFO 2024-12-11 23:27:47,830 basehttp 4884 15480 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-11 23:27:52,999 basehttp 4884 15480 "POST /accounts/profile/ HTTP/1.1" 200 31359
+INFO 2024-12-11 23:27:53,208 basehttp 4884 15480 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+ERROR 2024-12-11 23:29:50,016 basehttp 4884 4176 "GET /accounts/profile/ HTTP/1.1" 500 117275
+INFO 2024-12-11 23:29:54,295 basehttp 4884 15480 "POST /accounts/profile/ HTTP/1.1" 200 31733
+INFO 2024-12-11 23:29:54,427 basehttp 4884 15480 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-11 23:29:59,323 basehttp 4884 15480 "POST /accounts/profile/ HTTP/1.1" 200 31733
+INFO 2024-12-11 23:29:59,554 basehttp 4884 15480 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-11 23:30:04,127 basehttp 4884 15480 "POST /accounts/profile/ HTTP/1.1" 200 31733
+INFO 2024-12-11 23:30:04,307 basehttp 4884 15480 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-11 23:30:10,795 basehttp 4884 15480 "POST /accounts/profile/ HTTP/1.1" 200 31733
+INFO 2024-12-11 23:30:10,995 basehttp 4884 15480 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-11 23:30:13,112 basehttp 4884 15480 "GET /accounts/profile/ HTTP/1.1" 200 31733
+INFO 2024-12-11 23:30:13,244 basehttp 4884 15480 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-11 23:33:54,662 autoreload 4884 12240 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\views.py changed, reloading.
+INFO 2024-12-11 23:34:04,894 autoreload 10940 20756 Watching for file changes with StatReloader
+ERROR 2024-12-11 23:35:28,118 basehttp 10940 7756 "GET /accounts/profile/ HTTP/1.1" 500 117279
+INFO 2024-12-11 23:35:30,960 basehttp 10940 16180 "GET /accounts/profile/ HTTP/1.1" 200 28781
+INFO 2024-12-11 23:35:40,260 basehttp 10940 16180 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+ERROR 2024-12-11 23:35:46,232 basehttp 10940 7756 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-11 23:36:03,953 basehttp 10940 7756 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:36:07,954 basehttp 10940 7756 "GET /accounts/profile/ HTTP/1.1" 500 117276
+INFO 2024-12-11 23:36:09,064 basehttp 10940 16180 "GET /accounts/profile/ HTTP/1.1" 200 34503
+INFO 2024-12-11 23:36:09,202 basehttp 10940 16180 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+ERROR 2024-12-11 23:36:15,969 basehttp 10940 7756 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:36:16,660 basehttp 10940 7756 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:36:18,098 basehttp 10940 7756 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:36:20,171 basehttp 10940 7756 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:36:23,075 basehttp 10940 7756 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-11 23:36:24,825 basehttp 10940 7756 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-11 23:36:25,792 basehttp 10940 7756 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-11 23:36:33,082 basehttp 10940 16180 "GET /accounts/profile/ HTTP/1.1" 500 262842
+ERROR 2024-12-11 23:36:44,818 basehttp 10940 7756 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:36:46,946 basehttp 10940 7756 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-11 23:36:47,723 basehttp 10940 7756 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-11 23:36:48,602 basehttp 10940 7756 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:36:53,666 basehttp 10940 7756 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:36:54,316 basehttp 10940 7756 "GET /accounts/profile/ HTTP/1.1" 500 117276
+INFO 2024-12-11 23:36:57,973 basehttp 10940 16180 "GET /accounts/profile/ HTTP/1.1" 200 34503
+INFO 2024-12-11 23:36:58,123 basehttp 10940 16180 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+ERROR 2024-12-11 23:37:03,664 basehttp 10940 7756 "GET /accounts/profile/ HTTP/1.1" 500 117276
+INFO 2024-12-11 23:37:04,699 basehttp 10940 16180 "GET /accounts/profile/ HTTP/1.1" 200 31736
+INFO 2024-12-11 23:37:04,955 basehttp 10940 16180 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+ERROR 2024-12-11 23:38:34,194 basehttp 10940 7756 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:38:36,093 basehttp 10940 16180 "GET /accounts/profile/ HTTP/1.1" 500 237607
+INFO 2024-12-11 23:41:09,551 autoreload 10940 20756 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\forms.py changed, reloading.
+INFO 2024-12-11 23:41:11,721 autoreload 15196 7604 Watching for file changes with StatReloader
+INFO 2024-12-11 23:42:18,796 autoreload 15196 7604 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\forms.py changed, reloading.
+INFO 2024-12-11 23:42:20,631 autoreload 17364 12796 Watching for file changes with StatReloader
+ERROR 2024-12-11 23:42:21,400 basehttp 17364 8364 "GET /accounts/profile/ HTTP/1.1" 500 109507
+ERROR 2024-12-11 23:42:39,637 basehttp 17364 18328 "GET /accounts/profile/ HTTP/1.1" 500 117277
+ERROR 2024-12-11 23:42:49,199 basehttp 17364 8364 "GET /accounts/profile/ HTTP/1.1" 500 109508
+ERROR 2024-12-11 23:58:48,648 basehttp 17364 14952 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:58:58,594 basehttp 17364 14952 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:58:59,201 basehttp 17364 14952 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:59:00,185 basehttp 17364 14952 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-11 23:59:05,110 basehttp 17364 14952 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-11 23:59:08,848 basehttp 17364 14952 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-11 23:59:15,739 basehttp 17364 14952 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-11 23:59:18,606 basehttp 17364 15544 "GET /accounts/profile/ HTTP/1.1" 500 109507
+INFO 2024-12-11 23:59:58,618 autoreload 17364 12796 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\forms.py changed, reloading.
+INFO 2024-12-12 00:00:09,456 autoreload 10156 21600 Watching for file changes with StatReloader
+INFO 2024-12-12 00:00:30,324 autoreload 9832 3404 Watching for file changes with StatReloader
+INFO 2024-12-12 00:01:39,630 autoreload 19012 10956 Watching for file changes with StatReloader
+INFO 2024-12-12 00:01:42,222 autoreload 19012 10956 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\forms.py changed, reloading.
+INFO 2024-12-12 00:01:44,827 autoreload 18204 15944 Watching for file changes with StatReloader
+INFO 2024-12-12 00:01:45,622 basehttp 18204 10092 "GET /accounts/profile/ HTTP/1.1" 200 31858
+INFO 2024-12-12 00:01:45,798 basehttp 18204 10092 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-12 00:02:01,092 basehttp 18204 10092 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 304 0
+ERROR 2024-12-12 00:02:34,293 basehttp 18204 21040 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-12 00:02:34,918 basehttp 18204 21040 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-12 00:02:39,689 basehttp 18204 21040 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-12 00:02:41,903 basehttp 18204 21040 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-12 00:02:46,279 basehttp 18204 21040 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-12 00:02:50,828 basehttp 18204 21040 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-12 00:03:06,563 basehttp 18204 21040 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-12 00:03:08,553 basehttp 18204 21040 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-12 00:03:09,552 basehttp 18204 21040 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-12 00:03:10,327 basehttp 18204 21040 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-12 00:03:11,102 basehttp 18204 21040 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-12 00:03:13,377 basehttp 18204 21040 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-12 00:03:15,725 basehttp 18204 21040 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-12 00:03:18,141 basehttp 18204 21040 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-12 00:03:20,296 basehttp 18204 21040 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-12 00:03:21,304 basehttp 18204 21040 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-12 00:03:22,400 basehttp 18204 21040 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-12 00:03:23,914 basehttp 18204 21040 "GET /accounts/profile/ HTTP/1.1" 500 117275
+INFO 2024-12-12 00:03:31,969 autoreload 18204 15944 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\forms.py changed, reloading.
+INFO 2024-12-12 00:03:38,759 autoreload 1216 16072 Watching for file changes with StatReloader
+ERROR 2024-12-12 00:03:40,322 basehttp 1216 17908 "GET /accounts/profile/ HTTP/1.1" 500 117278
+INFO 2024-12-12 00:04:40,319 autoreload 1216 16072 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\forms.py changed, reloading.
+INFO 2024-12-12 00:04:44,009 autoreload 13720 14400 Watching for file changes with StatReloader
+INFO 2024-12-12 00:05:22,984 autoreload 13720 14400 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\views.py changed, reloading.
+INFO 2024-12-12 00:05:26,026 autoreload 7092 9356 Watching for file changes with StatReloader
+ERROR 2024-12-12 00:05:42,840 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117279
+ERROR 2024-12-12 00:06:12,306 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-12 00:06:21,450 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-12 00:06:29,044 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-12 00:06:32,992 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-12 00:06:43,355 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-12 00:06:44,647 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-12 00:06:45,622 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-12 00:06:46,862 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-12 00:06:48,494 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-12 00:06:51,473 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-12 00:06:52,477 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-12 00:08:17,003 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-12 00:08:19,984 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-12 00:08:23,089 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-12 00:08:24,466 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-12 00:08:29,688 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-12 00:08:32,359 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-12 00:08:33,994 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-12 00:08:36,981 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-12 00:08:40,522 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-12 00:08:41,663 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-12 00:08:45,446 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-12 00:08:58,325 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-12 00:09:00,479 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-12 00:09:03,934 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-12 00:09:04,541 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-12 00:09:05,326 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-12 00:09:08,300 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-12 00:09:11,491 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-12 00:09:18,388 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-12 00:09:33,836 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-12 00:09:35,292 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-12 00:09:41,213 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-12 00:09:51,518 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-12 00:10:01,203 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-12 00:10:01,917 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-12 00:10:02,572 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117276
+INFO 2024-12-12 00:10:07,493 basehttp 7092 884 "GET /accounts/profile/ HTTP/1.1" 200 31898
+INFO 2024-12-12 00:10:07,650 basehttp 7092 884 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-12 00:10:10,787 basehttp 7092 884 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 304 0
+INFO 2024-12-12 00:10:18,661 basehttp 7092 884 "POST /accounts/profile/ HTTP/1.1" 200 32096
+INFO 2024-12-12 00:10:18,804 basehttp 7092 884 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-12 00:10:22,854 basehttp 7092 884 "POST /accounts/profile/ HTTP/1.1" 200 32098
+INFO 2024-12-12 00:10:23,063 basehttp 7092 884 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-12 00:10:24,990 basehttp 7092 884 "GET / HTTP/1.1" 200 30761
+INFO 2024-12-12 00:10:26,332 basehttp 7092 884 "GET /accounts/profile/ HTTP/1.1" 200 31898
+INFO 2024-12-12 00:10:26,497 basehttp 7092 884 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-12 00:10:30,571 basehttp 7092 884 "POST /accounts/profile/ HTTP/1.1" 200 32096
+INFO 2024-12-12 00:10:30,740 basehttp 7092 884 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+ERROR 2024-12-12 00:10:57,020 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-12 00:11:07,565 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-12 00:11:12,771 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-12 00:11:15,802 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-12 00:11:17,229 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-12 00:11:18,576 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-12 00:11:19,501 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-12 00:11:28,838 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-12 00:11:31,373 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-12 00:11:33,356 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-12 00:11:33,918 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-12 00:11:34,438 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-12 00:11:40,370 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-12 00:13:52,487 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-12 00:13:56,187 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-12 00:13:57,416 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-12 00:14:08,792 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-12 00:14:28,855 basehttp 7092 15848 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-12 00:21:27,400 basehttp 7092 20984 "POST /accounts/profile/ HTTP/1.1" 500 239880
+ERROR 2024-12-12 00:22:27,805 basehttp 7092 10576 "GET /accounts/profile/ HTTP/1.1" 500 117276
+ERROR 2024-12-12 00:23:45,218 basehttp 7092 10576 "GET /accounts/profile/ HTTP/1.1" 500 117275
+ERROR 2024-12-12 00:23:46,814 basehttp 7092 10576 "GET /accounts/profile/ HTTP/1.1" 500 117276
+INFO 2024-12-12 00:23:47,434 autoreload 7092 9356 C:\Users\fgghy\PycharmProjects\InternetStore\InternetStore\settings.py changed, reloading.
+INFO 2024-12-12 00:23:50,978 autoreload 16152 8400 Watching for file changes with StatReloader
+ERROR 2024-12-12 00:23:52,190 basehttp 16152 2044 "GET /accounts/profile/ HTTP/1.1" 500 117334
+ERROR 2024-12-12 00:24:01,281 basehttp 16152 2044 "GET /accounts/profile/ HTTP/1.1" 500 117331
+ERROR 2024-12-12 00:24:10,239 basehttp 16152 2044 "GET /accounts/profile/ HTTP/1.1" 500 117331
+ERROR 2024-12-12 00:24:13,514 basehttp 16152 2044 "GET /accounts/profile/ HTTP/1.1" 500 117332
+ERROR 2024-12-12 00:24:33,610 basehttp 16152 2044 "GET /accounts/profile/ HTTP/1.1" 500 117331
+ERROR 2024-12-12 00:24:36,976 basehttp 16152 2044 "GET /accounts/profile/ HTTP/1.1" 500 117331
+ERROR 2024-12-12 00:25:37,176 basehttp 16152 2044 "GET /accounts/profile/ HTTP/1.1" 500 117331
+INFO 2024-12-12 00:25:42,179 basehttp 16152 8856 "POST /accounts/profile/ HTTP/1.1" 200 31193
+INFO 2024-12-12 00:25:42,340 basehttp 16152 8856 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-12 00:25:48,404 basehttp 16152 8856 "GET / HTTP/1.1" 200 30760
+INFO 2024-12-12 00:25:50,538 basehttp 16152 8856 "GET /accounts/profile/ HTTP/1.1" 200 30993
+INFO 2024-12-12 00:25:50,752 basehttp 16152 8856 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+ERROR 2024-12-12 00:28:16,823 basehttp 16152 2044 "GET /accounts/profile/ HTTP/1.1" 500 117332
+ERROR 2024-12-12 00:28:19,408 basehttp 16152 2044 "GET /accounts/profile/ HTTP/1.1" 500 117332
+ERROR 2024-12-12 00:28:48,252 basehttp 16152 2044 "GET /accounts/profile/ HTTP/1.1" 500 117332
+ERROR 2024-12-12 00:28:51,369 basehttp 16152 2044 "GET /accounts/profile/ HTTP/1.1" 500 117331
+ERROR 2024-12-12 00:28:52,152 basehttp 16152 2044 "GET /accounts/profile/ HTTP/1.1" 500 117332
+ERROR 2024-12-12 00:28:53,015 basehttp 16152 2044 "GET /accounts/profile/ HTTP/1.1" 500 117332
+ERROR 2024-12-12 00:28:53,662 basehttp 16152 2044 "GET /accounts/profile/ HTTP/1.1" 500 117332
+ERROR 2024-12-12 00:28:54,621 basehttp 16152 2044 "GET /accounts/profile/ HTTP/1.1" 500 117332
+ERROR 2024-12-12 00:28:55,648 basehttp 16152 2044 "GET /accounts/profile/ HTTP/1.1" 500 117332
+INFO 2024-12-12 00:29:35,505 autoreload 16152 8400 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\forms.py changed, reloading.
+INFO 2024-12-12 00:29:39,824 autoreload 1212 22440 Watching for file changes with StatReloader
+INFO 2024-12-12 00:29:58,078 autoreload 1212 22440 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\forms.py changed, reloading.
+INFO 2024-12-12 00:30:00,952 autoreload 2012 20900 Watching for file changes with StatReloader
+ERROR 2024-12-12 00:31:04,392 basehttp 2012 10004 "GET /accounts/profile/ HTTP/1.1" 500 117334
+ERROR 2024-12-12 00:31:09,636 basehttp 2012 10004 "GET /accounts/profile/ HTTP/1.1" 500 117331
+ERROR 2024-12-12 00:31:10,825 basehttp 2012 10004 "GET /accounts/profile/ HTTP/1.1" 500 117331
+ERROR 2024-12-12 00:31:23,064 basehttp 2012 15480 "GET /accounts/profile/ HTTP/1.1" 500 258566
+ERROR 2024-12-12 00:31:27,548 basehttp 2012 15480 "GET /accounts/profile/ HTTP/1.1" 500 258566
+ERROR 2024-12-12 00:31:32,380 basehttp 2012 15480 "GET /accounts/profile/ HTTP/1.1" 500 258566
+INFO 2024-12-12 00:34:16,659 autoreload 2012 20900 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\forms.py changed, reloading.
+INFO 2024-12-12 00:34:19,761 autoreload 15504 3256 Watching for file changes with StatReloader
+INFO 2024-12-12 00:34:25,719 basehttp 15504 11344 "GET /accounts/profile/ HTTP/1.1" 200 30943
+INFO 2024-12-12 00:34:25,967 basehttp 15504 11344 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-12 00:34:28,648 basehttp 15504 11344 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 304 0
+INFO 2024-12-12 00:35:26,562 autoreload 15504 3256 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\forms.py changed, reloading.
+INFO 2024-12-12 00:35:28,644 autoreload 11292 15656 Watching for file changes with StatReloader
+ERROR 2024-12-12 00:35:29,400 basehttp 11292 21804 "GET /accounts/profile/ HTTP/1.1" 500 258464
+INFO 2024-12-12 00:37:01,091 autoreload 11292 15656 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\forms.py changed, reloading.
+INFO 2024-12-12 00:37:05,419 autoreload 22400 13208 Watching for file changes with StatReloader
+ERROR 2024-12-12 00:37:06,661 basehttp 22400 5052 "GET /accounts/profile/ HTTP/1.1" 500 258148
+INFO 2024-12-12 00:39:25,372 autoreload 18240 6768 Watching for file changes with StatReloader
+INFO 2024-12-12 00:39:27,915 basehttp 18240 11784 "GET / HTTP/1.1" 200 30761
+ERROR 2024-12-12 00:39:29,870 basehttp 18240 11784 "GET /accounts/profile/ HTTP/1.1" 500 258011
+ERROR 2024-12-12 00:43:23,260 basehttp 18240 6500 "GET /accounts/profile/ HTTP/1.1" 500 117332
+INFO 2024-12-12 00:43:26,521 basehttp 18240 11784 "GET /accounts/profile/ HTTP/1.1" 200 30612
+INFO 2024-12-12 00:43:26,685 basehttp 18240 11784 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-12 00:43:32,114 basehttp 18240 11784 "GET /cart/ HTTP/1.1" 200 33407
+INFO 2024-12-12 00:43:33,458 basehttp 18240 11784 "GET /accounts/profile/ HTTP/1.1" 200 30610
+INFO 2024-12-12 00:43:33,655 basehttp 18240 11784 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-12 00:43:35,251 basehttp 18240 11784 "POST /accounts/profile/ HTTP/1.1" 200 30810
+INFO 2024-12-12 00:43:35,434 basehttp 18240 11784 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-12 00:43:49,524 basehttp 18240 11784 "GET / HTTP/1.1" 200 30759
+INFO 2024-12-12 00:43:50,490 basehttp 18240 11784 "GET /accounts/profile/ HTTP/1.1" 200 30610
+INFO 2024-12-12 00:43:50,660 basehttp 18240 11784 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-12 00:43:52,200 basehttp 18240 11784 "GET / HTTP/1.1" 200 30760
+INFO 2024-12-12 00:43:53,144 basehttp 18240 11784 "GET /accounts/profile/ HTTP/1.1" 200 30610
+INFO 2024-12-12 00:43:53,305 basehttp 18240 11784 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-12 00:43:54,114 basehttp 18240 11784 "GET /accounts/profile/ HTTP/1.1" 200 30610
+INFO 2024-12-12 00:43:54,250 basehttp 18240 11784 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-12 00:43:54,693 basehttp 18240 11784 "GET /accounts/profile/ HTTP/1.1" 200 30610
+INFO 2024-12-12 00:43:54,827 basehttp 18240 11784 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 304 0
+INFO 2024-12-12 00:43:55,211 basehttp 18240 11784 "GET /accounts/profile/ HTTP/1.1" 200 30611
+INFO 2024-12-12 00:43:55,349 basehttp 18240 11784 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-12 00:43:55,705 basehttp 18240 11784 "GET /accounts/profile/ HTTP/1.1" 200 30610
+INFO 2024-12-12 00:43:55,841 basehttp 18240 11784 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 304 0
+INFO 2024-12-12 00:43:56,489 basehttp 18240 11784 "GET /accounts/profile/ HTTP/1.1" 200 30612
+INFO 2024-12-12 00:43:56,707 basehttp 18240 11784 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-12 00:43:57,301 basehttp 18240 11784 "GET /accounts/profile/ HTTP/1.1" 200 30610
+INFO 2024-12-12 00:43:57,547 basehttp 18240 11784 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-12 00:43:58,002 basehttp 18240 11784 "GET /accounts/profile/ HTTP/1.1" 200 30610
+INFO 2024-12-12 00:43:58,140 basehttp 18240 11784 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 304 0
+INFO 2024-12-12 00:43:58,788 basehttp 18240 11784 "GET /accounts/profile/ HTTP/1.1" 200 30610
+INFO 2024-12-12 00:43:58,954 basehttp 18240 11784 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-12 00:43:59,701 basehttp 18240 11784 "GET /accounts/profile/ HTTP/1.1" 200 30610
+INFO 2024-12-12 00:43:59,855 basehttp 18240 11784 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-12 00:44:00,385 basehttp 18240 11784 "GET /accounts/profile/ HTTP/1.1" 200 30610
+INFO 2024-12-12 00:44:00,512 basehttp 18240 11784 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-12 00:44:00,955 basehttp 18240 11784 "GET /accounts/profile/ HTTP/1.1" 200 30611
+INFO 2024-12-12 00:44:01,105 basehttp 18240 11784 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 304 0
+INFO 2024-12-12 00:44:01,423 basehttp 18240 11784 "GET /accounts/profile/ HTTP/1.1" 200 30611
+INFO 2024-12-12 00:44:01,551 basehttp 18240 11784 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-12 00:44:01,804 basehttp 18240 11784 "GET /accounts/profile/ HTTP/1.1" 200 30611
+INFO 2024-12-12 00:44:01,940 basehttp 18240 11784 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 304 0
+INFO 2024-12-12 00:44:02,321 basehttp 18240 11784 "GET /accounts/profile/ HTTP/1.1" 200 30611
+INFO 2024-12-12 00:44:02,463 basehttp 18240 11784 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-12 00:44:02,966 basehttp 18240 11784 "GET /accounts/profile/ HTTP/1.1" 200 30610
+INFO 2024-12-12 00:44:03,101 basehttp 18240 11784 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 304 0
+INFO 2024-12-12 00:44:03,740 basehttp 18240 11784 "GET /accounts/profile/ HTTP/1.1" 200 30610
+INFO 2024-12-12 00:44:03,880 basehttp 18240 11784 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-12 00:44:04,567 basehttp 18240 11784 "GET /accounts/profile/ HTTP/1.1" 200 30610
+INFO 2024-12-12 00:44:04,697 basehttp 18240 11784 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-12 00:44:05,387 basehttp 18240 11784 "GET /accounts/profile/ HTTP/1.1" 200 30610
+INFO 2024-12-12 00:44:05,534 basehttp 18240 11784 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-12 00:44:06,109 basehttp 18240 11784 "GET /accounts/profile/ HTTP/1.1" 200 30610
+INFO 2024-12-12 00:44:06,250 basehttp 18240 11784 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-12 00:44:06,899 basehttp 18240 11784 "GET /accounts/profile/ HTTP/1.1" 200 30610
+INFO 2024-12-12 00:44:07,030 basehttp 18240 11784 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 304 0
+INFO 2024-12-12 00:44:27,313 basehttp 18240 11784 "GET / HTTP/1.1" 200 30761
+INFO 2024-12-12 00:44:30,272 basehttp 18240 11784 "GET /accounts/profile/ HTTP/1.1" 200 30610
+INFO 2024-12-12 00:44:30,533 basehttp 18240 11784 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-12 00:45:17,151 basehttp 18240 11784 "GET / HTTP/1.1" 200 30761
+INFO 2024-12-12 00:45:18,046 basehttp 18240 11784 "GET /accounts/profile/ HTTP/1.1" 200 30610
+INFO 2024-12-12 00:45:18,224 basehttp 18240 11784 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-12 00:45:20,644 basehttp 18240 11784 "POST /accounts/logout/ HTTP/1.1" 302 0
+INFO 2024-12-12 00:45:20,698 basehttp 18240 11784 "GET / HTTP/1.1" 200 30049
+INFO 2024-12-12 00:45:23,545 basehttp 18240 11784 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2024-12-12 00:45:23,625 basehttp 18240 11784 "GET / HTTP/1.1" 200 30616
+INFO 2024-12-12 00:45:24,751 basehttp 18240 11784 "GET /accounts/profile/ HTTP/1.1" 200 30467
+INFO 2024-12-12 00:45:24,960 basehttp 18240 11784 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-12 00:46:07,848 basehttp 18240 11784 "GET / HTTP/1.1" 200 30618
+INFO 2024-12-12 00:46:08,082 basehttp 18240 11784 "GET /media/products/logo_lROYikF.png HTTP/1.1" 200 27077
+INFO 2024-12-12 00:46:08,154 basehttp 18240 11784 "GET /media/products/logo_PERlXjP.png HTTP/1.1" 200 27077
+INFO 2024-12-12 00:46:08,214 basehttp 18240 11784 "GET /media/products/sample.jpg HTTP/1.1" 200 60860
+INFO 2024-12-12 00:46:08,267 basehttp 18240 11784 "GET /media/products/sample_eyP2G3l.jpg HTTP/1.1" 200 60860
+INFO 2024-12-12 00:46:09,880 basehttp 18240 11784 "GET /accounts/profile/ HTTP/1.1" 200 30467
+INFO 2024-12-12 00:46:10,062 basehttp 18240 11784 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-12 00:46:13,150 basehttp 18240 11784 "GET / HTTP/1.1" 200 30616
+INFO 2024-12-12 00:46:15,025 basehttp 18240 11784 "GET /accounts/profile/ HTTP/1.1" 200 30467
+INFO 2024-12-12 00:46:15,199 basehttp 18240 11784 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+ERROR 2024-12-12 00:46:55,000 basehttp 18240 6500 "GET /accounts/profile/ HTTP/1.1" 500 117332
+ERROR 2024-12-12 00:46:57,495 basehttp 18240 6500 "GET /accounts/profile/ HTTP/1.1" 500 117332
+ERROR 2024-12-12 00:47:02,019 basehttp 18240 6500 "GET /accounts/profile/ HTTP/1.1" 500 117332
+ERROR 2024-12-12 00:47:02,563 basehttp 18240 6500 "GET /accounts/profile/ HTTP/1.1" 500 117332
+ERROR 2024-12-12 00:47:04,984 basehttp 18240 6500 "GET /accounts/profile/ HTTP/1.1" 500 117332
+ERROR 2024-12-12 00:47:07,101 basehttp 18240 6500 "GET /accounts/profile/ HTTP/1.1" 500 117332
+INFO 2024-12-12 00:47:09,321 basehttp 18240 11784 "GET /accounts/profile/ HTTP/1.1" 200 30049
+INFO 2024-12-12 00:47:09,499 basehttp 18240 11784 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+ERROR 2024-12-12 00:47:44,791 basehttp 18240 6500 "GET /accounts/profile/ HTTP/1.1" 500 117332
+ERROR 2024-12-12 00:47:45,683 basehttp 18240 6500 "GET /accounts/profile/ HTTP/1.1" 500 117332
+ERROR 2024-12-12 00:47:47,008 basehttp 18240 6500 "GET /accounts/profile/ HTTP/1.1" 500 117332
+ERROR 2024-12-12 00:47:47,999 basehttp 18240 6500 "GET /accounts/profile/ HTTP/1.1" 500 117332
+ERROR 2024-12-12 00:47:49,549 basehttp 18240 6500 "GET /accounts/profile/ HTTP/1.1" 500 117332
+ERROR 2024-12-12 00:47:53,041 basehttp 18240 6500 "GET /accounts/profile/ HTTP/1.1" 500 117331
+ERROR 2024-12-12 00:47:59,210 basehttp 18240 11784 "GET /accounts/profile/ HTTP/1.1" 500 258148
+INFO 2024-12-12 00:48:48,816 autoreload 18240 6768 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\views.py changed, reloading.
+INFO 2024-12-12 00:48:54,600 autoreload 2804 17412 Watching for file changes with StatReloader
+INFO 2024-12-12 00:51:07,761 autoreload 2804 17412 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\views.py changed, reloading.
+INFO 2024-12-12 00:51:11,059 autoreload 14468 12084 Watching for file changes with StatReloader
+INFO 2024-12-12 00:51:39,683 autoreload 14468 12084 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\views.py changed, reloading.
+INFO 2024-12-12 00:51:44,002 autoreload 11200 7732 Watching for file changes with StatReloader
+INFO 2024-12-12 14:10:30,660 autoreload 7676 15880 Watching for file changes with StatReloader
+INFO 2024-12-12 14:10:35,201 basehttp 7676 12528 "GET / HTTP/1.1" 200 30619
+INFO 2024-12-12 14:10:35,463 basehttp 7676 12528 "GET /media/products/sample_eyP2G3l.jpg HTTP/1.1" 304 0
+WARNING 2024-12-12 14:10:35,756 basehttp 7676 12528 "GET /favicon.ico HTTP/1.1" 404 23151
+INFO 2024-12-12 14:10:39,149 basehttp 7676 12528 "GET /admin HTTP/1.1" 301 0
+INFO 2024-12-12 14:10:39,872 basehttp 7676 15392 "GET /admin/ HTTP/1.1" 200 45571
+INFO 2024-12-12 14:10:39,959 basehttp 7676 15392 "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 304 0
+INFO 2024-12-12 14:10:39,964 basehttp 7676 15392 "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 304 0
+INFO 2024-12-12 14:10:39,970 basehttp 7676 15392 "GET /static/jazzmin/css/main.css HTTP/1.1" 304 0
+INFO 2024-12-12 14:10:39,976 basehttp 7676 15392 "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 304 0
+INFO 2024-12-12 14:10:39,979 basehttp 7676 15392 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2024-12-12 14:10:39,984 basehttp 7676 15392 "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2024-12-12 14:10:39,992 basehttp 7676 15392 "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 304 0
+INFO 2024-12-12 14:10:39,997 basehttp 7676 15392 "GET /static/jazzmin/js/main.js HTTP/1.1" 304 0
+INFO 2024-12-12 14:10:40,178 basehttp 7676 15392 "GET /static/vendor/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 304 0
+INFO 2024-12-12 14:10:40,182 basehttp 7676 15392 "GET /static/vendor/fontawesome-free/webfonts/fa-regular-400.woff2 HTTP/1.1" 304 0
+INFO 2024-12-12 14:10:43,334 basehttp 7676 15392 "GET /admin/products/category/ HTTP/1.1" 200 33341
+INFO 2024-12-12 14:10:43,415 basehttp 7676 15392 "GET /static/vendor/select2/css/select2.min.css HTTP/1.1" 304 0
+INFO 2024-12-12 14:10:43,420 basehttp 7676 15024 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2024-12-12 14:10:43,428 basehttp 7676 9124 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2024-12-12 14:10:43,428 basehttp 7676 15568 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2024-12-12 14:10:43,429 basehttp 7676 13140 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2024-12-12 14:10:43,429 basehttp 7676 15212 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2024-12-12 14:10:43,438 basehttp 7676 15024 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2024-12-12 14:10:43,440 basehttp 7676 13140 "GET /static/jazzmin/js/change_list.js HTTP/1.1" 304 0
+INFO 2024-12-12 14:10:43,446 basehttp 7676 9124 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2024-12-12 14:10:43,448 basehttp 7676 15024 "GET /static/vendor/select2/js/select2.min.js HTTP/1.1" 304 0
+INFO 2024-12-12 14:10:43,700 basehttp 7676 15392 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2024-12-12 14:10:50,747 basehttp 7676 15392 "GET /admin/products/category/add/ HTTP/1.1" 200 50575
+INFO 2024-12-12 14:10:50,831 basehttp 7676 15024 "GET /static/admin/js/inlines.js HTTP/1.1" 304 0
+INFO 2024-12-12 14:10:50,833 basehttp 7676 13140 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2024-12-12 14:10:50,840 basehttp 7676 9124 "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2024-12-12 14:10:50,862 basehttp 7676 9124 "GET /static/jazzmin/js/change_form.js HTTP/1.1" 304 0
+INFO 2024-12-12 14:10:50,891 basehttp 7676 9124 "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 200 655
+INFO 2024-12-12 14:10:51,227 basehttp 7676 15392 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2024-12-12 14:10:55,657 basehttp 7676 15392 "GET /admin/products/category/ HTTP/1.1" 200 33341
+INFO 2024-12-12 14:10:55,890 basehttp 7676 15392 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2024-12-12 14:10:56,951 basehttp 7676 15392 "GET /admin/products/ HTTP/1.1" 200 41191
+INFO 2024-12-12 14:10:58,829 basehttp 7676 15392 "GET /admin/products/category/ HTTP/1.1" 200 33341
+INFO 2024-12-12 14:10:59,022 basehttp 7676 15392 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+ERROR 2024-12-12 14:11:01,296 basehttp 7676 15392 "GET /admin/products/subcategory/ HTTP/1.1" 500 241427
+ERROR 2024-12-12 14:11:28,577 basehttp 7676 15392 "GET /admin/products/subcategory/ HTTP/1.1" 500 241564
+ERROR 2024-12-12 14:11:31,431 basehttp 7676 15392 "GET /admin/products/subcategory/ HTTP/1.1" 500 241565
+INFO 2024-12-12 14:11:43,781 basehttp 7676 15392 "GET /admin/products/subcategory/ HTTP/1.1" 200 29965
+INFO 2024-12-12 14:11:43,945 basehttp 7676 15392 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2024-12-12 14:11:50,478 basehttp 7676 15392 "GET /admin/products/subcategory/add/ HTTP/1.1" 200 34485
+INFO 2024-12-12 14:11:50,570 basehttp 7676 9124 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2024-12-12 14:11:50,579 basehttp 7676 9124 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2024-12-12 14:11:50,587 basehttp 7676 9124 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2024-12-12 14:11:50,623 basehttp 7676 15392 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2024-12-12 14:12:35,814 basehttp 7676 15392 "GET /admin/products/subcategory/ HTTP/1.1" 200 29965
+INFO 2024-12-12 14:12:35,921 basehttp 7676 15392 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2024-12-12 14:12:40,000 basehttp 7676 15392 "GET /admin/products/category/ HTTP/1.1" 200 33341
+INFO 2024-12-12 14:12:40,114 basehttp 7676 15392 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2024-12-12 14:12:41,892 basehttp 7676 15392 "GET /admin/products/category/add/ HTTP/1.1" 200 50574
+INFO 2024-12-12 14:12:42,003 basehttp 7676 15392 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2024-12-12 14:14:06,070 basehttp 7676 15392 "POST /admin/products/category/add/ HTTP/1.1" 302 0
+INFO 2024-12-12 14:14:06,169 basehttp 7676 15392 "GET /admin/products/category/ HTTP/1.1" 200 34538
+INFO 2024-12-12 14:14:06,347 basehttp 7676 15392 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2024-12-12 14:14:12,307 basehttp 7676 15392 "GET /admin/products/subcategory/ HTTP/1.1" 200 30157
+INFO 2024-12-12 14:14:12,410 basehttp 7676 15392 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2024-12-12 14:14:28,853 basehttp 7676 15392 "GET /admin/products/subcategory/add/ HTTP/1.1" 200 34556
+INFO 2024-12-12 14:14:28,996 basehttp 7676 15392 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2024-12-12 14:15:01,762 basehttp 7676 15392 "POST /admin/products/subcategory/add/ HTTP/1.1" 302 0
+INFO 2024-12-12 14:15:01,860 basehttp 7676 15392 "GET /admin/products/subcategory/ HTTP/1.1" 200 34491
+INFO 2024-12-12 14:15:01,975 basehttp 7676 15392 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2024-12-12 14:15:11,453 basehttp 7676 15392 "GET /admin/auth/user/preview-homepage/ HTTP/1.1" 302 0
+INFO 2024-12-12 14:15:11,573 basehttp 7676 15392 "GET / HTTP/1.1" 200 30992
+INFO 2024-12-12 14:15:15,044 basehttp 7676 15392 "GET / HTTP/1.1" 200 30994
+ERROR 2024-12-12 14:17:54,840 basehttp 7676 3232 "GET / HTTP/1.1" 500 245973
+INFO 2024-12-12 14:17:55,327 basehttp 7676 3232 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2024-12-12 14:17:55,327 basehttp 7676 14192 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2024-12-12 14:17:55,656 basehttp 7676 14192 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2024-12-12 14:17:55,838 basehttp 7676 14192 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+ERROR 2024-12-12 14:17:56,844 basehttp 7676 15392 "GET / HTTP/1.1" 500 246983
+INFO 2024-12-12 14:19:56,300 autoreload 7676 15880 C:\Users\fgghy\PycharmProjects\InternetStore\products\urls.py changed, reloading.
+INFO 2024-12-12 14:19:58,590 autoreload 1744 11648 Watching for file changes with StatReloader
+INFO 2024-12-12 14:20:10,559 autoreload 1744 11648 C:\Users\fgghy\PycharmProjects\InternetStore\products\views.py changed, reloading.
+INFO 2024-12-12 14:20:18,115 autoreload 14516 1452 Watching for file changes with StatReloader
+INFO 2024-12-12 14:20:27,849 basehttp 14516 6632 "GET / HTTP/1.1" 200 31558
+INFO 2024-12-12 14:20:32,808 basehttp 14516 6632 "GET /category/gejming-pk-i-periferiya/ HTTP/1.1" 200 23822
+INFO 2024-12-12 14:20:34,967 basehttp 14516 6632 "GET / HTTP/1.1" 200 31557
+INFO 2024-12-12 14:20:38,954 basehttp 14516 6632 "GET /category/stiralnye-mashiny/ HTTP/1.1" 200 23800
+INFO 2024-12-12 14:20:40,959 basehttp 14516 6632 "GET / HTTP/1.1" 200 31557
+INFO 2024-12-12 14:20:42,996 basehttp 14516 6632 "GET /category/noutbuki/ HTTP/1.1" 200 27802
+INFO 2024-12-12 14:20:44,525 basehttp 14516 6632 "GET / HTTP/1.1" 200 31557
+ERROR 2024-12-12 14:20:48,093 basehttp 14516 6632 "GET /category/gejming-pk-i-periferiya/videokarty/ HTTP/1.1" 500 94318
+INFO 2024-12-12 14:22:40,472 autoreload 14516 1452 C:\Users\fgghy\PycharmProjects\InternetStore\products\views.py changed, reloading.
+INFO 2024-12-12 14:22:43,268 autoreload 6916 5688 Watching for file changes with StatReloader
+ERROR 2024-12-12 14:22:45,225 basehttp 6916 15632 "GET /category/gejming-pk-i-periferiya/videokarty/ HTTP/1.1" 500 117409
+INFO 2024-12-12 14:23:53,416 basehttp 6916 15632 "GET /category/gejming-pk-i-periferiya/videokarty/ HTTP/1.1" 200 23888
+INFO 2024-12-12 14:23:58,035 basehttp 6916 15632 "GET / HTTP/1.1" 200 31555
+INFO 2024-12-12 14:24:01,368 basehttp 6916 15632 "GET / HTTP/1.1" 200 31557
+INFO 2024-12-12 14:24:02,349 basehttp 6916 15632 "GET /category/noutbuki/ HTTP/1.1" 200 27802
+INFO 2024-12-12 14:24:03,347 basehttp 6916 15632 "GET / HTTP/1.1" 200 31557
+INFO 2024-12-12 14:24:05,900 basehttp 6916 15632 "GET /category/stiralnye-mashiny/ HTTP/1.1" 200 23798
+INFO 2024-12-12 14:24:07,015 basehttp 6916 15632 "GET / HTTP/1.1" 200 31557
+INFO 2024-12-12 14:24:08,837 basehttp 6916 15632 "GET /category/noutbuki/ HTTP/1.1" 200 27802
+INFO 2024-12-12 14:24:10,129 basehttp 6916 15632 "GET / HTTP/1.1" 200 31555
+INFO 2024-12-12 14:24:11,765 basehttp 6916 15632 "GET /category/gejming-pk-i-periferiya/ HTTP/1.1" 200 23822
+INFO 2024-12-12 14:24:16,820 basehttp 6916 15632 "GET / HTTP/1.1" 200 31556
+INFO 2024-12-12 14:24:52,954 basehttp 6916 15632 "GET / HTTP/1.1" 200 31557
+INFO 2024-12-12 14:24:54,062 basehttp 6916 15632 "GET /about/ HTTP/1.1" 200 24518
+INFO 2024-12-12 14:24:55,219 basehttp 6916 15632 "GET /contact/ HTTP/1.1" 200 24044
+INFO 2024-12-12 14:24:57,601 basehttp 6916 15632 "GET /contact/?q= HTTP/1.1" 200 24046
+INFO 2024-12-12 14:24:58,802 basehttp 6916 15632 "GET / HTTP/1.1" 200 31555
+INFO 2024-12-12 14:25:03,243 basehttp 6916 15632 "GET /?q=12 HTTP/1.1" 200 31561
+INFO 2024-12-12 14:26:52,636 autoreload 6916 5688 C:\Users\fgghy\PycharmProjects\InternetStore\products\views.py changed, reloading.
+INFO 2024-12-12 14:26:57,160 autoreload 11516 7476 Watching for file changes with StatReloader
+INFO 2024-12-12 14:27:14,600 basehttp 11516 6728 "GET /search/ HTTP/1.1" 200 23399
+INFO 2024-12-12 14:27:18,382 basehttp 11516 11068 "GET /?q=12 HTTP/1.1" 200 31562
+INFO 2024-12-12 14:27:23,511 basehttp 11516 11068 "GET /?q=1 HTTP/1.1" 200 31561
+INFO 2024-12-12 14:27:30,610 basehttp 11516 11068 "GET /?q=23 HTTP/1.1" 200 31562
+INFO 2024-12-12 14:27:38,538 basehttp 11516 11068 "GET /product/1/ HTTP/1.1" 200 32717
+INFO 2024-12-12 14:27:38,750 basehttp 11516 11068 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-12 14:27:40,450 basehttp 11516 11068 "GET /category/noutbuki/ HTTP/1.1" 200 27802
+INFO 2024-12-12 14:27:43,454 basehttp 11516 11068 "GET /category/noutbuki/?q=12 HTTP/1.1" 200 27807
+INFO 2024-12-12 14:29:04,577 basehttp 11516 11068 "GET /search/?q=12 HTTP/1.1" 200 23975
+INFO 2024-12-12 14:29:06,700 basehttp 11516 11068 "GET /search/?q=12 HTTP/1.1" 200 23975
+INFO 2024-12-12 14:29:12,347 basehttp 11516 11068 "GET /search/?q=acer HTTP/1.1" 200 25029
+INFO 2024-12-12 14:31:28,430 basehttp 11516 11068 "GET /search/?q=acer HTTP/1.1" 200 25039
+INFO 2024-12-12 14:31:31,497 basehttp 11516 11068 "GET /search/?q=12 HTTP/1.1" 200 23983
+INFO 2024-12-12 14:31:33,197 basehttp 11516 11068 "GET / HTTP/1.1" 200 31565
+INFO 2024-12-12 14:31:34,499 basehttp 11516 11068 "GET /search/?q= HTTP/1.1" 200 23978
+INFO 2024-12-12 14:36:45,835 autoreload 11516 7476 C:\Users\fgghy\PycharmProjects\InternetStore\products\views.py changed, reloading.
+INFO 2024-12-12 14:36:49,969 autoreload 14616 11728 Watching for file changes with StatReloader
+INFO 2024-12-12 14:37:07,807 autoreload 14616 11728 C:\Users\fgghy\PycharmProjects\InternetStore\products\views.py changed, reloading.
+INFO 2024-12-12 14:37:11,561 autoreload 9720 2892 Watching for file changes with StatReloader
+INFO 2024-12-12 14:37:29,826 autoreload 9720 2892 C:\Users\fgghy\PycharmProjects\InternetStore\products\urls.py changed, reloading.
+INFO 2024-12-12 14:37:32,177 autoreload 1452 6384 Watching for file changes with StatReloader
+INFO 2024-12-12 14:38:41,072 basehttp 1452 15904 "GET /search/ HTTP/1.1" 200 28117
+INFO 2024-12-12 14:38:41,216 basehttp 1452 11628 "GET /media/products/sample_eyP2G3l.jpg HTTP/1.1" 304 0
+INFO 2024-12-12 14:38:41,223 basehttp 1452 15904 "GET /media/products/sample.jpg HTTP/1.1" 304 0
+INFO 2024-12-12 14:38:48,169 basehttp 1452 13400 "GET / HTTP/1.1" 200 34003
+INFO 2024-12-12 14:38:50,711 basehttp 1452 13400 "GET /search_suggestions/?q=1 HTTP/1.1" 200 58
+INFO 2024-12-12 14:38:51,029 basehttp 1452 13400 "GET /__debug__/history_sidebar/?store_id=6b2aae9c0d0a46058cab8bee80f92d63 HTTP/1.1" 200 13856
+INFO 2024-12-12 14:38:52,410 basehttp 1452 13400 "GET /search_suggestions/?q=2 HTTP/1.1" 200 34
+INFO 2024-12-12 14:38:52,727 basehttp 1452 13400 "GET /__debug__/history_sidebar/?store_id=a6d21a2d882e41889a75dea2bfe1adea HTTP/1.1" 200 13856
+INFO 2024-12-12 14:38:53,916 basehttp 1452 13400 "GET /search_suggestions/?q=%D0%BD HTTP/1.1" 200 339
+INFO 2024-12-12 14:38:54,226 basehttp 1452 13400 "GET /__debug__/history_sidebar/?store_id=471eeb1d15344d83a7e1745a669288f8 HTTP/1.1" 200 13861
+INFO 2024-12-12 14:38:54,512 basehttp 1452 13400 "GET /search_suggestions/?q=%D0%BD%D0%BE HTTP/1.1" 200 34
+INFO 2024-12-12 14:38:54,808 basehttp 1452 13400 "GET /__debug__/history_sidebar/?store_id=8f5f73ffd7c84948b9f710783434af1b HTTP/1.1" 200 13867
+INFO 2024-12-12 14:38:55,282 basehttp 1452 13400 "GET /search_suggestions/?q=%D0%BD HTTP/1.1" 200 339
+INFO 2024-12-12 14:38:55,664 basehttp 1452 13400 "GET /__debug__/history_sidebar/?store_id=7d6399b6d8b94cbb8b1b1ddcc0d28a7c HTTP/1.1" 200 13861
+INFO 2024-12-12 14:38:59,843 basehttp 1452 13400 "GET /search_suggestions/?q=a HTTP/1.1" 200 87
+INFO 2024-12-12 14:39:00,151 basehttp 1452 13400 "GET /__debug__/history_sidebar/?store_id=1c5e176a5ccc426a8016e7d9e1c4e28b HTTP/1.1" 200 13856
+INFO 2024-12-12 14:39:00,320 basehttp 1452 13400 "GET /search_suggestions/?q=ac HTTP/1.1" 200 87
+INFO 2024-12-12 14:39:00,639 basehttp 1452 13400 "GET /__debug__/history_sidebar/?store_id=baef92eab0614ea382fb7c2dbd2d2f05 HTTP/1.1" 200 13857
+INFO 2024-12-12 14:39:01,567 basehttp 1452 13400 "GET /search_suggestions/?q=a HTTP/1.1" 200 87
+INFO 2024-12-12 14:39:01,850 basehttp 1452 13400 "GET /__debug__/history_sidebar/?store_id=1f9b78b9be77438b8f20b2d163ccc09f HTTP/1.1" 200 13856
+INFO 2024-12-12 14:39:01,979 basehttp 1452 13400 "GET /search_suggestions/?q=a HTTP/1.1" 200 87
+INFO 2024-12-12 14:39:02,282 basehttp 1452 13400 "GET /search_suggestions/?q=ac HTTP/1.1" 200 87
+INFO 2024-12-12 14:39:02,286 basehttp 1452 2440 "GET /__debug__/history_sidebar/?store_id=20104c55be4746d09e4b038deb8eea9a HTTP/1.1" 200 13856
+INFO 2024-12-12 14:39:02,598 basehttp 1452 2440 "GET /__debug__/history_sidebar/?store_id=96394393e9be407aa04975062c11fdfd HTTP/1.1" 200 13857
+INFO 2024-12-12 14:39:04,614 basehttp 1452 2440 "GET /product/1/ HTTP/1.1" 200 35163
+INFO 2024-12-12 14:39:04,809 basehttp 1452 2440 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-12 14:39:07,292 basehttp 1452 2440 "GET /search_suggestions/?q=e HTTP/1.1" 200 87
+INFO 2024-12-12 14:39:07,572 basehttp 1452 2440 "GET /__debug__/history_sidebar/?store_id=9c4257bb82cb4afd97684a43008ef850 HTTP/1.1" 200 13856
+INFO 2024-12-12 14:39:07,839 basehttp 1452 9232 "GET /media/products/logo_lROYikF.png HTTP/1.1" 200 27077
+INFO 2024-12-12 14:39:10,243 basehttp 1452 2440 "GET /search_suggestions/?q=%D0%BA HTTP/1.1" 200 177
+INFO 2024-12-12 14:39:10,509 basehttp 1452 13400 "GET /search_suggestions/?q=%D0%BA%D0%B0 HTTP/1.1" 200 34
+INFO 2024-12-12 14:39:10,584 basehttp 1452 2440 "GET /__debug__/history_sidebar/?store_id=4304a7318e80433e8e67f9b813bc09c9 HTTP/1.1" 200 13861
+INFO 2024-12-12 14:39:10,863 basehttp 1452 2440 "GET /__debug__/history_sidebar/?store_id=37dcb4053fcb42188eb3aeade7df36eb HTTP/1.1" 200 13868
+INFO 2024-12-12 14:39:11,372 basehttp 1452 2440 "GET /search_suggestions/?q=%D0%BA HTTP/1.1" 200 177
+INFO 2024-12-12 14:39:11,728 basehttp 1452 2440 "GET /__debug__/history_sidebar/?store_id=ec36c80799a844c987dc23c944e40840 HTTP/1.1" 200 13861
+INFO 2024-12-12 14:39:13,552 basehttp 1452 2440 "GET / HTTP/1.1" 200 34003
+INFO 2024-12-12 14:46:36,522 autoreload 1452 6384 C:\Users\fgghy\PycharmProjects\InternetStore\products\views.py changed, reloading.
+INFO 2024-12-12 14:46:40,041 autoreload 14064 14768 Watching for file changes with StatReloader
+INFO 2024-12-12 14:51:39,526 autoreload 14064 14768 C:\Users\fgghy\PycharmProjects\InternetStore\products\views.py changed, reloading.
+INFO 2024-12-12 14:51:45,490 autoreload 2904 512 Watching for file changes with StatReloader
+ERROR 2024-12-12 14:51:58,415 basehttp 2904 3708 "GET /search/ HTTP/1.1" 500 98117
+INFO 2024-12-12 14:52:36,651 basehttp 2904 12220 "GET / HTTP/1.1" 200 34003
+INFO 2024-12-12 14:52:38,966 basehttp 2904 12220 "GET /search_suggestions/?q=d HTTP/1.1" 200 34
+INFO 2024-12-12 14:52:39,239 basehttp 2904 12220 "GET /__debug__/history_sidebar/?store_id=792a3b45844947119690ac4395b018a6 HTTP/1.1" 200 13855
+INFO 2024-12-12 14:52:40,034 basehttp 2904 12220 "GET /search_suggestions/?q=a HTTP/1.1" 200 87
+INFO 2024-12-12 14:52:40,318 basehttp 2904 12220 "GET /__debug__/history_sidebar/?store_id=bf08ea5fa3bd4724bd4791d7c0f610b9 HTTP/1.1" 200 13855
+INFO 2024-12-12 14:52:40,767 basehttp 2904 12220 "GET /search_suggestions/?q=ac HTTP/1.1" 200 87
+INFO 2024-12-12 14:52:41,042 basehttp 2904 12220 "GET /__debug__/history_sidebar/?store_id=b85ca09e544d45dab6de47a4c007c707 HTTP/1.1" 200 13856
+INFO 2024-12-12 14:52:43,571 basehttp 2904 12220 "GET /product/1/ HTTP/1.1" 200 35161
+INFO 2024-12-12 14:52:43,727 basehttp 2904 12220 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-12 14:52:46,836 basehttp 2904 12220 "GET /search_suggestions/?q=a HTTP/1.1" 200 87
+INFO 2024-12-12 14:52:47,117 basehttp 2904 12220 "GET /__debug__/history_sidebar/?store_id=67c7e4d7c0074c0791d85a8381a5a68d HTTP/1.1" 200 13854
+ERROR 2024-12-12 14:52:51,079 basehttp 2904 12220 "GET /search/?q=a HTTP/1.1" 500 99047
+INFO 2024-12-12 14:52:55,402 basehttp 2904 12220 "GET /search_suggestions/?q=a2 HTTP/1.1" 200 34
+INFO 2024-12-12 14:52:55,694 basehttp 2904 12220 "GET /__debug__/history_sidebar/?store_id=40dbce674c564e6f90269742dad9fbc8 HTTP/1.1" 200 13856
+INFO 2024-12-12 14:52:56,112 basehttp 2904 12220 "GET /search_suggestions/?q=a HTTP/1.1" 200 87
+INFO 2024-12-12 14:52:56,408 basehttp 2904 12220 "GET /__debug__/history_sidebar/?store_id=58e7f87c19d74a9693931462daa28661 HTTP/1.1" 200 13855
+INFO 2024-12-12 14:52:56,441 basehttp 2904 13108 "GET /search_suggestions/?q=a HTTP/1.1" 200 87
+INFO 2024-12-12 14:52:56,723 basehttp 2904 13108 "GET /__debug__/history_sidebar/?store_id=b0e07a9c9098452a8309bec4e8271253 HTTP/1.1" 200 13855
+INFO 2024-12-12 14:52:57,037 basehttp 2904 13108 "GET /search_suggestions/?q=ac HTTP/1.1" 200 87
+INFO 2024-12-12 14:52:57,333 basehttp 2904 13108 "GET /__debug__/history_sidebar/?store_id=eaec21102aa54923bb1f42676725ef77 HTTP/1.1" 200 13856
+INFO 2024-12-12 14:52:57,829 basehttp 2904 13108 "GET /search_suggestions/?q=ace HTTP/1.1" 200 87
+INFO 2024-12-12 14:52:57,937 basehttp 2904 13108 "GET /search_suggestions/?q=acer HTTP/1.1" 200 87
+INFO 2024-12-12 14:52:58,263 basehttp 2904 12220 "GET /__debug__/history_sidebar/?store_id=5b52556f495f433a8088740af515bb71 HTTP/1.1" 200 13857
+ERROR 2024-12-12 14:52:58,265 basehttp 2904 13108 "GET /search/?q=acer HTTP/1.1" 500 99075
+INFO 2024-12-12 14:59:21,741 autoreload 2904 512 C:\Users\fgghy\PycharmProjects\InternetStore\products\views.py changed, reloading.
+INFO 2024-12-12 14:59:25,587 autoreload 13244 15180 Watching for file changes with StatReloader
+INFO 2024-12-12 22:33:31,804 autoreload 13244 15180 C:\Users\fgghy\PycharmProjects\InternetStore\products\views.py changed, reloading.
+INFO 2024-12-12 22:33:36,577 autoreload 12888 19444 Watching for file changes with StatReloader
+INFO 2024-12-12 22:33:38,262 basehttp 12888 18572 "GET /search/?q=acer HTTP/1.1" 200 30140
+INFO 2024-12-12 22:33:44,137 basehttp 12888 18572 "GET /search/?q=acer&sort=price&category=&price_min=&price_max= HTTP/1.1" 200 30199
+INFO 2024-12-12 22:33:48,478 basehttp 12888 18572 "GET /search/?q=acer&sort=price&category=&price_min=&price_max= HTTP/1.1" 200 30198
+INFO 2024-12-12 22:33:51,746 basehttp 12888 18572 "GET /search/?q=acer&sort=name&category=&price_min=&price_max= HTTP/1.1" 200 30196
+INFO 2024-12-12 22:33:55,124 basehttp 12888 18572 "GET /search/?q=acer&sort=-price&category=&price_min=&price_max= HTTP/1.1" 200 30200
+INFO 2024-12-12 22:34:11,811 basehttp 12888 18572 "GET /search_suggestions/?q=a HTTP/1.1" 200 87
+INFO 2024-12-12 22:34:12,076 basehttp 12888 18572 "GET /__debug__/history_sidebar/?store_id=b4421c88ce1d4d96942c2711275cec16 HTTP/1.1" 200 13856
+INFO 2024-12-12 22:34:12,249 basehttp 12888 18572 "GET /search_suggestions/?q=ac HTTP/1.1" 200 87
+INFO 2024-12-12 22:34:12,555 basehttp 12888 18572 "GET /__debug__/history_sidebar/?store_id=c2bda96ebbbd486492dfbb9cffa547c1 HTTP/1.1" 200 13855
+INFO 2024-12-12 22:34:13,706 basehttp 12888 18572 "GET /search_suggestions/?q=ace HTTP/1.1" 200 87
+INFO 2024-12-12 22:34:13,843 basehttp 12888 18572 "GET /search_suggestions/?q=acer HTTP/1.1" 200 87
+INFO 2024-12-12 22:34:14,134 basehttp 12888 18572 "GET /__debug__/history_sidebar/?store_id=cb7c953317624d5ca9bde9a44075ac9e HTTP/1.1" 200 13857
+INFO 2024-12-12 22:34:15,952 basehttp 12888 5452 "GET /search_suggestions/?q=acer HTTP/1.1" 200 87
+INFO 2024-12-12 22:34:15,978 basehttp 12888 18572 "GET /search_suggestions/?q=acerh HTTP/1.1" 200 34
+INFO 2024-12-12 22:34:16,291 basehttp 12888 18572 "GET /__debug__/history_sidebar/?store_id=9e5c682b1a414a5dac5cd7906e24ee0c HTTP/1.1" 200 13860
+INFO 2024-12-12 22:34:16,710 basehttp 12888 18572 "GET /search_suggestions/?q=ace HTTP/1.1" 200 87
+INFO 2024-12-12 22:34:16,813 basehttp 12888 5452 "GET /search_suggestions/?q=aceh HTTP/1.1" 200 34
+INFO 2024-12-12 22:34:17,131 basehttp 12888 5452 "GET /__debug__/history_sidebar/?store_id=7b34f60e702544e09890a106982f5b97 HTTP/1.1" 200 13859
+INFO 2024-12-12 22:34:17,746 basehttp 12888 5452 "GET /search/?q=aceh HTTP/1.1" 200 28458
+INFO 2024-12-12 22:34:22,165 basehttp 12888 5452 "GET /search/?q=acer7 HTTP/1.1" 200 29334
+INFO 2024-12-12 22:34:24,534 basehttp 12888 5452 - Broken pipe from ('127.0.0.1', 59165)
+INFO 2024-12-12 22:34:24,572 basehttp 12888 18572 "GET / HTTP/1.1" 200 34002
+INFO 2024-12-12 22:34:26,912 basehttp 12888 18572 "GET /search/?q= HTTP/1.1" 200 31694
+INFO 2024-12-12 22:35:50,126 basehttp 12888 18572 "GET /product/4/ HTTP/1.1" 200 33475
+INFO 2024-12-12 22:35:53,116 basehttp 12888 15504 "GET /media/products/sample_eyP2G3l.jpg HTTP/1.1" 200 60860
+INFO 2024-12-12 22:36:22,718 basehttp 12888 18572 "GET / HTTP/1.1" 200 34001
+INFO 2024-12-12 22:36:24,466 basehttp 12888 18572 "GET /category/gejming-pk-i-periferiya/ HTTP/1.1" 200 26266
+INFO 2024-12-12 22:36:25,311 basehttp 12888 18572 "GET /about/ HTTP/1.1" 200 26963
+INFO 2024-12-12 22:36:26,290 basehttp 12888 18572 "GET /search/?q= HTTP/1.1" 200 31694
+INFO 2024-12-12 22:36:31,291 basehttp 12888 18572 "GET /search/?q=&sort=price&category=&price_min=&price_max= HTTP/1.1" 200 31753
+INFO 2024-12-12 22:36:31,528 basehttp 12888 18572 "GET /search/?q=&sort=price&category=&price_min=&price_max= HTTP/1.1" 200 31753
+INFO 2024-12-12 22:39:35,272 basehttp 12888 18572 "GET / HTTP/1.1" 200 34001
+INFO 2024-12-12 22:41:06,046 basehttp 12888 18572 "GET / HTTP/1.1" 200 34065
+INFO 2024-12-12 22:41:09,400 basehttp 12888 18572 "GET /search/?q=%D1%83 HTTP/1.1" 200 31831
+INFO 2024-12-12 22:41:12,160 basehttp 12888 18572 "GET / HTTP/1.1" 200 34067
+INFO 2024-12-12 22:41:39,723 basehttp 12888 18572 "GET / HTTP/1.1" 200 34097
+INFO 2024-12-12 22:42:51,000 basehttp 12888 18572 "GET / HTTP/1.1" 200 34014
+INFO 2024-12-12 22:42:52,822 basehttp 12888 18572 "GET /search/?q= HTTP/1.1" 200 31707
+INFO 2024-12-12 22:42:54,110 basehttp 12888 18572 "GET / HTTP/1.1" 200 34016
+INFO 2024-12-12 22:43:23,428 basehttp 12888 12964 "GET /search/ HTTP/1.1" 200 31137
+INFO 2024-12-12 22:43:23,784 basehttp 12888 12964 "GET /static/css/styles.css HTTP/1.1" 304 0
+INFO 2024-12-12 22:43:23,808 basehttp 12888 12964 "GET /static/images/logo.png HTTP/1.1" 304 0
+INFO 2024-12-12 22:43:23,952 basehttp 12888 2372 "GET /media/products/logo_lROYikF.png HTTP/1.1" 304 0
+INFO 2024-12-12 22:43:23,977 basehttp 12888 12964 "GET /media/products/logo_PERlXjP.png HTTP/1.1" 304 0
+INFO 2024-12-12 22:43:25,650 basehttp 12888 18572 "GET /search/?q= HTTP/1.1" 200 35678
+INFO 2024-12-12 22:43:27,577 basehttp 12888 18572 "GET /search/?q= HTTP/1.1" 200 35677
+INFO 2024-12-12 22:44:14,973 basehttp 12888 12964 "GET /search/ HTTP/1.1" 200 35105
+INFO 2024-12-12 22:44:19,238 basehttp 12888 12964 "GET /search/ HTTP/1.1" 200 35105
+INFO 2024-12-12 22:44:22,711 basehttp 12888 12964 "GET /search/ HTTP/1.1" 200 35106
+INFO 2024-12-12 22:44:27,435 basehttp 12888 12964 "GET /search/ HTTP/1.1" 200 35105
+INFO 2024-12-12 22:44:49,140 basehttp 12888 12964 "GET /search/ HTTP/1.1" 200 35106
+INFO 2024-12-12 22:44:52,758 basehttp 12888 12964 "GET /search/ HTTP/1.1" 200 35105
+INFO 2024-12-12 22:45:03,887 basehttp 12888 12964 "GET /search/ HTTP/1.1" 200 35366
+INFO 2024-12-12 22:45:09,195 basehttp 12888 18572 "GET /search/?q= HTTP/1.1" 200 35939
+INFO 2024-12-12 22:45:14,054 basehttp 12888 12964 "GET /search/ HTTP/1.1" 200 35365
+INFO 2024-12-12 22:45:15,764 basehttp 12888 12964 "GET /search/ HTTP/1.1" 200 35105
+INFO 2024-12-12 22:45:20,338 basehttp 12888 18572 "GET /search/?q= HTTP/1.1" 200 35678
+INFO 2024-12-12 22:45:26,004 basehttp 12888 12964 "GET /search/ HTTP/1.1" 200 35105
+INFO 2024-12-12 22:45:29,566 basehttp 12888 18572 "GET /search/?q= HTTP/1.1" 200 35938
+INFO 2024-12-12 22:45:39,324 basehttp 12888 12964 "GET /search/ HTTP/1.1" 200 35365
+INFO 2024-12-12 22:45:57,123 basehttp 12888 18572 "GET /search/?q= HTTP/1.1" 200 35679
+INFO 2024-12-12 22:45:59,760 basehttp 12888 18572 "GET /search/?q=&sort=name&category=&price_min=&price_max= HTTP/1.1" 200 35737
+INFO 2024-12-12 22:46:13,161 basehttp 12888 18572 "GET /search/?q=&sort=name&category=&price_min=&price_max= HTTP/1.1" 200 35735
+INFO 2024-12-12 22:46:53,321 basehttp 12888 18572 "GET /search/?q=&sort=name&category=&price_min=&price_max= HTTP/1.1" 200 35737
+INFO 2024-12-12 22:46:59,319 basehttp 12888 18572 "GET /search/?q=&sort=name&category=&price_min=&price_max= HTTP/1.1" 200 35737
+INFO 2024-12-12 22:47:25,955 basehttp 12888 18572 "GET /search/?q=&sort=name&category=&price_min=&price_max= HTTP/1.1" 200 36001
+INFO 2024-12-12 22:47:51,702 basehttp 12888 18572 "GET /search/?q=&sort=name&category=&price_min=&price_max= HTTP/1.1" 200 36262
+INFO 2024-12-12 22:47:59,148 basehttp 12888 18572 "GET /search/?q=&sort=name&category=&price_min=1265&price_max=10000 HTTP/1.1" 200 33882
+INFO 2024-12-12 22:48:01,954 basehttp 12888 18572 "GET /search/?q=&sort=name&category=&price_min=0&price_max=10000 HTTP/1.1" 200 35451
+INFO 2024-12-12 22:48:24,287 basehttp 12888 18572 "GET /search/?q=&sort=name&category=&price_min=0&price_max=10000 HTTP/1.1" 200 35451
+INFO 2024-12-12 22:48:27,405 basehttp 12888 18572 "GET /search/?q=&sort=name&category=&price_min=4499&price_max=10000 HTTP/1.1" 200 33027
+INFO 2024-12-12 22:48:29,288 basehttp 12888 18572 "GET /search/?q=&sort=name&category=&price_min=0&price_max=10000 HTTP/1.1" 200 35450
+INFO 2024-12-12 22:48:50,041 basehttp 12888 18572 "GET /search_suggestions/?q=d HTTP/1.1" 200 34
+INFO 2024-12-12 22:48:50,345 basehttp 12888 18572 "GET /__debug__/history_sidebar/?store_id=0fb358fe3e8d48a1b4a1e6649b4f9e19 HTTP/1.1" 200 13855
+INFO 2024-12-12 22:48:50,541 basehttp 12888 18572 "GET /search_suggestions/?q=df HTTP/1.1" 200 34
+INFO 2024-12-12 22:48:50,776 basehttp 12888 18572 "GET /__debug__/history_sidebar/?store_id=d239d32315bb4c4fa84b8cd52c7cc84c HTTP/1.1" 200 13855
+INFO 2024-12-12 22:48:50,855 basehttp 12888 18572 "GET /search_suggestions/?q=dfv HTTP/1.1" 200 34
+INFO 2024-12-12 22:48:51,172 basehttp 12888 18572 "GET /__debug__/history_sidebar/?store_id=e1be0db321024ad7be9f67abb0cfdf13 HTTP/1.1" 200 13856
+INFO 2024-12-12 22:48:51,413 basehttp 12888 18572 "GET /search_suggestions/?q=df HTTP/1.1" 200 34
+INFO 2024-12-12 22:48:51,552 basehttp 12888 18572 "GET /search_suggestions/?q=d HTTP/1.1" 200 34
+INFO 2024-12-12 22:48:51,795 basehttp 12888 18572 "GET /__debug__/history_sidebar/?store_id=90857b511fb249ac82d5c49a8b2bf078 HTTP/1.1" 200 13854
+INFO 2024-12-12 22:48:52,226 basehttp 12888 18572 "GET /search_suggestions/?q=a HTTP/1.1" 200 87
+INFO 2024-12-12 22:48:52,531 basehttp 12888 18572 "GET /__debug__/history_sidebar/?store_id=f95290cbaf6648579d0e3724030fe4ee HTTP/1.1" 200 13855
+INFO 2024-12-12 22:48:52,579 basehttp 12888 18572 "GET /search_suggestions/?q=ac HTTP/1.1" 200 87
+INFO 2024-12-12 22:48:52,825 basehttp 12888 18572 "GET /__debug__/history_sidebar/?store_id=2df71e515e4c425dba8066f5f06f43cc HTTP/1.1" 200 13855
+INFO 2024-12-12 22:48:53,602 basehttp 12888 18572 "GET /search_suggestions/?q=a HTTP/1.1" 200 87
+INFO 2024-12-12 22:48:53,956 basehttp 12888 18572 "GET /__debug__/history_sidebar/?store_id=f241f0054a5b4fe2be0baad4d21b1c18 HTTP/1.1" 200 13855
+INFO 2024-12-12 22:50:30,254 basehttp 12888 12964 "GET /search/ HTTP/1.1" 200 35695
+INFO 2024-12-12 22:50:33,624 basehttp 12888 18572 "GET /search/?q=&sort=name&category=&price_min=0&price_max=10000 HTTP/1.1" 200 35515
+INFO 2024-12-12 22:51:33,427 basehttp 12888 12964 "GET /search/ HTTP/1.1" 200 35693
+INFO 2024-12-12 22:51:36,568 basehttp 12888 18572 "GET /search/?q=&sort=name&category=&price_min=0&price_max=10000 HTTP/1.1" 200 35617
+INFO 2024-12-12 22:51:41,600 basehttp 12888 18572 "GET /search/?q=&sort=name&category=&price_min=0&price_max=10000 HTTP/1.1" 200 35615
+INFO 2024-12-12 22:51:44,233 basehttp 12888 18572 "GET /search_suggestions/?q=%D1%8B HTTP/1.1" 200 172
+INFO 2024-12-12 22:51:44,504 basehttp 12888 18572 "GET /__debug__/history_sidebar/?store_id=4a6e33aa7c4c4bb18dc340c0d0414983 HTTP/1.1" 200 13861
+INFO 2024-12-12 22:51:45,970 basehttp 12888 18572 "GET /category/stiralnye-mashiny/ HTTP/1.1" 200 26782
+INFO 2024-12-12 22:51:48,376 basehttp 12888 18572 "GET /search/?q= HTTP/1.1" 200 36369
+INFO 2024-12-12 22:51:52,803 basehttp 12888 18572 "GET /search_suggestions/?q=a HTTP/1.1" 200 87
+INFO 2024-12-12 22:51:53,093 basehttp 12888 18572 "GET /search_suggestions/?q=ac HTTP/1.1" 200 87
+INFO 2024-12-12 22:51:53,146 basehttp 12888 18572 "GET /__debug__/history_sidebar/?store_id=7572ca1922fd4bdf984a25e3ac4d31ce HTTP/1.1" 200 13855
+INFO 2024-12-12 22:51:53,347 basehttp 12888 18572 "GET /__debug__/history_sidebar/?store_id=5146014a39ad40688b493b54fe22654d HTTP/1.1" 200 13857
+INFO 2024-12-12 22:51:53,930 basehttp 12888 18572 "GET /product/1/ HTTP/1.1" 200 35701
+INFO 2024-12-12 22:51:54,078 basehttp 12888 18572 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-12 22:52:06,655 basehttp 12888 18572 "GET /search/?q= HTTP/1.1" 200 36369
+INFO 2024-12-13 12:07:28,824 autoreload 15660 14648 Watching for file changes with StatReloader
+INFO 2024-12-13 12:07:33,410 basehttp 15660 19840 "GET /search/ HTTP/1.1" 200 35800
+INFO 2024-12-13 12:07:33,788 basehttp 15660 19840 "GET /media/products/sample_eyP2G3l.jpg HTTP/1.1" 304 0
+INFO 2024-12-13 12:08:01,453 basehttp 15660 13976 "GET / HTTP/1.1" 200 33972
+INFO 2024-12-13 12:08:01,690 basehttp 15660 13976 "GET /static/css/styles.css HTTP/1.1" 200 553
+INFO 2024-12-13 12:08:01,725 basehttp 15660 7772 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 14601
+INFO 2024-12-13 12:08:01,874 basehttp 15660 7772 "GET /static/images/logo.png HTTP/1.1" 200 27077
+INFO 2024-12-13 12:08:01,969 basehttp 15660 7772 "GET /static/images/banner1.jpg HTTP/1.1" 200 138568
+INFO 2024-12-13 12:08:01,972 basehttp 15660 13976 "GET /static/images/banner2.jpg HTTP/1.1" 200 138568
+INFO 2024-12-13 12:08:01,974 basehttp 15660 12800 "GET /static/images/banner3.jpg HTTP/1.1" 200 138568
+INFO 2024-12-13 12:08:02,015 basehttp 15660 13976 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 16675
+INFO 2024-12-13 12:08:02,061 basehttp 15660 12800 "GET /media/products/logo_lROYikF.png HTTP/1.1" 200 27077
+INFO 2024-12-13 12:08:02,108 basehttp 15660 13976 "GET /media/products/sample.jpg HTTP/1.1" 200 60860
+INFO 2024-12-13 12:08:02,142 basehttp 15660 7772 "GET /media/products/logo_PERlXjP.png HTTP/1.1" 200 27077
+INFO 2024-12-13 12:08:02,222 basehttp 15660 12800 "GET /media/products/sample_eyP2G3l.jpg HTTP/1.1" 200 60860
+INFO 2024-12-13 12:08:02,371 basehttp 15660 12800 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2024-12-13 12:08:02,459 basehttp 15660 7772 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4742
+WARNING 2024-12-13 12:08:03,554 basehttp 15660 7772 "GET /favicon.ico HTTP/1.1" 404 23753
+INFO 2024-12-13 12:10:54,284 basehttp 15660 7772 "GET / HTTP/1.1" 200 34328
+INFO 2024-12-13 12:13:29,847 autoreload 15660 14648 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\context_processors.py changed, reloading.
+INFO 2024-12-13 12:13:36,241 autoreload 14340 15212 Watching for file changes with StatReloader
+INFO 2024-12-13 12:14:27,990 basehttp 14340 19916 "GET / HTTP/1.1" 200 34362
+INFO 2024-12-13 12:15:37,480 basehttp 14340 19916 "GET / HTTP/1.1" 200 34315
+INFO 2024-12-13 12:16:40,478 basehttp 14340 19916 "GET /about/ HTTP/1.1" 200 27275
+INFO 2024-12-13 12:16:41,963 basehttp 14340 19916 "GET / HTTP/1.1" 200 34315
+INFO 2024-12-13 12:16:45,985 basehttp 14340 19916 "GET /about/ HTTP/1.1" 200 27276
+INFO 2024-12-13 12:16:47,991 basehttp 14340 19916 "GET / HTTP/1.1" 200 34314
+INFO 2024-12-13 12:17:33,300 basehttp 14340 13856 "GET / HTTP/1.1" 200 34335
+INFO 2024-12-13 12:17:33,466 basehttp 14340 13856 "GET /static/images/banner1.jpg HTTP/1.1" 304 0
+INFO 2024-12-13 12:17:33,468 basehttp 14340 7836 "GET /static/images/banner2.jpg HTTP/1.1" 304 0
+INFO 2024-12-13 12:17:33,482 basehttp 14340 13856 "GET /static/images/banner3.jpg HTTP/1.1" 304 0
+INFO 2024-12-13 12:17:39,074 basehttp 14340 13856 "GET / HTTP/1.1" 200 34334
+INFO 2024-12-13 12:17:44,861 basehttp 14340 19916 "GET / HTTP/1.1" 200 34339
+INFO 2024-12-13 12:18:28,685 basehttp 14340 19916 "GET / HTTP/1.1" 200 34339
+INFO 2024-12-13 12:18:42,100 basehttp 14340 19916 "GET /search/?q= HTTP/1.1" 200 36145
+INFO 2024-12-13 12:22:11,468 basehttp 14340 13856 "GET /search/ HTTP/1.1" 200 36138
+INFO 2024-12-13 12:22:22,057 basehttp 14340 19916 "GET /search/?q= HTTP/1.1" 200 36920
+INFO 2024-12-13 12:22:31,526 basehttp 14340 19916 "GET /search/?q=&sort=name&category=&price_min=0&price_max=10000 HTTP/1.1" 200 36171
+INFO 2024-12-13 12:22:36,293 basehttp 14340 19916 "GET / HTTP/1.1" 200 34340
+INFO 2024-12-13 12:24:43,118 basehttp 14340 19916 "GET / HTTP/1.1" 200 34361
+INFO 2024-12-13 12:24:51,072 basehttp 14340 19916 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2024-12-13 12:24:51,448 basehttp 14340 19916 "GET / HTTP/1.1" 200 35372
+INFO 2024-12-13 12:24:51,863 basehttp 14340 11736 "GET /media/products/logo_PERlXjP.png HTTP/1.1" 200 27077
+INFO 2024-12-13 12:24:52,285 basehttp 14340 11736 "GET /media/products/sample.jpg HTTP/1.1" 200 60860
+INFO 2024-12-13 12:24:52,328 basehttp 14340 19468 "GET /media/products/sample_eyP2G3l.jpg HTTP/1.1" 200 60860
+INFO 2024-12-13 12:24:52,548 basehttp 14340 19916 "GET /media/products/logo_lROYikF.png HTTP/1.1" 200 27077
+INFO 2024-12-13 12:25:02,748 basehttp 14340 19916 "GET /admin/ HTTP/1.1" 200 44921
+INFO 2024-12-13 12:25:02,828 basehttp 14340 11736 "GET /static/jazzmin/css/main.css HTTP/1.1" 200 16969
+INFO 2024-12-13 12:25:02,830 basehttp 14340 12012 "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 200 2637
+INFO 2024-12-13 12:25:02,845 basehttp 14340 19916 "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 200 103009
+INFO 2024-12-13 12:25:03,002 basehttp 14340 19916 "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 200 44244
+INFO 2024-12-13 12:25:03,013 basehttp 14340 12012 "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 62440
+INFO 2024-12-13 12:25:03,020 basehttp 14340 11736 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2024-12-13 12:25:03,083 basehttp 14340 19916 "GET /static/jazzmin/js/main.js HTTP/1.1" 200 2391
+INFO 2024-12-13 12:25:03,100 basehttp 14340 19468 "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 200 1382975
+INFO 2024-12-13 12:25:03,418 basehttp 14340 19468 "GET /static/vendor/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 156400
+INFO 2024-12-13 12:25:03,421 basehttp 14340 19916 "GET /static/vendor/fontawesome-free/webfonts/fa-regular-400.woff2 HTTP/1.1" 200 25392
+INFO 2024-12-13 12:26:17,537 basehttp 14340 19468 "GET /category/noutbuki/ HTTP/1.1" 200 31592
+INFO 2024-12-13 12:26:22,037 basehttp 14340 19468 "GET /about/ HTTP/1.1" 200 28309
+INFO 2024-12-13 12:26:24,013 basehttp 14340 19468 "GET / HTTP/1.1" 200 35372
+INFO 2024-12-13 12:26:28,879 basehttp 14340 19468 "GET /category/gejming-pk-i-periferiya/ HTTP/1.1" 200 27611
+INFO 2024-12-13 12:26:31,340 basehttp 14340 19468 "GET /category/noutbuki/ HTTP/1.1" 200 31592
+INFO 2024-12-13 12:28:01,970 basehttp 14340 19468 "GET /about/ HTTP/1.1" 200 28307
+INFO 2024-12-13 12:28:03,237 basehttp 14340 19468 "GET / HTTP/1.1" 200 35371
+INFO 2024-12-13 12:28:04,971 basehttp 14340 19468 "GET /search/?q= HTTP/1.1" 200 37954
+ERROR 2024-12-13 12:28:48,079 basehttp 14340 19468 "GET /accounts/profile/ HTTP/1.1" 500 258296
+ERROR 2024-12-13 12:28:56,880 basehttp 14340 19468 "GET /accounts/profile/ HTTP/1.1" 500 258297
+INFO 2024-12-13 12:30:49,201 autoreload 14340 15212 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\views.py changed, reloading.
+INFO 2024-12-13 12:31:09,177 autoreload 13548 15296 Watching for file changes with StatReloader
+ERROR 2024-12-13 12:31:20,321 basehttp 13548 19300 "GET /accounts/profile/ HTTP/1.1" 500 258132
+INFO 2024-12-13 12:31:34,218 autoreload 13548 15296 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\views.py changed, reloading.
+INFO 2024-12-13 12:31:41,972 autoreload 15480 10900 Watching for file changes with StatReloader
+INFO 2024-12-13 12:31:56,041 autoreload 19212 15556 Watching for file changes with StatReloader
+INFO 2024-12-13 12:31:59,784 basehttp 19212 8444 "GET / HTTP/1.1" 200 35373
+INFO 2024-12-13 12:32:00,233 basehttp 19212 8444 "GET /media/products/sample_eyP2G3l.jpg HTTP/1.1" 304 0
+WARNING 2024-12-13 12:32:00,786 basehttp 19212 8444 "GET /favicon.ico HTTP/1.1" 404 23754
+ERROR 2024-12-13 12:32:02,055 basehttp 19212 8444 "GET /accounts/profile/ HTTP/1.1" 500 258041
+ERROR 2024-12-13 12:32:23,851 basehttp 19212 6612 "GET /accounts/profile/ HTTP/1.1" 500 258174
+ERROR 2024-12-13 12:32:39,982 basehttp 19212 8444 "GET /accounts/profile/ HTTP/1.1" 500 258181
+INFO 2024-12-13 12:32:54,387 basehttp 19212 8444 "GET / HTTP/1.1" 200 35372
+ERROR 2024-12-13 12:32:56,964 basehttp 19212 8444 "GET /accounts/profile/ HTTP/1.1" 500 258041
+INFO 2024-12-13 12:33:14,701 basehttp 19212 8444 "GET /accounts/profile/ HTTP/1.1" 200 34500
+ERROR 2024-12-13 12:33:15,381 basehttp 19212 12852 "GET /accounts/profile/ HTTP/1.1" 500 117196
+INFO 2024-12-13 12:33:15,562 basehttp 19212 8444 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-13 12:36:24,467 basehttp 19212 6612 "GET /accounts/profile/ HTTP/1.1" 200 34500
+INFO 2024-12-13 12:36:24,868 basehttp 19212 6612 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-13 12:36:26,595 basehttp 19212 6612 "GET / HTTP/1.1" 200 35372
+INFO 2024-12-13 12:36:28,835 basehttp 19212 6612 "POST /cart/add/3/ HTTP/1.1" 302 0
+INFO 2024-12-13 12:36:29,060 basehttp 19212 6612 "GET /cart/ HTTP/1.1" 200 37250
+INFO 2024-12-13 12:37:00,608 basehttp 19212 6612 "GET /cart/ HTTP/1.1" 200 37251
+INFO 2024-12-13 12:37:04,052 basehttp 19212 6612 "GET /order/create/ HTTP/1.1" 200 46926
+INFO 2024-12-13 12:39:02,927 basehttp 19212 6612 "GET /accounts/profile/ HTTP/1.1" 200 34672
+INFO 2024-12-13 12:39:03,282 basehttp 19212 6612 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-13 12:40:24,143 basehttp 19212 6612 "GET / HTTP/1.1" 200 35546
+INFO 2024-12-13 12:40:26,141 basehttp 19212 6612 "GET /product/2/ HTTP/1.1" 200 36694
+INFO 2024-12-13 12:40:26,324 basehttp 19212 6612 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-13 12:40:27,660 basehttp 19212 6612 "GET /wishlist/add/2/ HTTP/1.1" 302 0
+INFO 2024-12-13 12:40:27,841 basehttp 19212 6612 "GET /product/2/ HTTP/1.1" 200 36694
+INFO 2024-12-13 12:40:28,041 basehttp 19212 6612 "GET /media/products/logo_PERlXjP.png HTTP/1.1" 200 27077
+INFO 2024-12-13 12:40:28,103 basehttp 19212 16896 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-13 12:40:39,288 basehttp 19212 16896 "GET /wishlist/ HTTP/1.1" 200 27732
+INFO 2024-12-13 12:40:41,459 basehttp 19212 16896 "GET /products/ HTTP/1.1" 200 46477
+INFO 2024-12-13 12:40:41,701 basehttp 19212 6612 "GET /media/products/sample.jpg HTTP/1.1" 200 60860
+INFO 2024-12-13 12:40:41,736 basehttp 19212 16896 "GET /media/products/logo_lROYikF.png HTTP/1.1" 200 27077
+INFO 2024-12-13 12:40:41,818 basehttp 19212 6612 "GET /media/products/sample_eyP2G3l.jpg HTTP/1.1" 200 60860
+ERROR 2024-12-13 12:40:45,462 basehttp 19212 6612 "GET /wishlist/remove/2/ HTTP/1.1" 500 122491
+INFO 2024-12-13 12:40:47,779 basehttp 19212 6612 "GET /products/ HTTP/1.1" 200 46458
+INFO 2024-12-13 12:41:26,889 basehttp 19212 6612 "GET /product/2/ HTTP/1.1" 200 36694
+INFO 2024-12-13 12:41:27,027 basehttp 19212 6612 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-13 12:41:27,138 basehttp 19212 6612 "GET /media/products/logo_PERlXjP.png HTTP/1.1" 200 27077
+INFO 2024-12-13 12:42:37,775 basehttp 19212 6612 "GET / HTTP/1.1" 200 35546
+INFO 2024-12-13 12:42:37,989 basehttp 19212 6612 "GET /media/products/logo_lROYikF.png HTTP/1.1" 200 27077
+INFO 2024-12-13 12:42:38,136 basehttp 19212 16896 "GET /media/products/sample.jpg HTTP/1.1" 200 60860
+INFO 2024-12-13 12:42:38,352 basehttp 19212 6612 "GET /media/products/sample_eyP2G3l.jpg HTTP/1.1" 200 60860
+INFO 2024-12-13 12:42:38,843 basehttp 19212 6612 "GET /admin/ HTTP/1.1" 200 45969
+INFO 2024-12-13 12:43:54,525 basehttp 19212 6612 "GET /admin/products/category/ HTTP/1.1" 200 33930
+INFO 2024-12-13 12:43:54,584 basehttp 19212 6612 "GET /static/vendor/select2/css/select2.min.css HTTP/1.1" 200 16264
+INFO 2024-12-13 12:43:54,626 basehttp 19212 6612 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2024-12-13 12:43:54,674 basehttp 19212 6612 "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2024-12-13 12:43:54,722 basehttp 19212 6612 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9097
+INFO 2024-12-13 12:43:54,777 basehttp 19212 16896 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2024-12-13 12:43:54,777 basehttp 19212 6612 "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2024-12-13 12:43:54,808 basehttp 19212 16896 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2024-12-13 12:43:54,820 basehttp 19212 6612 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2024-12-13 12:43:54,938 basehttp 19212 7132 "GET /static/jazzmin/js/change_list.js HTTP/1.1" 200 2252
+INFO 2024-12-13 12:43:54,960 basehttp 19212 6612 "GET /static/vendor/select2/js/select2.min.js HTTP/1.1" 200 73170
+INFO 2024-12-13 12:43:55,007 basehttp 19212 16896 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2024-12-13 12:43:59,053 basehttp 19212 16896 "GET /admin/accounts/adminsettings/ HTTP/1.1" 200 67871
+INFO 2024-12-13 12:43:59,151 basehttp 19212 6612 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2024-12-13 12:43:59,191 basehttp 19212 16896 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2024-12-13 12:43:59,214 basehttp 19212 7132 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2024-12-13 12:43:59,289 basehttp 19212 7132 "GET /static/jazzmin/js/change_form.js HTTP/1.1" 200 6052
+INFO 2024-12-13 12:44:10,224 basehttp 19212 7132 "POST /admin/accounts/adminsettings/ HTTP/1.1" 302 0
+INFO 2024-12-13 12:44:10,410 basehttp 19212 7132 "GET /admin/ HTTP/1.1" 200 45885
+INFO 2024-12-13 12:44:11,984 basehttp 19212 7132 "GET /admin/accounts/adminsettings/ HTTP/1.1" 200 67871
+INFO 2024-12-13 12:44:12,108 basehttp 19212 7132 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2024-12-13 12:44:41,744 basehttp 19212 7132 "GET /admin/products/category/ HTTP/1.1" 200 33929
+INFO 2024-12-13 12:44:41,884 basehttp 19212 7132 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2024-12-13 12:44:50,459 basehttp 19212 7132 "GET /admin/products/category/add/ HTTP/1.1" 200 50573
+INFO 2024-12-13 12:44:50,555 basehttp 19212 16896 "GET /static/admin/js/inlines.js HTTP/1.1" 200 15526
+INFO 2024-12-13 12:44:50,598 basehttp 19212 7132 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2024-12-13 12:44:50,610 basehttp 19212 16896 "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 200 655
+INFO 2024-12-13 12:45:13,025 basehttp 19212 16896 "GET /admin/products/product/ HTTP/1.1" 200 44660
+INFO 2024-12-13 12:45:13,160 basehttp 19212 16896 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2024-12-13 12:45:13,206 basehttp 19212 7132 "GET /media/CACHE/images/products/sample_eyP2G3l/b48b512de49f74f6afe3027bc3462256.jpg HTTP/1.1" 200 904
+INFO 2024-12-13 12:45:13,287 basehttp 19212 6612 "GET /media/products/sample_eyP2G3l.jpg HTTP/1.1" 200 60860
+INFO 2024-12-13 12:45:13,371 basehttp 19212 7132 "GET /media/CACHE/images/products/sample/148e347d3656a69950393be17fc7305a.jpg HTTP/1.1" 200 904
+INFO 2024-12-13 12:45:13,431 basehttp 19212 16896 "GET /media/products/sample.jpg HTTP/1.1" 200 60860
+INFO 2024-12-13 12:45:13,541 basehttp 19212 6612 "GET /media/CACHE/images/products/logo_PERlXjP/d0fb4d211d857c6cc0260af147092965.jpg HTTP/1.1" 200 1075
+INFO 2024-12-13 12:45:13,651 basehttp 19212 7132 "GET /media/CACHE/images/products/logo_lROYikF/3ed59c9c7db42625d9dfb3972a60bd0a.jpg HTTP/1.1" 200 1075
+INFO 2024-12-13 12:45:13,651 basehttp 19212 6612 "GET /media/products/logo_lROYikF.png HTTP/1.1" 200 27077
+INFO 2024-12-13 12:45:13,704 basehttp 19212 16896 "GET /media/products/logo_PERlXjP.png HTTP/1.1" 200 27077
+INFO 2024-12-13 12:45:16,533 basehttp 19212 16896 "GET /admin/auth/user/ HTTP/1.1" 200 40719
+INFO 2024-12-13 12:45:16,652 basehttp 19212 16896 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2024-12-13 12:46:15,140 basehttp 19212 16896 "GET /admin/products/staticpage/ HTTP/1.1" 200 35169
+INFO 2024-12-13 12:46:15,288 basehttp 19212 16896 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2024-12-13 12:46:21,837 basehttp 19212 16896 "GET /admin/products/order/ HTTP/1.1" 200 38303
+INFO 2024-12-13 12:46:21,919 basehttp 19212 6612 "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+INFO 2024-12-13 12:46:22,034 basehttp 19212 16896 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2024-12-13 12:46:48,751 basehttp 19212 16896 "GET /admin/products/product/ HTTP/1.1" 200 44660
+INFO 2024-12-13 12:46:48,874 basehttp 19212 16896 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2024-12-13 12:54:32,810 basehttp 19212 10900 "GET /admin/ HTTP/1.1" 200 45332
+INFO 2024-12-13 12:54:34,682 basehttp 19212 10900 "GET /admin/auth/user/preview-homepage/ HTTP/1.1" 302 0
+INFO 2024-12-13 12:54:34,845 basehttp 19212 10900 "GET / HTTP/1.1" 200 35545
+INFO 2024-12-13 12:54:45,716 basehttp 19212 10900 "POST /accounts/logout/ HTTP/1.1" 302 0
+INFO 2024-12-13 12:54:45,831 basehttp 19212 10900 "GET / HTTP/1.1" 200 34360
+INFO 2024-12-13 12:57:10,025 basehttp 19212 10900 "GET /search_suggestions/?q=a HTTP/1.1" 200 87
+INFO 2024-12-13 12:57:10,182 basehttp 19212 10900 "GET /search_suggestions/?q=ac HTTP/1.1" 200 87
+INFO 2024-12-13 12:57:10,375 basehttp 19212 10900 "GET /search_suggestions/?q=ace HTTP/1.1" 200 87
+INFO 2024-12-13 12:57:10,591 basehttp 19212 10900 "GET /__debug__/history_sidebar/?store_id=7cf697ec755746a9b360c3a8357b88b3 HTTP/1.1" 200 13856
+INFO 2024-12-13 12:57:12,032 basehttp 19212 10900 "GET /product/1/ HTTP/1.1" 200 34084
+INFO 2024-12-13 12:57:12,212 basehttp 19212 10900 "GET /media/products/logo_lROYikF.png HTTP/1.1" 200 27077
+INFO 2024-12-13 12:57:12,262 basehttp 19212 9972 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2024-12-13 12:57:13,311 basehttp 19212 9972 "GET / HTTP/1.1" 200 34360
+INFO 2024-12-13 12:57:13,583 basehttp 19212 9972 "GET /media/products/logo_PERlXjP.png HTTP/1.1" 200 27077
+INFO 2024-12-13 12:57:13,662 basehttp 19212 10900 "GET /media/products/sample.jpg HTTP/1.1" 200 60860
+INFO 2024-12-13 12:57:13,823 basehttp 19212 9972 "GET /media/products/sample_eyP2G3l.jpg HTTP/1.1" 200 60860
+INFO 2025-02-10 17:48:31,585 autoreload 21364 18752 Watching for file changes with StatReloader
+INFO 2025-02-10 17:48:56,356 basehttp 21364 22168 "GET / HTTP/1.1" 200 34361
+INFO 2025-02-10 17:48:56,495 basehttp 21364 22168 "GET /static/css/styles.css HTTP/1.1" 200 553
+INFO 2025-02-10 17:48:56,577 basehttp 21364 21004 "GET /static/images/logo.png HTTP/1.1" 200 27077
+INFO 2025-02-10 17:48:56,615 basehttp 21364 17972 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 14601
+INFO 2025-02-10 17:48:56,730 basehttp 21364 22168 "GET /static/images/banner1.jpg HTTP/1.1" 200 138568
+INFO 2025-02-10 17:48:56,763 basehttp 21364 21004 "GET /static/images/banner2.jpg HTTP/1.1" 200 138568
+INFO 2025-02-10 17:48:56,770 basehttp 21364 17972 "GET /static/images/banner3.jpg HTTP/1.1" 200 138568
+INFO 2025-02-10 17:48:56,817 basehttp 21364 17972 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 16675
+INFO 2025-02-10 17:48:56,891 basehttp 21364 22168 "GET /media/products/logo_lROYikF.png HTTP/1.1" 200 27077
+INFO 2025-02-10 17:48:56,932 basehttp 21364 21004 "GET /media/products/logo_PERlXjP.png HTTP/1.1" 200 27077
+INFO 2025-02-10 17:48:56,973 basehttp 21364 17972 "GET /media/products/sample.jpg HTTP/1.1" 200 60860
+INFO 2025-02-10 17:48:57,044 basehttp 21364 22168 "GET /media/products/sample_eyP2G3l.jpg HTTP/1.1" 200 60860
+INFO 2025-02-10 17:48:57,317 basehttp 21364 22168 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2025-02-10 17:48:57,356 basehttp 21364 17972 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4742
+WARNING 2025-02-10 17:48:58,202 basehttp 21364 17972 "GET /favicon.ico HTTP/1.1" 404 23752
+ERROR 2025-02-10 17:52:07,717 basehttp 21364 1460 "GET /accounts/profile/ HTTP/1.1" 500 117515
+INFO 2025-02-10 17:52:07,842 basehttp 21364 19420 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 14601
+INFO 2025-02-10 17:52:07,843 basehttp 21364 1460 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 16675
+INFO 2025-02-10 17:52:08,035 basehttp 21364 1460 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2025-02-10 17:52:08,187 basehttp 21364 1460 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4742
+INFO 2025-02-10 17:58:43,595 autoreload 21364 18752 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\admin.py changed, reloading.
+INFO 2025-02-10 17:58:47,370 autoreload 14880 20444 Watching for file changes with StatReloader
+INFO 2025-02-10 17:58:49,104 autoreload 14880 20444 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\admin.py changed, reloading.
+INFO 2025-02-10 17:58:55,077 autoreload 21184 22972 Watching for file changes with StatReloader
+INFO 2025-02-10 17:59:52,093 autoreload 21184 22972 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\admin.py changed, reloading.
+INFO 2025-02-10 17:59:58,902 autoreload 13260 16516 Watching for file changes with StatReloader
+INFO 2025-02-10 18:00:04,486 autoreload 13260 16516 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\admin.py changed, reloading.
+INFO 2025-02-10 18:00:07,260 autoreload 3692 22956 Watching for file changes with StatReloader
+INFO 2025-02-10 18:00:15,285 autoreload 3692 22956 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\admin.py changed, reloading.
+INFO 2025-02-10 18:00:24,688 autoreload 23172 8124 Watching for file changes with StatReloader
+INFO 2025-02-10 18:00:27,283 autoreload 23172 8124 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\admin.py changed, reloading.
+INFO 2025-02-10 18:00:31,251 autoreload 8628 4368 Watching for file changes with StatReloader
+INFO 2025-02-10 18:02:01,650 autoreload 8628 4368 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\models.py changed, reloading.
+INFO 2025-02-10 18:02:04,964 autoreload 3544 20124 Watching for file changes with StatReloader
+INFO 2025-02-10 18:02:14,253 autoreload 3544 20124 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\models.py changed, reloading.
+INFO 2025-02-10 18:02:18,653 autoreload 7612 1912 Watching for file changes with StatReloader
+INFO 2025-02-10 18:04:14,083 autoreload 7612 1912 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\forms.py changed, reloading.
+INFO 2025-02-10 18:04:22,472 autoreload 19368 22932 Watching for file changes with StatReloader
+INFO 2025-02-10 18:06:35,212 autoreload 19368 22932 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\forms.py changed, reloading.
+INFO 2025-02-10 18:06:37,358 autoreload 11728 14508 Watching for file changes with StatReloader
+INFO 2025-02-10 18:07:55,731 autoreload 11728 14508 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\forms.py changed, reloading.
+INFO 2025-02-10 18:07:57,419 autoreload 21160 9816 Watching for file changes with StatReloader
+INFO 2025-02-10 18:09:12,881 autoreload 21160 9816 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\forms.py changed, reloading.
+INFO 2025-02-10 18:09:15,088 autoreload 23004 7956 Watching for file changes with StatReloader
+INFO 2025-02-11 13:31:10,424 autoreload 8608 17076 Watching for file changes with StatReloader
+INFO 2025-02-11 13:32:34,959 autoreload 16328 5092 Watching for file changes with StatReloader
+INFO 2025-02-11 13:32:37,611 basehttp 16328 11332 "GET / HTTP/1.1" 200 33272
+INFO 2025-02-11 13:32:37,754 basehttp 16328 11332 "GET /static/css/styles.css HTTP/1.1" 200 553
+INFO 2025-02-11 13:32:37,809 basehttp 16328 9208 "GET /static/images/logo.png HTTP/1.1" 200 27077
+INFO 2025-02-11 13:32:37,841 basehttp 16328 4972 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 14601
+INFO 2025-02-11 13:32:38,016 basehttp 16328 11332 "GET /static/images/banner1.jpg HTTP/1.1" 200 138568
+INFO 2025-02-11 13:32:38,037 basehttp 16328 9208 "GET /static/images/banner2.jpg HTTP/1.1" 200 138568
+INFO 2025-02-11 13:32:38,037 basehttp 16328 4972 "GET /static/images/banner3.jpg HTTP/1.1" 200 138568
+INFO 2025-02-11 13:32:38,057 basehttp 16328 4972 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 16675
+INFO 2025-02-11 13:32:38,141 basehttp 16328 11332 "GET /media/products/logo_lROYikF.png HTTP/1.1" 200 27077
+INFO 2025-02-11 13:32:38,171 basehttp 16328 9208 "GET /media/products/logo_PERlXjP.png HTTP/1.1" 200 27077
+INFO 2025-02-11 13:32:38,272 basehttp 16328 4972 "GET /media/products/sample.jpg HTTP/1.1" 200 60860
+INFO 2025-02-11 13:32:38,273 basehttp 16328 11332 "GET /media/products/sample_eyP2G3l.jpg HTTP/1.1" 200 60860
+INFO 2025-02-11 13:32:38,312 basehttp 16328 17008 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2025-02-11 13:32:38,348 basehttp 16328 752 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4742
+WARNING 2025-02-11 13:32:39,145 basehttp 16328 752 "GET /favicon.ico HTTP/1.1" 404 23752
+INFO 2025-02-11 13:32:46,189 basehttp 16328 752 "GET / HTTP/1.1" 200 33271
+INFO 2025-02-11 13:32:47,803 basehttp 16328 752 "GET /about/ HTTP/1.1" 200 26207
+INFO 2025-02-11 13:32:48,386 basehttp 16328 752 "GET /contact/ HTTP/1.1" 200 25733
+INFO 2025-02-11 13:32:49,415 basehttp 16328 752 "GET / HTTP/1.1" 200 33271
+INFO 2025-02-11 13:32:54,060 basehttp 16328 752 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-02-11 13:32:54,128 basehttp 16328 752 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 17172
+INFO 2025-02-11 13:32:54,183 basehttp 16328 752 "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 200 103009
+INFO 2025-02-11 13:32:54,189 basehttp 16328 4972 "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 200 2637
+INFO 2025-02-11 13:32:54,190 basehttp 16328 11332 "GET /static/jazzmin/css/main.css HTTP/1.1" 200 16969
+INFO 2025-02-11 13:32:54,212 basehttp 16328 752 "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 200 44244
+INFO 2025-02-11 13:32:54,216 basehttp 16328 4972 "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 62440
+INFO 2025-02-11 13:32:54,260 basehttp 16328 17008 "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 200 1382975
+INFO 2025-02-11 13:32:54,328 basehttp 16328 9208 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-02-11 13:32:54,389 basehttp 16328 9208 "GET /static/vendor/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 156400
+INFO 2025-02-11 13:32:56,619 basehttp 16328 9208 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 17605
+INFO 2025-02-11 13:33:00,291 basehttp 16328 9208 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 17604
+ERROR 2025-02-11 13:33:04,089 signals 16328 9208 Ошибка логирования входа: maximum recursion depth exceeded
+Traceback (most recent call last):
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\accounts\signals.py", line 40, in log_user_login
+    ip_address=get_client_ip(request),
+               ~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\accounts\utils.py", line 5, in get_client_ip
+    ip, _ = get_client_ip(request)
+            ~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\accounts\utils.py", line 5, in get_client_ip
+    ip, _ = get_client_ip(request)
+            ~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\accounts\utils.py", line 5, in get_client_ip
+    ip, _ = get_client_ip(request)
+            ~~~~~~~~~~~~~^^^^^^^^^
+  [Previous line repeated 929 more times]
+RecursionError: maximum recursion depth exceeded
+INFO 2025-02-11 13:33:04,270 basehttp 16328 9208 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-02-11 13:33:04,560 basehttp 16328 9208 "GET /admin/ HTTP/1.1" 200 45370
+INFO 2025-02-11 13:33:04,636 basehttp 16328 9208 "GET /static/jazzmin/js/main.js HTTP/1.1" 200 2391
+INFO 2025-02-11 13:33:04,706 basehttp 16328 9208 "GET /static/vendor/fontawesome-free/webfonts/fa-regular-400.woff2 HTTP/1.1" 200 25392
+INFO 2025-02-11 13:33:09,245 basehttp 16328 9208 "GET /admin/accounts/adminsettings/ HTTP/1.1" 200 67915
+INFO 2025-02-11 13:33:09,322 basehttp 16328 4972 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-02-11 13:33:09,334 basehttp 16328 17920 "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-02-11 13:33:09,336 basehttp 16328 9208 "GET /static/vendor/select2/css/select2.min.css HTTP/1.1" 200 16264
+INFO 2025-02-11 13:33:09,343 basehttp 16328 752 "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-02-11 13:33:09,357 basehttp 16328 11332 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9097
+INFO 2025-02-11 13:33:09,379 basehttp 16328 4972 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-02-11 13:33:09,385 basehttp 16328 752 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-02-11 13:33:09,390 basehttp 16328 17920 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-02-11 13:33:09,394 basehttp 16328 752 "GET /static/vendor/select2/js/select2.min.js HTTP/1.1" 200 73170
+INFO 2025-02-11 13:33:09,416 basehttp 16328 11332 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-02-11 13:33:09,439 basehttp 16328 752 "GET /static/jazzmin/js/change_form.js HTTP/1.1" 200 6052
+INFO 2025-02-11 13:33:09,558 basehttp 16328 17008 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 13:33:09,569 basehttp 16328 9208 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-02-11 13:33:26,449 basehttp 16328 9208 "GET /admin/products/category/ HTTP/1.1" 200 33930
+INFO 2025-02-11 13:33:26,527 basehttp 16328 9208 "GET /static/jazzmin/js/change_list.js HTTP/1.1" 200 2252
+INFO 2025-02-11 13:33:26,593 basehttp 16328 17008 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 13:33:27,601 basehttp 16328 17008 "GET /admin/products/category/ HTTP/1.1" 200 33930
+INFO 2025-02-11 13:33:27,698 basehttp 16328 17008 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 13:33:28,606 basehttp 16328 17008 "GET /admin/accounts/adminsettings/ HTTP/1.1" 200 67915
+INFO 2025-02-11 13:33:28,695 basehttp 16328 17008 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 13:33:29,795 basehttp 16328 17008 "GET /admin/products/product/ HTTP/1.1" 200 44660
+INFO 2025-02-11 13:33:29,964 basehttp 16328 752 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 13:33:29,965 basehttp 16328 17008 "GET /media/CACHE/images/products/sample_eyP2G3l/b48b512de49f74f6afe3027bc3462256.jpg HTTP/1.1" 200 904
+INFO 2025-02-11 13:33:30,024 basehttp 16328 9208 "GET /media/CACHE/images/products/sample/148e347d3656a69950393be17fc7305a.jpg HTTP/1.1" 200 904
+INFO 2025-02-11 13:33:30,218 basehttp 16328 752 "GET /media/CACHE/images/products/logo_lROYikF/3ed59c9c7db42625d9dfb3972a60bd0a.jpg HTTP/1.1" 200 1075
+INFO 2025-02-11 13:33:30,252 basehttp 16328 17008 "GET /media/CACHE/images/products/logo_PERlXjP/d0fb4d211d857c6cc0260af147092965.jpg HTTP/1.1" 200 1075
+INFO 2025-02-11 13:33:34,067 basehttp 16328 17008 "GET /admin/auth/user/ HTTP/1.1" 200 40719
+INFO 2025-02-11 13:33:34,186 basehttp 16328 17008 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+ERROR 2025-02-11 13:33:39,467 basehttp 16328 17008 "GET /admin/auth/user/1/change/ HTTP/1.1" 500 173689
+INFO 2025-02-11 13:33:42,312 basehttp 16328 17008 "GET /admin/auth/user/ HTTP/1.1" 200 40719
+ERROR 2025-02-11 13:33:43,785 basehttp 16328 17008 "GET /admin/auth/user/4/change/ HTTP/1.1" 500 173695
+INFO 2025-02-11 13:33:44,988 basehttp 16328 17008 "GET /admin/auth/user/ HTTP/1.1" 200 40719
+INFO 2025-02-11 13:34:08,258 basehttp 16328 17008 "GET /admin/products/staticpage/ HTTP/1.1" 200 35170
+INFO 2025-02-11 13:34:08,389 basehttp 16328 17008 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 13:34:10,966 basehttp 16328 17008 "GET /admin/products/subcategory/ HTTP/1.1" 200 33841
+INFO 2025-02-11 13:34:11,088 basehttp 16328 17008 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 13:34:11,783 basehttp 16328 17008 "GET /admin/products/order/ HTTP/1.1" 200 38303
+INFO 2025-02-11 13:34:11,819 basehttp 16328 17008 "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+INFO 2025-02-11 13:34:11,892 basehttp 16328 752 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 13:34:12,605 basehttp 16328 752 "GET /admin/products/product/ HTTP/1.1" 200 44659
+INFO 2025-02-11 13:34:12,712 basehttp 16328 752 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 13:34:13,460 basehttp 16328 752 "GET /admin/products/category/ HTTP/1.1" 200 33928
+INFO 2025-02-11 13:34:13,570 basehttp 16328 752 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 13:34:25,708 basehttp 16328 752 "GET /admin/products/category/2/change/ HTTP/1.1" 200 51589
+INFO 2025-02-11 13:34:25,822 basehttp 16328 752 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 13:34:25,823 basehttp 16328 17008 "GET /static/admin/js/inlines.js HTTP/1.1" 200 15526
+INFO 2025-02-11 13:34:25,845 basehttp 16328 17008 "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 200 655
+INFO 2025-02-11 13:34:27,274 basehttp 16328 17008 "GET /admin/products/category/ HTTP/1.1" 200 33930
+INFO 2025-02-11 13:34:28,851 basehttp 16328 17008 "GET /admin/auth/user/ HTTP/1.1" 200 40719
+INFO 2025-02-11 13:34:28,988 basehttp 16328 17008 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+ERROR 2025-02-11 13:34:31,180 basehttp 16328 17008 "GET /admin/auth/user/1/change/ HTTP/1.1" 500 173688
+INFO 2025-02-11 13:41:21,942 autoreload 16328 5092 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\admin.py changed, reloading.
+INFO 2025-02-11 13:41:27,967 autoreload 10204 3148 Watching for file changes with StatReloader
+INFO 2025-02-11 13:41:33,417 autoreload 10204 3148 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\admin.py changed, reloading.
+INFO 2025-02-11 13:41:37,145 autoreload 10108 8492 Watching for file changes with StatReloader
+ERROR 2025-02-11 13:41:39,210 basehttp 10108 1708 "GET /admin/auth/user/1/change/ HTTP/1.1" 500 173995
+ERROR 2025-02-11 13:41:41,434 basehttp 10108 1708 "GET /admin/auth/user/1/change/ HTTP/1.1" 500 173993
+ERROR 2025-02-11 13:45:19,630 basehttp 10108 1708 "GET /admin/auth/user/1/change/ HTTP/1.1" 500 173993
+INFO 2025-02-11 13:54:16,127 autoreload 10108 8492 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\admin.py changed, reloading.
+INFO 2025-02-11 13:54:18,672 autoreload 17940 10932 Watching for file changes with StatReloader
+ERROR 2025-02-11 13:54:19,488 basehttp 17940 5536 "GET /admin/auth/user/1/change/ HTTP/1.1" 500 173827
+ERROR 2025-02-11 13:54:24,716 basehttp 17940 5536 "GET /admin/auth/user/1/change/ HTTP/1.1" 500 173825
+INFO 2025-02-11 13:54:32,116 autoreload 9728 11432 Watching for file changes with StatReloader
+INFO 2025-02-11 13:54:34,427 basehttp 9728 4988 "GET / HTTP/1.1" 200 34283
+INFO 2025-02-11 13:54:34,805 basehttp 9728 4988 "GET /media/products/logo_lROYikF.png HTTP/1.1" 200 27077
+INFO 2025-02-11 13:54:34,918 basehttp 9728 11072 "GET /media/products/sample.jpg HTTP/1.1" 200 60860
+INFO 2025-02-11 13:54:34,919 basehttp 9728 11660 "GET /media/products/logo_PERlXjP.png HTTP/1.1" 200 27077
+INFO 2025-02-11 13:54:34,986 basehttp 9728 4988 "GET /media/products/sample_eyP2G3l.jpg HTTP/1.1" 200 60860
+INFO 2025-02-11 13:54:40,940 basehttp 9728 4988 "GET /admin/ HTTP/1.1" 200 45370
+INFO 2025-02-11 13:54:42,488 basehttp 9728 4988 "GET /admin/products/staticpage/ HTTP/1.1" 200 35170
+INFO 2025-02-11 13:54:42,603 basehttp 9728 4988 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 13:54:43,286 basehttp 9728 4988 "GET /admin/products/subcategory/ HTTP/1.1" 200 33841
+INFO 2025-02-11 13:54:43,384 basehttp 9728 4988 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 13:54:44,617 basehttp 9728 4988 "GET /admin/auth/user/ HTTP/1.1" 200 40764
+INFO 2025-02-11 13:54:44,749 basehttp 9728 4988 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+ERROR 2025-02-11 13:54:48,920 basehttp 9728 4988 "GET /admin/auth/user/1/change/ HTTP/1.1" 500 173688
+INFO 2025-02-11 13:57:24,939 autoreload 9728 11432 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\admin.py changed, reloading.
+INFO 2025-02-11 13:57:27,590 autoreload 11744 14468 Watching for file changes with StatReloader
+ERROR 2025-02-11 13:57:28,522 basehttp 11744 7544 "GET /admin/auth/user/1/change/ HTTP/1.1" 500 173995
+ERROR 2025-02-11 13:57:30,681 basehttp 11744 7544 "GET /admin/auth/user/1/change/ HTTP/1.1" 500 173993
+INFO 2025-02-11 13:58:17,887 autoreload 11744 14468 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\admin.py changed, reloading.
+INFO 2025-02-11 13:58:22,415 autoreload 18124 3936 Watching for file changes with StatReloader
+INFO 2025-02-11 13:58:42,837 autoreload 18124 3936 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\admin.py changed, reloading.
+INFO 2025-02-11 13:58:44,740 autoreload 10268 16828 Watching for file changes with StatReloader
+INFO 2025-02-11 13:58:45,920 basehttp 10268 17040 "GET /admin/auth/user/1/change/ HTTP/1.1" 200 228613
+INFO 2025-02-11 13:58:46,012 basehttp 10268 17040 "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4530
+INFO 2025-02-11 13:58:46,014 basehttp 10268 11580 "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 15502
+INFO 2025-02-11 13:58:46,058 basehttp 10268 7972 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 13:58:46,101 basehttp 10268 7972 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-02-11 13:58:51,107 basehttp 10268 7972 "GET /static/jazzmin/img/selector-icons.svg HTTP/1.1" 200 3291
+INFO 2025-02-11 14:04:03,038 basehttp 10268 4440 "GET /admin/auth/user/1/change/ HTTP/1.1" 200 228613
+INFO 2025-02-11 14:04:03,163 basehttp 10268 4440 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 15:48:10,529 autoreload 14552 16992 Watching for file changes with StatReloader
+INFO 2025-02-11 15:48:13,882 basehttp 14552 18008 "GET / HTTP/1.1" 200 34283
+WARNING 2025-02-11 15:48:15,049 basehttp 14552 18008 "GET /favicon.ico HTTP/1.1" 404 23754
+INFO 2025-02-11 15:48:17,370 basehttp 14552 18008 "GET /admin/ HTTP/1.1" 200 45369
+INFO 2025-02-11 15:48:24,966 basehttp 14552 18008 "GET /admin/auth/group/ HTTP/1.1" 200 31877
+INFO 2025-02-11 15:48:25,089 basehttp 14552 18008 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 15:48:28,249 basehttp 14552 18008 "GET /admin/accounts/adminsettings/ HTTP/1.1" 200 67916
+INFO 2025-02-11 15:48:28,369 basehttp 14552 18008 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 15:48:38,611 basehttp 14552 18008 "GET /admin/products/category/ HTTP/1.1" 200 33929
+INFO 2025-02-11 15:48:38,723 basehttp 14552 18008 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 15:48:47,138 basehttp 14552 18008 "GET /admin/products/category/add/ HTTP/1.1" 200 50574
+INFO 2025-02-11 15:48:47,262 basehttp 14552 18008 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 15:49:00,773 basehttp 14552 18008 "GET /admin/products/category/ HTTP/1.1" 200 33930
+INFO 2025-02-11 15:49:19,841 basehttp 14552 18008 "GET /admin/products/product/ HTTP/1.1" 200 44660
+INFO 2025-02-11 15:49:19,973 basehttp 14552 18008 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 15:49:25,839 basehttp 14552 18008 "GET /admin/products/order/ HTTP/1.1" 200 38304
+INFO 2025-02-11 15:49:26,128 basehttp 14552 18008 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 15:49:31,587 basehttp 14552 18008 "GET /admin/products/subcategory/ HTTP/1.1" 200 33841
+INFO 2025-02-11 15:49:31,707 basehttp 14552 18008 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 15:53:55,504 basehttp 14552 18008 "GET /admin/products/subcategory/ HTTP/1.1" 200 33841
+INFO 2025-02-11 15:53:55,643 basehttp 14552 18008 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 15:53:58,815 basehttp 14552 18008 "GET /admin/products/staticpage/ HTTP/1.1" 200 35170
+INFO 2025-02-11 15:53:58,957 basehttp 14552 18008 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 15:54:00,340 basehttp 14552 18008 "GET /admin/products/order/ HTTP/1.1" 200 38303
+INFO 2025-02-11 15:54:00,480 basehttp 14552 18008 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 15:54:05,028 basehttp 14552 18008 "GET /admin/auth/user/ HTTP/1.1" 200 40764
+INFO 2025-02-11 15:54:05,143 basehttp 14552 18008 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 15:54:06,263 basehttp 14552 18008 "GET /admin/auth/group/ HTTP/1.1" 200 31878
+INFO 2025-02-11 15:54:06,397 basehttp 14552 18008 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 15:54:09,942 basehttp 14552 18008 "GET /admin/products/product/ HTTP/1.1" 200 44660
+INFO 2025-02-11 15:54:10,077 basehttp 14552 18008 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 15:54:12,857 basehttp 14552 18008 "GET /admin/auth/user/ HTTP/1.1" 200 40764
+INFO 2025-02-11 15:54:12,997 basehttp 14552 18008 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 15:54:16,488 basehttp 14552 18008 "GET /admin/products/product/ HTTP/1.1" 200 44660
+INFO 2025-02-11 15:54:16,607 basehttp 14552 18008 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 15:54:22,099 basehttp 14552 18008 "GET /admin/products/product/4/change/ HTTP/1.1" 200 47936
+INFO 2025-02-11 15:54:22,155 basehttp 14552 12912 "GET /static/admin/css/vendor/select2/select2.css HTTP/1.1" 200 17358
+INFO 2025-02-11 15:54:22,164 basehttp 14552 18008 "GET /static/django_ckeditor_5/dist/styles.css HTTP/1.1" 200 238958
+INFO 2025-02-11 15:54:22,175 basehttp 14552 12912 "GET /static/admin/css/autocomplete.css HTTP/1.1" 200 9185
+INFO 2025-02-11 15:54:22,282 basehttp 14552 18008 "GET /static/django_ckeditor_5/dist/bundle.js HTTP/1.1" 200 1249508
+INFO 2025-02-11 15:54:22,326 basehttp 14552 18008 "GET /static/django_ckeditor_5/dist/translations/ru.js HTTP/1.1" 200 46775
+INFO 2025-02-11 15:54:22,354 basehttp 14552 18008 "GET /static/admin/js/vendor/select2/i18n/ru.js HTTP/1.1" 200 1171
+INFO 2025-02-11 15:54:22,360 basehttp 14552 12912 "GET /static/admin/js/vendor/select2/select2.full.js HTTP/1.1" 200 173566
+INFO 2025-02-11 15:54:22,397 basehttp 14552 18008 "GET /static/admin/js/autocomplete.js HTTP/1.1" 200 1060
+INFO 2025-02-11 15:54:22,420 basehttp 14552 18008 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-02-11 15:54:22,468 basehttp 14552 12912 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 15:54:22,487 basehttp 14552 18008 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-02-11 15:57:45,907 basehttp 14552 18008 "GET /admin/products/category/ HTTP/1.1" 200 33930
+INFO 2025-02-11 15:57:46,064 basehttp 14552 18008 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 15:58:46,855 basehttp 14552 18008 "GET /admin/products/category/add/ HTTP/1.1" 200 50574
+INFO 2025-02-11 15:58:46,987 basehttp 14552 18008 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 15:59:49,690 basehttp 14552 18008 "GET /admin/products/category/ HTTP/1.1" 200 33930
+INFO 2025-02-11 15:59:49,837 basehttp 14552 18008 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 15:59:52,239 basehttp 14552 18008 "GET /admin/products/category/3/change/ HTTP/1.1" 200 55158
+INFO 2025-02-11 15:59:52,475 basehttp 14552 18008 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 15:59:58,375 basehttp 14552 18008 "GET /admin/products/category/ HTTP/1.1" 200 33930
+INFO 2025-02-11 15:59:58,526 basehttp 14552 18008 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 16:00:01,322 basehttp 14552 18008 "GET /admin/products/order/ HTTP/1.1" 200 38303
+INFO 2025-02-11 16:00:01,428 basehttp 14552 18008 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 16:00:10,265 basehttp 14552 18008 "GET /admin/products/order/add/ HTTP/1.1" 200 58822
+INFO 2025-02-11 16:00:10,404 basehttp 14552 18008 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 16:01:26,179 basehttp 14552 18008 "GET /admin/products/product/?_to_field=id&_popup=1 HTTP/1.1" 200 31386
+INFO 2025-02-11 16:01:26,236 basehttp 14552 18008 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2025-02-11 16:01:36,296 basehttp 14552 18008 "GET /admin/products/order/ HTTP/1.1" 200 38303
+INFO 2025-02-11 16:01:36,453 basehttp 14552 18008 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 16:01:44,020 basehttp 14552 18008 "GET /admin/products/order/1/change/ HTTP/1.1" 200 66415
+INFO 2025-02-11 16:01:44,170 basehttp 14552 18008 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 16:02:22,680 basehttp 14552 18008 "GET /admin/products/order/ HTTP/1.1" 200 38303
+INFO 2025-02-11 16:02:22,810 basehttp 14552 18008 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 16:02:26,524 basehttp 14552 18008 "GET /admin/products/subcategory/ HTTP/1.1" 200 33841
+INFO 2025-02-11 16:02:26,762 basehttp 14552 18008 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 16:02:28,278 basehttp 14552 18008 "GET /admin/products/staticpage/ HTTP/1.1" 200 35170
+INFO 2025-02-11 16:02:28,423 basehttp 14552 18008 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 16:02:31,236 basehttp 14552 18008 "GET /admin/products/staticpage/add/ HTTP/1.1" 200 38458
+INFO 2025-02-11 16:02:31,377 basehttp 14552 18008 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 16:02:42,511 basehttp 14552 18008 "GET /admin/products/staticpage/ HTTP/1.1" 200 35170
+INFO 2025-02-11 16:02:42,667 basehttp 14552 18008 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 16:02:51,952 basehttp 14552 18008 "GET /admin/auth/group/ HTTP/1.1" 200 31878
+INFO 2025-02-11 16:02:52,088 basehttp 14552 18008 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 16:02:54,411 basehttp 14552 18008 "GET /admin/auth/user/ HTTP/1.1" 200 40764
+INFO 2025-02-11 16:02:54,539 basehttp 14552 18008 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 16:02:57,891 basehttp 14552 18008 "GET /admin/auth/user/1/change/ HTTP/1.1" 200 228616
+INFO 2025-02-11 16:02:58,030 basehttp 14552 18008 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 16:03:50,621 basehttp 14552 18008 "GET /admin/auth/user/ HTTP/1.1" 200 40764
+INFO 2025-02-11 16:03:50,771 basehttp 14552 18008 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 16:12:22,965 autoreload 14552 16992 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\admin.py changed, reloading.
+INFO 2025-02-11 16:12:25,461 autoreload 17404 6704 Watching for file changes with StatReloader
+INFO 2025-02-11 16:12:43,058 autoreload 11688 17512 Watching for file changes with StatReloader
+INFO 2025-02-11 16:13:47,338 autoreload 11688 17512 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\admin.py changed, reloading.
+INFO 2025-02-11 16:13:51,543 autoreload 11132 8988 Watching for file changes with StatReloader
+INFO 2025-02-11 16:22:19,544 autoreload 9036 9228 Watching for file changes with StatReloader
+INFO 2025-02-11 16:22:33,671 autoreload 9452 9288 Watching for file changes with StatReloader
+INFO 2025-02-11 16:24:31,488 autoreload 9452 9288 C:\Users\fgghy\PycharmProjects\InternetStore\InternetStore\settings.py changed, reloading.
+INFO 2025-02-11 16:24:39,442 autoreload 7944 9688 Watching for file changes with StatReloader
+INFO 2025-02-11 16:24:44,713 autoreload 7944 9688 C:\Users\fgghy\PycharmProjects\InternetStore\InternetStore\settings.py changed, reloading.
+INFO 2025-02-11 16:26:34,079 autoreload 10116 12764 Watching for file changes with StatReloader
+INFO 2025-02-11 16:26:37,497 basehttp 10116 14480 "GET / HTTP/1.1" 200 34283
+INFO 2025-02-11 16:26:40,740 basehttp 10116 14480 "GET /admin/ HTTP/1.1" 200 45370
+INFO 2025-02-11 16:28:13,770 basehttp 10116 14480 "GET /admin/auth/user/ HTTP/1.1" 200 40793
+INFO 2025-02-11 16:28:13,980 basehttp 10116 14480 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
+INFO 2025-02-11 16:35:44,481 basehttp 10116 4036 "GET / HTTP/1.1" 200 33272
+INFO 2025-02-11 16:35:44,933 basehttp 10116 4036 "GET /static/css/styles.css HTTP/1.1" 200 553
+INFO 2025-02-11 16:35:44,943 basehttp 10116 3316 "GET /static/images/logo.png HTTP/1.1" 200 27077
+INFO 2025-02-11 16:35:45,044 basehttp 10116 4036 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 14601
+INFO 2025-02-11 16:35:45,062 basehttp 10116 3316 "GET /static/images/banner1.jpg HTTP/1.1" 200 138568
+INFO 2025-02-11 16:35:45,117 basehttp 10116 4036 "GET /static/images/banner2.jpg HTTP/1.1" 200 138568
+INFO 2025-02-11 16:35:45,166 basehttp 10116 3316 "GET /static/images/banner3.jpg HTTP/1.1" 200 138568
+INFO 2025-02-11 16:35:45,407 basehttp 10116 17432 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 16675
+INFO 2025-02-11 16:35:45,479 basehttp 10116 13088 "GET /media/products/logo_lROYikF.png HTTP/1.1" 200 27077
+INFO 2025-02-11 16:35:45,531 basehttp 10116 4036 "GET /media/products/sample_eyP2G3l.jpg HTTP/1.1" 200 60860
+INFO 2025-02-11 16:35:45,748 basehttp 10116 8364 "GET /media/products/logo_PERlXjP.png HTTP/1.1" 200 27077
+INFO 2025-02-11 16:35:45,804 basehttp 10116 3552 "GET /media/products/sample.jpg HTTP/1.1" 200 60860
+INFO 2025-02-11 16:35:45,952 basehttp 10116 3552 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2025-02-11 16:35:45,953 basehttp 10116 8364 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4742
+INFO 2025-02-11 16:35:51,503 basehttp 10116 11072 "GET / HTTP/1.1" 200 43387
+INFO 2025-02-11 16:37:01,873 basehttp 10116 8364 "GET / HTTP/1.1" 200 42375
+INFO 2025-02-11 16:37:04,003 basehttp 10116 11072 "GET / HTTP/1.1" 200 43387
+INFO 2025-02-11 16:37:18,727 basehttp 10116 8364 "GET / HTTP/1.1" 200 42375
+INFO 2025-02-11 16:37:20,611 basehttp 10116 11072 "GET / HTTP/1.1" 200 42564
+INFO 2025-02-11 16:37:44,281 basehttp 10116 8364 "GET / HTTP/1.1" 200 41551
+INFO 2025-02-11 16:37:46,303 basehttp 10116 11072 "GET / HTTP/1.1" 200 41828
+INFO 2025-02-11 16:38:22,753 basehttp 10116 11072 "GET /cart/ HTTP/1.1" 200 32781
+INFO 2025-02-11 16:38:26,099 basehttp 10116 11072 "GET /products/ HTTP/1.1" 200 45196
+ERROR 2025-02-11 16:38:35,743 basehttp 10116 11072 "GET /wishlist/remove/1/ HTTP/1.1" 500 122554
+INFO 2025-02-11 16:38:49,975 basehttp 10116 11072 "GET /products/ HTTP/1.1" 200 45177
+INFO 2025-02-11 16:38:50,281 basehttp 10116 11072 "GET /media/products/logo_lROYikF.png HTTP/1.1" 200 27077
+INFO 2025-02-11 16:38:50,303 basehttp 10116 10176 "GET /media/products/logo_PERlXjP.png HTTP/1.1" 200 27077
+INFO 2025-02-11 16:38:50,502 basehttp 10116 11072 "GET /media/products/sample.jpg HTTP/1.1" 200 60860
+INFO 2025-02-11 16:38:50,542 basehttp 10116 10176 "GET /media/products/sample_eyP2G3l.jpg HTTP/1.1" 200 60860
+INFO 2025-02-11 16:38:57,348 basehttp 10116 10176 "GET / HTTP/1.1" 200 41827
+INFO 2025-02-11 16:39:07,432 basehttp 10116 10176 "GET /product/1/ HTTP/1.1" 200 35418
+INFO 2025-02-11 16:39:07,614 basehttp 10116 10176 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2025-02-11 16:39:09,931 basehttp 10116 10176 "POST /cart/add/1/ HTTP/1.1" 302 0
+ERROR 2025-02-11 16:39:10,417 basehttp 10116 10176 "GET /cart/ HTTP/1.1" 500 133791
+INFO 2025-02-11 16:39:16,361 basehttp 10116 11072 "GET / HTTP/1.1" 200 42001
+ERROR 2025-02-11 16:39:27,614 basehttp 10116 11072 "GET /cart/ HTTP/1.1" 500 133644
+INFO 2025-02-11 16:39:44,542 basehttp 10116 14584 "GET / HTTP/1.1" 200 42001
+INFO 2025-02-11 16:39:46,982 basehttp 10116 14584 "GET / HTTP/1.1" 200 42001
+INFO 2025-02-12 14:33:23,234 autoreload 20444 20376 Watching for file changes with StatReloader
+INFO 2025-02-12 14:33:26,899 basehttp 20444 9432 "GET / HTTP/1.1" 200 40816
+INFO 2025-02-12 14:33:26,987 basehttp 20444 9432 "GET /static/css/styles.css HTTP/1.1" 200 553
+INFO 2025-02-12 14:33:26,999 basehttp 20444 13184 "GET /static/images/logo.png HTTP/1.1" 200 27077
+INFO 2025-02-12 14:33:27,035 basehttp 20444 4544 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 14601
+INFO 2025-02-12 14:33:27,255 basehttp 20444 4544 "GET /static/images/banner1.jpg HTTP/1.1" 200 138568
+INFO 2025-02-12 14:33:27,255 basehttp 20444 13184 "GET /static/images/banner2.jpg HTTP/1.1" 200 138568
+INFO 2025-02-12 14:33:27,257 basehttp 20444 9432 "GET /static/images/banner3.jpg HTTP/1.1" 200 138568
+INFO 2025-02-12 14:33:27,292 basehttp 20444 9432 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 16675
+INFO 2025-02-12 14:33:27,425 basehttp 20444 9432 "GET /media/products/sample.jpg HTTP/1.1" 200 60860
+INFO 2025-02-12 14:33:27,503 basehttp 20444 4544 "GET /media/products/logo_PERlXjP.png HTTP/1.1" 200 27077
+INFO 2025-02-12 14:33:27,534 basehttp 20444 13184 "GET /media/products/logo_lROYikF.png HTTP/1.1" 200 27077
+INFO 2025-02-12 14:33:27,585 basehttp 20444 9432 "GET /media/products/sample_eyP2G3l.jpg HTTP/1.1" 200 60860
+INFO 2025-02-12 14:33:27,938 basehttp 20444 9432 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2025-02-12 14:33:27,964 basehttp 20444 13184 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4742
+WARNING 2025-02-12 14:33:29,034 basehttp 20444 13184 "GET /favicon.ico HTTP/1.1" 404 23753
+INFO 2025-02-12 14:33:31,871 basehttp 20444 13184 "GET /about/ HTTP/1.1" 200 26208
+INFO 2025-02-12 14:33:32,901 basehttp 20444 13184 "GET /contact/ HTTP/1.1" 200 25733
+INFO 2025-02-12 14:33:33,778 basehttp 20444 13184 "GET / HTTP/1.1" 200 40816
+INFO 2025-02-12 14:33:43,995 basehttp 20444 13184 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-02-12 14:33:44,494 basehttp 20444 13184 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 17173
+INFO 2025-02-12 14:33:44,613 basehttp 20444 13184 "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 200 103009
+INFO 2025-02-12 14:33:44,617 basehttp 20444 4544 "GET /static/jazzmin/css/main.css HTTP/1.1" 200 16969
+INFO 2025-02-12 14:33:44,623 basehttp 20444 11860 "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 200 2637
+INFO 2025-02-12 14:33:44,715 basehttp 20444 9432 "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 200 1382975
+INFO 2025-02-12 14:33:44,819 basehttp 20444 11280 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-02-12 14:33:44,938 basehttp 20444 13184 "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 200 44244
+INFO 2025-02-12 14:33:44,971 basehttp 20444 9432 "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 62440
+INFO 2025-02-12 14:33:45,390 basehttp 20444 9432 "GET /static/vendor/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 156400
+INFO 2025-02-12 14:34:30,053 basehttp 20444 4544 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 17176
+INFO 2025-02-12 14:35:13,306 basehttp 20444 11860 "GET /static/vendor/bootstrap/js/bootstrap.min.js.map HTTP/1.1" 200 187646
+INFO 2025-02-12 14:35:13,399 basehttp 20444 6528 "GET /static/vendor/adminlte/js/adminlte.min.js.map HTTP/1.1" 200 129651
+INFO 2025-02-12 14:35:18,346 basehttp 20444 12188 - Broken pipe from ('127.0.0.1', 51386)
+INFO 2025-02-15 00:42:42,446 autoreload 23664 13068 Watching for file changes with StatReloader
+INFO 2025-02-15 00:42:45,411 basehttp 23664 7084 "GET / HTTP/1.1" 200 40816
+INFO 2025-02-15 00:42:45,481 basehttp 23664 16924 "GET /static/images/logo.png HTTP/1.1" 200 27077
+INFO 2025-02-15 00:42:45,482 basehttp 23664 7084 "GET /static/css/styles.css HTTP/1.1" 200 553
+INFO 2025-02-15 00:42:45,537 basehttp 23664 22020 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 14601
+INFO 2025-02-15 00:42:45,726 basehttp 23664 16924 "GET /static/images/banner2.jpg HTTP/1.1" 200 138568
+INFO 2025-02-15 00:42:45,730 basehttp 23664 22020 "GET /static/images/banner1.jpg HTTP/1.1" 200 138568
+INFO 2025-02-15 00:42:45,731 basehttp 23664 7084 "GET /static/images/banner3.jpg HTTP/1.1" 200 138568
+INFO 2025-02-15 00:42:45,762 basehttp 23664 22020 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 16675
+INFO 2025-02-15 00:42:45,922 basehttp 23664 22020 "GET /media/products/sample.jpg HTTP/1.1" 200 60860
+INFO 2025-02-15 00:42:45,981 basehttp 23664 22020 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4742
+INFO 2025-02-15 00:42:46,033 basehttp 23664 16924 "GET /media/products/logo_lROYikF.png HTTP/1.1" 200 27077
+INFO 2025-02-15 00:42:46,062 basehttp 23664 7084 "GET /media/products/logo_PERlXjP.png HTTP/1.1" 200 27077
+INFO 2025-02-15 00:42:46,104 basehttp 23664 22020 "GET /media/products/sample_eyP2G3l.jpg HTTP/1.1" 200 60860
+INFO 2025-02-15 00:42:46,146 basehttp 23664 9084 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+WARNING 2025-02-15 00:42:46,835 basehttp 23664 9084 "GET /favicon.ico HTTP/1.1" 404 23468
+INFO 2025-02-15 00:42:47,555 basehttp 23664 9084 "GET /product/2/ HTTP/1.1" 200 33007
+INFO 2025-02-15 00:42:47,660 basehttp 23664 9084 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2025-02-15 00:42:52,289 basehttp 23664 9084 "GET /accounts/login/ HTTP/1.1" 200 27020
+INFO 2025-02-15 00:42:54,472 basehttp 23664 9084 "POST /accounts/login/ HTTP/1.1" 200 27313
+ERROR 2025-02-15 00:43:18,507 signals 23664 9084 Ошибка логирования входа: maximum recursion depth exceeded
+Traceback (most recent call last):
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\accounts\signals.py", line 40, in log_user_login
+    ip_address=get_client_ip(request),
+               ~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\accounts\utils.py", line 10, in get_client_ip
+    ip, _ = get_client_ip(request)
+            ~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\accounts\utils.py", line 10, in get_client_ip
+    ip, _ = get_client_ip(request)
+            ~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\accounts\utils.py", line 10, in get_client_ip
+    ip, _ = get_client_ip(request)
+            ~~~~~~~~~~~~~^^^^^^^^^
+  [Previous line repeated 924 more times]
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\accounts\utils.py", line 8, in get_client_ip
+    ip=cache.get(cache_key)
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\debug_toolbar\panels\cache.py", line 42, in wrapper
+    return panel._record_call(cache, name, original_method, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\debug_toolbar\panels\cache.py", line 149, in _record_call
+    value = original_method(*args, **kwargs)
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\django\core\cache\backends\locmem.py", line 35, in get
+    key = self.make_and_validate_key(key, version=version)
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\django\core\cache\backends\base.py", line 123, in make_and_validate_key
+    self.validate_key(key)
+    ~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\django\core\cache\backends\base.py", line 117, in validate_key
+    for warning in memcache_key_warnings(key):
+                   ~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\django\core\cache\backends\base.py", line 401, in memcache_key_warnings
+    if memcached_error_chars_re.search(key):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\django\utils\functional.py", line 250, in inner
+    if (_wrapped := self._wrapped) is empty:
+                    ^^^^^^^^^^^^^
+RecursionError: maximum recursion depth exceeded
+INFO 2025-02-15 00:43:20,989 basehttp 23664 9084 - Broken pipe from ('127.0.0.1', 65345)
+ERROR 2025-02-15 00:43:36,727 signals 23664 22020 Ошибка логирования входа: maximum recursion depth exceeded
+Traceback (most recent call last):
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\accounts\signals.py", line 40, in log_user_login
+    ip_address=get_client_ip(request),
+               ~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\accounts\utils.py", line 10, in get_client_ip
+    ip, _ = get_client_ip(request)
+            ~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\accounts\utils.py", line 10, in get_client_ip
+    ip, _ = get_client_ip(request)
+            ~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\accounts\utils.py", line 10, in get_client_ip
+    ip, _ = get_client_ip(request)
+            ~~~~~~~~~~~~~^^^^^^^^^
+  [Previous line repeated 924 more times]
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\accounts\utils.py", line 8, in get_client_ip
+    ip=cache.get(cache_key)
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\debug_toolbar\panels\cache.py", line 42, in wrapper
+    return panel._record_call(cache, name, original_method, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\debug_toolbar\panels\cache.py", line 149, in _record_call
+    value = original_method(*args, **kwargs)
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\django\core\cache\backends\locmem.py", line 35, in get
+    key = self.make_and_validate_key(key, version=version)
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\django\core\cache\backends\base.py", line 123, in make_and_validate_key
+    self.validate_key(key)
+    ~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\django\core\cache\backends\base.py", line 117, in validate_key
+    for warning in memcache_key_warnings(key):
+                   ~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\django\core\cache\backends\base.py", line 401, in memcache_key_warnings
+    if memcached_error_chars_re.search(key):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\django\utils\functional.py", line 250, in inner
+    if (_wrapped := self._wrapped) is empty:
+                    ^^^^^^^^^^^^^
+RecursionError: maximum recursion depth exceeded
+INFO 2025-02-15 00:43:36,889 basehttp 23664 22020 - Broken pipe from ('127.0.0.1', 65337)
+INFO 2025-02-15 00:43:37,422 basehttp 23664 7084 "POST /accounts/login/ HTTP/1.1" 200 27317
+ERROR 2025-02-15 00:44:07,057 signals 23664 7084 Ошибка логирования входа: maximum recursion depth exceeded
+Traceback (most recent call last):
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\accounts\signals.py", line 40, in log_user_login
+    ip_address=get_client_ip(request),
+               ~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\accounts\utils.py", line 10, in get_client_ip
+    ip, _ = get_client_ip(request)
+            ~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\accounts\utils.py", line 10, in get_client_ip
+    ip, _ = get_client_ip(request)
+            ~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\accounts\utils.py", line 10, in get_client_ip
+    ip, _ = get_client_ip(request)
+            ~~~~~~~~~~~~~^^^^^^^^^
+  [Previous line repeated 924 more times]
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\accounts\utils.py", line 8, in get_client_ip
+    ip=cache.get(cache_key)
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\debug_toolbar\panels\cache.py", line 42, in wrapper
+    return panel._record_call(cache, name, original_method, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\debug_toolbar\panels\cache.py", line 149, in _record_call
+    value = original_method(*args, **kwargs)
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\django\core\cache\backends\locmem.py", line 35, in get
+    key = self.make_and_validate_key(key, version=version)
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\django\core\cache\backends\base.py", line 123, in make_and_validate_key
+    self.validate_key(key)
+    ~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\django\core\cache\backends\base.py", line 117, in validate_key
+    for warning in memcache_key_warnings(key):
+                   ~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\django\core\cache\backends\base.py", line 401, in memcache_key_warnings
+    if memcached_error_chars_re.search(key):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\django\utils\functional.py", line 250, in inner
+    if (_wrapped := self._wrapped) is empty:
+                    ^^^^^^^^^^^^^
+RecursionError: maximum recursion depth exceeded
+INFO 2025-02-15 00:44:07,195 basehttp 23664 7084 - Broken pipe from ('127.0.0.1', 65336)
+ERROR 2025-02-15 00:44:32,049 signals 23664 16924 Ошибка логирования входа: maximum recursion depth exceeded
+Traceback (most recent call last):
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\accounts\signals.py", line 40, in log_user_login
+    ip_address=get_client_ip(request),
+               ~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\accounts\utils.py", line 10, in get_client_ip
+    ip, _ = get_client_ip(request)
+            ~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\accounts\utils.py", line 10, in get_client_ip
+    ip, _ = get_client_ip(request)
+            ~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\accounts\utils.py", line 10, in get_client_ip
+    ip, _ = get_client_ip(request)
+            ~~~~~~~~~~~~~^^^^^^^^^
+  [Previous line repeated 925 more times]
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\accounts\utils.py", line 8, in get_client_ip
+    ip=cache.get(cache_key)
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\debug_toolbar\panels\cache.py", line 42, in wrapper
+    return panel._record_call(cache, name, original_method, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\debug_toolbar\panels\cache.py", line 149, in _record_call
+    value = original_method(*args, **kwargs)
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\django\core\cache\backends\locmem.py", line 35, in get
+    key = self.make_and_validate_key(key, version=version)
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\django\core\cache\backends\base.py", line 123, in make_and_validate_key
+    self.validate_key(key)
+    ~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\django\core\cache\backends\base.py", line 117, in validate_key
+    for warning in memcache_key_warnings(key):
+                   ~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\django\core\cache\backends\base.py", line 401, in memcache_key_warnings
+    if memcached_error_chars_re.search(key):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\django\utils\functional.py", line 250, in inner
+    if (_wrapped := self._wrapped) is empty:
+                    ^^^^^^^^^^^^^
+RecursionError: maximum recursion depth exceeded
+INFO 2025-02-15 00:44:32,780 basehttp 23664 4292 - Broken pipe from ('127.0.0.1', 65436)
+INFO 2025-02-15 00:44:32,871 basehttp 23664 20224 - Broken pipe from ('127.0.0.1', 65440)
+INFO 2025-02-15 00:44:34,796 basehttp 23664 2184 - Broken pipe from ('127.0.0.1', 65443)
+INFO 2025-02-15 00:44:34,989 basehttp 23664 15280 - Broken pipe from ('127.0.0.1', 65445)
+INFO 2025-02-15 00:44:36,074 basehttp 23664 16924 - Broken pipe from ('127.0.0.1', 65335)
+INFO 2025-02-15 00:44:37,009 basehttp 23664 18764 - Broken pipe from ('127.0.0.1', 65447)
+INFO 2025-02-15 00:44:38,444 basehttp 23664 21000 "GET / HTTP/1.1" 200 40819
+INFO 2025-02-15 00:44:43,225 basehttp 23664 21000 "GET /accounts/login/ HTTP/1.1" 200 27022
+ERROR 2025-02-15 00:44:44,081 signals 23664 3152 Ошибка логирования входа: maximum recursion depth exceeded
+Traceback (most recent call last):
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\accounts\signals.py", line 40, in log_user_login
+    ip_address=get_client_ip(request),
+               ~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\accounts\utils.py", line 10, in get_client_ip
+    ip, _ = get_client_ip(request)
+            ~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\accounts\utils.py", line 10, in get_client_ip
+    ip, _ = get_client_ip(request)
+            ~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\accounts\utils.py", line 10, in get_client_ip
+    ip, _ = get_client_ip(request)
+            ~~~~~~~~~~~~~^^^^^^^^^
+  [Previous line repeated 924 more times]
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\accounts\utils.py", line 8, in get_client_ip
+    ip=cache.get(cache_key)
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\debug_toolbar\panels\cache.py", line 42, in wrapper
+    return panel._record_call(cache, name, original_method, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\debug_toolbar\panels\cache.py", line 149, in _record_call
+    value = original_method(*args, **kwargs)
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\django\core\cache\backends\locmem.py", line 35, in get
+    key = self.make_and_validate_key(key, version=version)
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\django\core\cache\backends\base.py", line 123, in make_and_validate_key
+    self.validate_key(key)
+    ~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\django\core\cache\backends\base.py", line 117, in validate_key
+    for warning in memcache_key_warnings(key):
+                   ~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\django\core\cache\backends\base.py", line 401, in memcache_key_warnings
+    if memcached_error_chars_re.search(key):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\django\utils\functional.py", line 250, in inner
+    if (_wrapped := self._wrapped) is empty:
+                    ^^^^^^^^^^^^^
+RecursionError: maximum recursion depth exceeded
+INFO 2025-02-15 00:44:44,372 basehttp 23664 3152 - Broken pipe from ('127.0.0.1', 65428)
+INFO 2025-02-15 00:44:49,645 basehttp 23664 21000 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-02-15 00:44:49,720 basehttp 23664 21000 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 17172
+INFO 2025-02-15 00:44:49,765 basehttp 23664 21000 "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 200 103009
+INFO 2025-02-15 00:44:49,776 basehttp 23664 18076 "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 200 1382975
+INFO 2025-02-15 00:44:49,795 basehttp 23664 18076 "GET /static/jazzmin/css/main.css HTTP/1.1" 200 16969
+INFO 2025-02-15 00:44:49,966 basehttp 23664 18076 "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 200 2637
+INFO 2025-02-15 00:44:50,081 basehttp 23664 18076 "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 62440
+INFO 2025-02-15 00:44:50,082 basehttp 23664 21000 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-02-15 00:44:50,150 basehttp 23664 21000 "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 200 44244
+INFO 2025-02-15 00:44:50,817 basehttp 23664 21000 "GET /static/vendor/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 156400
+ERROR 2025-02-15 00:45:13,847 signals 23664 21000 Ошибка логирования входа: maximum recursion depth exceeded
+Traceback (most recent call last):
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\accounts\signals.py", line 40, in log_user_login
+    ip_address=get_client_ip(request),
+               ~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\accounts\utils.py", line 10, in get_client_ip
+    ip, _ = get_client_ip(request)
+            ~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\accounts\utils.py", line 10, in get_client_ip
+    ip, _ = get_client_ip(request)
+            ~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\accounts\utils.py", line 10, in get_client_ip
+    ip, _ = get_client_ip(request)
+            ~~~~~~~~~~~~~^^^^^^^^^
+  [Previous line repeated 921 more times]
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\accounts\utils.py", line 8, in get_client_ip
+    ip=cache.get(cache_key)
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\debug_toolbar\panels\cache.py", line 42, in wrapper
+    return panel._record_call(cache, name, original_method, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\debug_toolbar\panels\cache.py", line 149, in _record_call
+    value = original_method(*args, **kwargs)
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\django\core\cache\backends\locmem.py", line 35, in get
+    key = self.make_and_validate_key(key, version=version)
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\django\core\cache\backends\base.py", line 123, in make_and_validate_key
+    self.validate_key(key)
+    ~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\django\core\cache\backends\base.py", line 117, in validate_key
+    for warning in memcache_key_warnings(key):
+                   ~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\django\core\cache\backends\base.py", line 401, in memcache_key_warnings
+    if memcached_error_chars_re.search(key):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fgghy\PycharmProjects\InternetStore\.venv\Lib\site-packages\django\utils\functional.py", line 250, in inner
+    if (_wrapped := self._wrapped) is empty:
+                    ^^^^^^^^^^^^^
+RecursionError: maximum recursion depth exceeded
+INFO 2025-02-15 00:45:13,955 basehttp 23664 21000 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-02-15 00:45:14,325 basehttp 23664 21000 "GET /admin/ HTTP/1.1" 200 45324
+INFO 2025-02-15 00:45:14,417 basehttp 23664 21000 "GET /static/jazzmin/js/main.js HTTP/1.1" 200 2391
+INFO 2025-02-15 00:45:14,673 basehttp 23664 21000 "GET /static/vendor/fontawesome-free/webfonts/fa-regular-400.woff2 HTTP/1.1" 200 25392
+INFO 2025-02-15 00:45:37,140 basehttp 23664 21000 "GET /admin/auth/user/preview-homepage/ HTTP/1.1" 302 0
+INFO 2025-02-15 00:45:37,248 basehttp 23664 21000 "GET / HTTP/1.1" 200 41826
+INFO 2025-02-15 00:45:37,656 basehttp 23664 18076 "GET /media/products/logo_PERlXjP.png HTTP/1.1" 200 27077
+INFO 2025-02-15 00:45:37,742 basehttp 23664 23356 "GET /media/products/sample.jpg HTTP/1.1" 200 60860
+INFO 2025-02-15 00:45:37,753 basehttp 23664 21000 "GET /media/products/logo_lROYikF.png HTTP/1.1" 200 27077
+INFO 2025-02-15 00:45:37,795 basehttp 23664 18076 "GET /media/products/sample_eyP2G3l.jpg HTTP/1.1" 200 60860
+INFO 2025-02-15 00:45:44,649 basehttp 23664 18076 "GET /accounts/profile/ HTTP/1.1" 200 33409
+INFO 2025-02-15 00:45:44,821 basehttp 23664 18076 "GET /media/user_1/e87709fe-4ef1-4cb2-b666-6e41d4cfef7d.jpg HTTP/1.1" 200 10303
+INFO 2025-02-15 00:45:53,740 basehttp 23664 18076 "GET / HTTP/1.1" 200 41827
+INFO 2025-02-15 00:45:55,584 basehttp 23664 18076 "GET /accounts/profile/ HTTP/1.1" 200 33410
+INFO 2025-02-15 00:46:00,346 basehttp 23664 18076 "GET / HTTP/1.1" 200 41827
+INFO 2025-02-15 00:46:01,847 basehttp 23664 18076 "GET /product/3/ HTTP/1.1" 200 35473
+INFO 2025-02-15 00:46:02,853 basehttp 23664 18076 "GET / HTTP/1.1" 200 41827
+INFO 2025-02-15 00:46:03,841 basehttp 23664 18076 "GET /product/3/ HTTP/1.1" 200 35472
+INFO 2025-02-15 00:46:08,784 basehttp 23664 18076 "POST /product/3/add_review/ HTTP/1.1" 302 0
+INFO 2025-02-15 00:46:08,886 basehttp 23664 18076 "GET /product/3/ HTTP/1.1" 200 35472
+INFO 2025-02-15 00:46:12,813 basehttp 23664 18076 "GET /product/3/ HTTP/1.1" 200 35473
+INFO 2025-02-15 00:46:15,523 basehttp 23664 18076 "GET / HTTP/1.1" 200 41827
+INFO 2025-02-15 00:46:16,553 basehttp 23664 18076 "GET /product/1/ HTTP/1.1" 200 35418
+INFO 2025-02-15 00:46:19,918 basehttp 23664 18076 "GET / HTTP/1.1" 200 41827
+INFO 2025-02-15 00:46:21,025 basehttp 23664 18076 "GET /product/2/ HTTP/1.1" 200 35431
+INFO 2025-02-15 00:46:23,862 basehttp 23664 18076 "GET / HTTP/1.1" 200 41827
+INFO 2025-02-15 00:46:25,037 basehttp 23664 18076 "GET /product/3/ HTTP/1.1" 200 35473
+INFO 2025-02-15 00:46:29,577 basehttp 23664 18076 "GET / HTTP/1.1" 200 41827
+INFO 2025-02-15 00:46:30,656 basehttp 23664 18076 "GET /product/4/ HTTP/1.1" 200 33729
+ERROR 2025-02-15 00:46:35,385 basehttp 23664 18076 "POST /product/4/add_review/ HTTP/1.1" 500 127952
+INFO 2025-02-15 00:46:41,802 basehttp 23664 18076 "GET /product/4/ HTTP/1.1" 200 35428
+INFO 2025-02-15 00:46:52,089 basehttp 23664 18076 "GET / HTTP/1.1" 200 41826

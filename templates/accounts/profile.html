@@ -1,148 +1,173 @@
-<!-- templates/accounts/profile.html -->
-
 {% extends 'accounts/base.html' %}
 {% load static %}
 {% load crispy_forms_tags %}
+{% load widget_tweaks %}
 
 {% block title %}Профиль пользователя{% endblock %}
 
 {% block content %}
-<main class="container mt-5">
-    <h2 class="mb-4">Профиль пользователя</h2>
+<style>
+    .form-check-input:checked {
+        background-color: #0d6efd !important;
+        border-color: #0d6efd !important;
+    }
+    .avatar-label {
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+    }
+    .avatar-label img {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 2px solid #ddd;
+    }
+</style>
+
+<main class="container-fluid mt-4">
     <div class="row">
-        <!-- Аватар пользователя -->
-        <div class="col-md-4 text-center">
-            <div class="card mb-4 shadow-sm">
-                {% if user.profile.avatar %}
-                    <img src="{{ user.profile.avatar.url }}" alt="Аватар" class="card-img-top rounded-circle" style="width: 200px; height: 200px; object-fit: cover; margin: 20px auto 0;">
-                {% else %}
-                    <img src="{% static 'media/default_avatar.jpg' %}" alt="Аватар" class="card-img-top rounded-circle" style="width: 200px; height: 200px; object-fit: cover; margin: 20px auto 0;">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar border-end">
+            <div class="pt-3">
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                        <a class="nav-link active" href="#">
+                            <i class="fas fa-user"></i> Мой профиль
+                        </a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-shopping-bag"></i> Мои заказы
+                        </a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-balance-scale"></i> Список сравнения
+                        </a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-heart"></i> Избранные товары
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="col-md-10">
+            <form method="post" action="" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% if message %}
+                    <div class="alert alert-success" role="alert">
+                        {{ message }}
+                    </div>
                 {% endif %}
-                <div class="card-body">
-                    <h5 class="card-title">{{ user.username }}</h5>
-                    <a href="{% url 'accounts:edit_profile' %}" class="btn btn-primary btn-sm mt-2">Редактировать профиль</a>
-                </div>
-            </div>
-        </div>
 
-        <!-- Информация о пользователе -->
-        <div class="col-md-8">
-            <div class="card mb-4 shadow-sm">
-                <div class="card-header bg-primary text-white">
-                    <h5 class="mb-0">Основная информация</h5>
-                </div>
-                <div class="card-body">
-                    <div class="row mb-3">
-                        <div class="col-sm-4"><strong>Имя:</strong></div>
-                        <div class="col-sm-8">{{ user.first_name|default:"Не указано" }}</div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-sm-4"><strong>Фамилия:</strong></div>
-                        <div class="col-sm-8">{{ user.last_name|default:"Не указано" }}</div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-sm-4"><strong>Email:</strong></div>
-                        <div class="col-sm-8">{{ user.email }}</div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-sm-4"><strong>Дата рождения:</strong></div>
-                        <div class="col-sm-8">{{ user.profile.birth_date|date:"d.m.Y" }}</div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-sm-4"><strong>Номер телефона:</strong></div>
-                        <div class="col-sm-8">{{ user.profile.phone_number|default:"Не указано" }}</div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-sm-4"><strong>Адрес:</strong></div>
-                        <div class="col-sm-8">{{ user.profile.address|default:"Не указано" }}</div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-sm-4"><strong>О себе:</strong></div>
-                        <div class="col-sm-8">{{ user.profile.bio|default:"Не указано" }}</div>
-                    </div>
-                    <!-- Социальные ссылки -->
-                    <div class="row mb-3">
-                        <div class="col-sm-4"><strong>Twitter:</strong></div>
-                        <div class="col-sm-8">
-                            {% if user.profile.twitter %}
-                                <a href="{{ user.profile.twitter }}" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
-                            {% else %}
-                                Не указано
-                            {% endif %}
+                <div class="row">
+                    <!-- Контактная информация -->
+                    <div class="col-12 mb-4">
+                        <div class="bg-primary text-white p-2 rounded mb-3">
+                            <h4 class="mb-0">Контактная информация</h4>
                         </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-sm-4"><strong>Facebook:</strong></div>
-                        <div class="col-sm-8">
-                            {% if user.profile.facebook %}
-                                <a href="{{ user.profile.facebook }}" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
-                            {% else %}
-                                Не указано
-                            {% endif %}
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-sm-4"><strong>Instagram:</strong></div>
-                        <div class="col-sm-8">
-                            {% if user.profile.instagram %}
-                                <a href="{{ user.profile.instagram }}" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-                            {% else %}
-                                Не указано
-                            {% endif %}
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-sm-4"><strong>LinkedIn:</strong></div>
-                        <div class="col-sm-8">
-                            {% if user.profile.linkedin %}
-                                <a href="{{ user.profile.linkedin }}" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                            {% else %}
-                                Не указано
-                            {% endif %}
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-sm-4"><strong>Получать новости и акции:</strong></div>
-                        <div class="col-sm-8">
-                            {% if user.profile.receive_newsletters %}
-                                <span class="badge bg-success">Да</span>
-                            {% else %}
-                                <span class="badge bg-danger">Нет</span>
-                            {% endif %}
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-sm-4"><strong>Получать уведомления о заказах:</strong></div>
-                        <div class="col-sm-8">
-                            {% if user.profile.receive_notifications %}
-                                <span class="badge bg-success">Да</span>
-                            {% else %}
-                                <span class="badge bg-danger">Нет</span>
-                            {% endif %}
-                        </div>
-                    </div>
-                </div>
-            </div>
+                        <div class="p-3 border rounded bg-white">
+                            <div class="d-flex align-items-center mb-3">
+                                <label class="avatar-label me-3">
+                                        {% if user.profile.avatar %}
+                                            <img src="{{ user.profile.avatar.url }}" alt="Аватар">
+                                        {% else %}
+                                            <img src="{% static 'media/default_avatar.jpg' %}" alt="Аватар">
+                                        {% endif %}
+                                    </label>
+                                <div>
+                                    <span class="text-muted">Имя</span>
+                                    {{ user_form.first_name|attr:"class:form-control rounded-pill"|attr:"placeholder:Имя" }}
+                                </div>
+                                <div class="ms-3">
+                                    <span class="text-muted">Фамилия</span>
+                                    {{ user_form.last_name|attr:"class:form-control rounded-pill"|attr:"placeholder:Фамилия" }}
+                                </div>
+                            </div>
 
-            <!-- Дополнительная информация (например, Заказы, Wishlist) -->
-            <div class="card mb-4 shadow-sm">
-                <div class="card-header bg-success text-white">
-                    <h5 class="mb-0">Дополнительная информация</h5>
+                            <div class="mb-3">
+                                <span class="text-muted">Дата рождения</span>
+                                {{ profile_form.birth_date|attr:"class:form-control rounded-pill"|attr:"type:date" }}
+                            </div>
+
+                            <div class="mb-3">
+                                <span class="text-muted">Телефон</span>
+                                {{ profile_form.phone_number|attr:"class:form-control rounded-pill"|attr:"placeholder:0XX-XX-XX-XX" }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Безопасность -->
+                    <div class="col-12 mb-4">
+                        <div class="bg-primary text-white p-2 rounded mb-3">
+                            <h4 class="mb-0">Безопасность</h4>
+                        </div>
+                        <div class="p-3 border rounded bg-white">
+                            <div class="mb-3">
+                                <label for="email" class="form-label">E-mail <span class="text-danger">*</span></label>
+                                {{ user_form.email|attr:"class:form-control rounded-pill"|attr:"id:email" }}
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Пароль <span class="text-danger">*</span></label>
+                                <input type="password" class="form-control rounded-pill" id="password" name="password">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="password2" class="form-label">Подтверждение пароля <span class="text-danger">*</span></label>
+                                <input type="password" class="form-control rounded-pill" id="password2" name="password2">
+                            </div>
+
+                            <div class="mb-3 text-muted" style="font-size:0.9em;">
+                                Чтобы повысить уровень безопасности своей учетной записи, рекомендуется избегать паролей...
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Списки рассылок -->
+                    <div class="col-12 mb-4">
+                        <div class="bg-primary text-white p-2 rounded mb-3">
+                            <h4 class="mb-0">Списки рассылок</h4>
+                        </div>
+                        <div class="p-3 border rounded bg-white">
+                            <p>Подпишитесь на рассылку...</p>
+                            <div class="form-check mb-2">
+                                {{ profile_form.receive_newsletters }}
+                                <label class="form-check-label" for="news">Новости</label>
+                            </div>
+                            <div class="form-check">
+                                {{ profile_form.receive_notifications }}
+                                <label class="form-check-label" for="offers">Акции и предложения</label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary mt-3 rounded-pill">сохранить</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <a href="{% url 'accounts:order_history' %}" class="btn btn-outline-primary btn-block mb-2">
-                        <i class="fas fa-history"></i> История заказов
-                    </a>
-                    <a href="{% url 'accounts:wishlist' %}" class="btn btn-outline-warning btn-block mb-2">
-                        <i class="fas fa-heart"></i> Мой список желаний
-                    </a>
-                    <a href="{% url 'accounts:password_change' %}" class="btn btn-outline-secondary btn-block">
-                        <i class="fas fa-key"></i> Изменить пароль
-                    </a>
-                </div>
-            </div>
+            </form>
         </div>
-    </main>
-</body>
-</html>
+    </div>
+</main>
 {% endblock %}
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const avatarInput = document.querySelector('input[name="avatar"]');
+    const avatarImg = document.querySelector('.avatar-label img');
+
+    if (avatarInput && avatarImg) {
+        avatarInput.addEventListener('change', function() {
+            if (this.files && this.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    avatarImg.src = e.target.result;
+                }
+                reader.readAsDataURL(this.files[0]);
+            }
+        });
+    }
+});
+</script>

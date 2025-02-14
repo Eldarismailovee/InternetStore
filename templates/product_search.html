@@ -1,10 +1,229 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Поиск{% endblock %}
 
-</body>
-</html>
+{% block content %}
+    <style>
+    /* Стили для noUiSlider */
+    #price-slider .noUi-handle {
+        background: #007bff; /* Цвет ручки */
+        border: 2px solid #fff;
+        border-radius: 50%; /* Делает ручку круглой */
+        width: 20px; /* Диаметр ручки */
+        height: 20px;
+        top: -8px; /* Чуть сместим, чтобы выглядело аккуратнее */
+    }
+
+    #price-slider .noUi-connect {
+        background: #007bff; /* Цвет заполненной части */
+    }
+
+    #price-slider {
+        margin:20px 0 10px 0; /* Добавим отступы: сверху 20px, снизу 10px */
+        height: 5px; /* Можно слегка уменьшить высоту полосы */
+    }
+</style>
+<div class="container mt-4">
+    <h1>Результаты поиска</h1>
+
+    <form method="get" action="{% url 'products:product_search' %}" class="mb-3 position-relative">
+        <div class="input-group mb-3">
+            <input type="text" name="q" value="{{ query }}" placeholder="Поиск товаров..." class="form-control" id="pageSearchInput" autocomplete="off">
+            <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>
+        </div>
+        <div id="pageSearchSuggestions" class="list-group position-absolute bg-white" style="top:65px; left:0; right:0; z-index:999; display:none;"></div>
+
+        <!-- Сортировка и категория -->
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <!-- Поле сортировки -->
+                <div class="mb-3">
+    <label for="sort" class="form-label">Сортировать по</label>
+    <div class="input-group">
+        <span class="input-group-text bg-white text-muted border-0"><i class="fas fa-sort"></i></span>
+        <select name="sort" id="sort" class="form-select border-0" style="box-shadow: none;">
+            <option value="name" {% if selected_sort == 'name' %}selected{% endif %}>По имени (А-Я)</option>
+            <option value="price" {% if selected_sort == 'price' %}selected{% endif %}>По цене (возр.)</option>
+            <option value="-price" {% if selected_sort == '-price' %}selected{% endif %}>По цене (убыв.)</option>
+            <option value="created_at" {% if selected_sort == 'created_at' %}selected{% endif %}>По дате (новые)</option>
+            <option value="-created_at" {% if selected_sort == '-created_at' %}selected{% endif %}>По дате (старые)</option>
+        </select>
+    </div>
+</div>
+
+                <!-- Фильтр по категории -->
+                <div class="mb-3">
+    <label for="category" class="form-label">Категория</label>
+    <div class="input-group">
+        <span class="input-group-text bg-white text-muted border-0"><i class="fas fa-list-ul"></i></span>
+        <select name="category" id="category" class="form-select border-0" style="box-shadow: none;">
+            <option value="">Все категории</option>
+            {% for cat in categories %}
+                <option value="{{ cat.slug }}" {% if selected_category == cat.slug %}selected{% endif %}>{{ cat.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+</div>
+
+                <!-- Слайдер цены -->
+                <div class="mb-3">
+                    <label class="form-label">Цена</label>
+                    <!-- Пример с одним слайдером типа noUiSlider -->
+                    <div id="price-slider" style="margin:20px;"></div>
+                    <div class="d-flex justify-content-between">
+                        <span id="price-min">0</span>
+                        <span id="price-max">10000</span>
+                    </div>
+                    <input type="hidden" name="price_min" id="hidden-price-min">
+                    <input type="hidden" name="price_max" id="hidden-price-max">
+                </div>
+
+                <button type="submit" class="btn btn-secondary w-100">Применить фильтры</button>
+            </div>
+            <div class="col-md-9">
+                {% if query %}
+                    <h3>Результаты для "{{ query }}":</h3>
+                {% else %}
+                    <h3>Все товары:</h3>
+                {% endif %}
+
+                {% if did_you_mean and products.count == 0 %}
+                    <p>Ничего не найдено. Возможно, вы имели в виду:</p>
+                    <ul>
+                        {% for suggestion in did_you_mean %}
+                            <li><a href="?q={{ suggestion }}">{{ suggestion }}</a></li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+
+                {% if page_obj %}
+                    <div class="row mt-4">
+                        {% for product in highlighted_products %}
+                            <div class="col-md-3 col-sm-6 mb-4">
+                                <div class="card h-100">
+                                    <a href="{% url 'products:product_detail' product.id %}">
+                                        <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                    </a>
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">{{ product.highlighted_name|safe }}</h5>
+                                        <p class="card-text">{{ product.price }} руб.</p>
+                                        <p class="text-muted small">{{ product.highlighted_description|safe|truncatewords:10 }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <!-- Пагинация -->
+                    {% if page_obj.has_other_pages %}
+                        <nav>
+                            <ul class="pagination">
+                                {% if page_obj.has_previous %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?{% querystring page=page_obj.previous_page_number %}">Назад</a>
+                                    </li>
+                                {% endif %}
+                                {% for i in page_obj.paginator.page_range %}
+                                    {% if i == page_obj.number %}
+                                        <li class="page-item active"><span class="page-link">{{ i }}</span></li>
+                                    {% else %}
+                                        <li class="page-item"><a class="page-link" href="?{% querystring page=i %}">{{ i }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+                                {% if page_obj.has_next %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?{% querystring page=page_obj.next_page_number %}">Вперед</a>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </nav>
+                    {% endif %}
+                {% else %}
+                    <p>Нет товаров, соответствующих запросу.</p>
+                {% endif %}
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+// Логика подсказок для поискового поля на странице
+document.addEventListener('DOMContentLoaded', function() {
+    const pageSearchInput = document.getElementById('pageSearchInput');
+    const pageSuggestionsBox = document.getElementById('pageSearchSuggestions');
+
+    pageSearchInput.addEventListener('input', function() {
+        const query = this.value.trim();
+        if (query.length > 0) {
+            fetch(`{% url 'products:search_suggestions' %}?q=` + encodeURIComponent(query))
+                .then(response => response.json())
+                .then(data => {
+                    let html = '';
+                    const products = data.products;
+                    const categories = data.categories;
+
+                    if (products.length === 0 && categories.length === 0) {
+                        html = '<div class="list-group-item">Ничего не найдено</div>';
+                    } else {
+                        if (products.length > 0) {
+                            html += '<div class="list-group-item fw-bold">Товары:</div>';
+                            products.forEach(product => {
+                                html += `<a href="{% url 'products:product_detail' 0 %}`.replace('0', product.id) + `" class="list-group-item list-group-item-action">${product.name}</a>`;
+                            });
+                        }
+                        if (categories.length > 0) {
+                            html += '<div class="list-group-item fw-bold">Категории:</div>';
+                            categories.forEach(category => {
+                                html += `<a href="{% url 'products:category_detail' 'slugplaceholder' %}`.replace('slugplaceholder', category.slug) + `" class="list-group-item list-group-item-action">${category.name}</a>`;
+                            });
+                        }
+                    }
+                    pageSuggestionsBox.innerHTML = html;
+                    pageSuggestionsBox.style.display = 'block';
+                });
+        } else {
+            pageSuggestionsBox.style.display = 'none';
+        }
+    });
+
+    document.addEventListener('click', function(e) {
+        if (!pageSearchInput.contains(e.target)) {
+            pageSuggestionsBox.style.display = 'none';
+        }
+    });
+});
+
+// Инициализация слайдера (пример с noUiSlider, нужно подключить noUiSlider CSS/JS)
+document.addEventListener('DOMContentLoaded', function() {
+    var priceSlider = document.getElementById('price-slider');
+    noUiSlider.create(priceSlider, {
+        start: [{{ price_min|default:'0' }}, {{ price_max|default:'10000' }}],
+        connect: true,
+        range: {
+            'min': 0,
+            'max': 10000
+        },
+        tooltips: true,
+        format: {
+            to: function(value) {
+                return Math.round(value);
+            },
+            from: function(value) {
+                return Number(value);
+            }
+        }
+    });
+
+    var priceMinElem = document.getElementById('price-min');
+    var priceMaxElem = document.getElementById('price-max');
+    var hiddenMin = document.getElementById('hidden-price-min');
+    var hiddenMax = document.getElementById('hidden-price-max');
+
+    priceSlider.noUiSlider.on('update', function(values, handle) {
+        priceMinElem.textContent = values[0];
+        priceMaxElem.textContent = values[1];
+        hiddenMin.value = values[0];
+        hiddenMax.value = values[1];
+    });
+});
+</script>
+{% endblock %}

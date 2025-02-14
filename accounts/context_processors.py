@@ -1,19 +1,28 @@
-# accounts/context_processors.py
-
+from django.core.cache import cache
 from .forms import UserLoginForm, UserRegisterForm
 from .models import AdminSettings
 
 
 def auth_forms(request):
-    return {
-        'login_form': UserLoginForm(),
-        'register_form': UserRegisterForm(),
-    }
+    """Передача форм аутентификации только для определенных URL"""
+    if request.path in ('/login/', '/register/'):
+        return {
+            'login_form': UserLoginForm(),
+            'register_form': UserRegisterForm()
+        }
+    return {}
+
 
 def admin_settings(request):
-    """
-    Контекст-процессор для передачи настроек админки в шаблоны.
-    """
-    return {
-        'admin_settings': AdminSettings.objects.first()  # Используйте get_solo() если используете django-solo
-    }
+    """Кешированные настройки админки для всех шаблонов"""
+    cache_key = 'admin_settings'
+    settings = cache.get(cache_key)
+
+    if not settings:
+        try:
+            settings = AdminSettings.get_solo()
+            cache.set(cache_key, settings, 60 * 60 * 24)  # Кеш на 24 часа
+        except Exception as e:
+            settings = None
+
+    return {'admin_settings': settings or AdminSettings()}

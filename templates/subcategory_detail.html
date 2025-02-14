@@ -1,0 +1,37 @@
+<!-- templates/subcategory_detail.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ subcategory.name }} - Подкатегория - Electronic Store{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="mb-4">{{ category.name }} > {{ subcategory.name }}</h1>
+    <div class="row">
+        {% if products %}
+            {% for product in products %}
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="card h-100">
+                        <a href="{% url 'products:product_detail' product.id %}">
+                            <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        </a>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">{{ product.name }}</h5>
+                            <p class="card-text">{{ product.price }} руб.</p>
+                            <form action="{% url 'products:add_to_cart' product.id %}" method="post">
+                                {% csrf_token %}
+                                <input type="hidden" name="quantity" value="1">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-shopping-cart"></i> В корзину
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Товаров в данной подкатегории пока нет.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

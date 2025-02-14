@@ -4,11 +4,10 @@ from django.contrib import messages
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
-from django.db.models import Avg
 from django.shortcuts import redirect, render, get_object_or_404
 
 from accounts.models import Address, NotificationSettings, Subscription, UserLoginHistory
-from products.models import Order, Wishlist, Product, Review
+from products.models import Order, Wishlist, Product
 from .forms import UserRegisterForm, UserForm, ProfileForm, AddressForm, NotificationSettingsForm, SubscriptionForm
 from .utils import get_client_ip
 
@@ -31,14 +30,41 @@ def register(request):
     return render(request, 'accounts/register.html', {'form': form})
 @login_required
 def profile(request):
-    """
-    Представление для отображения профиля пользователя.
-    """
-    average_rating = Review.objects.filter(product__in=Wishlist.objects.filter(user=request.user).values('product')).aggregate(Avg('rating'))['rating__avg']
-    context = {
-        'average_rating': average_rating,
-    }
-    return render(request, 'accounts/profile.html', context)
+    profile_instance = request.user.profile
+    if request.method == 'POST':
+        user_form = UserForm(request.POST, instance=request.user)
+        profile_form = ProfileForm(request.POST, request.FILES, instance=profile_instance)
+
+        # Логика изменения пароля (опционально)
+        new_password = request.POST.get('password')
+        confirm_password = request.POST.get('password2')
+        if new_password and new_password == confirm_password:
+            request.user.set_password(new_password)
+
+        if user_form.is_valid() and profile_form.is_valid():
+            user_form.save()
+            profile_form.save()
+
+            # Перелогиниваем пользователя, если пароль был изменён
+            if new_password and new_password == confirm_password:
+                from django.contrib.auth import authenticate, login
+                user = authenticate(username=request.user.username, password=new_password)
+                if user:
+                    login(request, user)
+
+            return render(request, 'accounts/profile.html', {
+                'user_form': user_form,
+                'profile_form': profile_form,
+                'message': 'Изменения успешно сохранены!'
+            })
+    else:
+        user_form = UserForm(instance=request.user)
+        profile_form = ProfileForm(instance=profile_instance)
+
+    return render(request, 'accounts/profile.html',{
+        'user_form': user_form,
+        'profile_form': profile_form
+    })
 @login_required
 def edit_profile(request):
     if request.method == 'POST':

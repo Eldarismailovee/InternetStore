@@ -35,6 +35,7 @@ urlpatterns = [
     path('cart/update_quantity/', views.update_quantity, name='update_quantity'),
     path('cart/remove_item/', views.remove_item, name='remove_item'),
     path('staticpage/<int:pk>/preview/', views.static_page_preview, name='staticpage_preview'),
+    path('category/<slug:category_slug>/<slug:subcategory_slug>/', views.subcategory_detail, name='subcategory_detail'),
 
-    path('category/<slug:slug>/', views.category_detail, name='category_detail'),  # Д
+    path('search_suggestions/', views.search_suggestions, name='search_suggestions'),
 ]

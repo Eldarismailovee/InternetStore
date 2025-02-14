@@ -1,10 +1,147 @@
 {% extends 'base.html' %}
 {% load static %}
-
 {% block title %}Главная - Electronic Store{% endblock %}
 
+<!-- Подключим Font Awesome (если не подключено в base.html) -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
 {% block content %}
+
+<style>
+    /* Стили для меню категорий */
+    .list-group-item {
+        position: relative;
+    }
+    .subcategories {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 100%;
+        z-index: 1000;
+        min-width: 200px;
+        background: #fff;
+        border: 1px solid #ccc;
+        padding: 0;
+        list-style: none;
+    }
+    .subcategories li a {
+        display: block;
+        padding: 8px 15px;
+        text-decoration: none;
+        color: #333;
+        white-space: nowrap;
+    }
+    .subcategories li a:hover {
+        background-color: #f8f9fa;
+    }
+    .list-group-item:hover .subcategories {
+        display: block;
+    }
+
+    /* Стили для блока "Топ продаж" (карточки товаров) */
+    .top-sales-container {
+        position: relative;
+        margin-top: 30px;
+    }
+    .product-card {
+        background: #fff;
+        border-radius: 8px;
+        padding: 15px;
+        margin: 10px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        position: relative;
+        height: 100%;
+        transition: box-shadow 0.3s ease-in-out;
+    }
+    .product-card:hover {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    }
+    .product-image {
+        text-align: center;
+        margin-bottom: 10px;
+        max-height: 200px;
+        overflow: hidden;
+    }
+    .product-image img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+    .product-info {
+        text-align: left;
+        margin-bottom: 35px; /* чтобы иконка корзины не наезжала на текст */
+    }
+    .product-title {
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 0.3rem;
+    }
+    .product-subtitle {
+        font-size: 13px;
+        color: #888;
+        margin-bottom: 0.5rem;
+    }
+    .product-old-price {
+        text-decoration: line-through;
+        color: #999;
+        font-size: 14px;
+        margin-right: 6px;
+    }
+    .product-discount-amount {
+        color: #f50057; /* Ярко-розовый */
+        font-weight: 500;
+        font-size: 13px;
+    }
+    .product-price {
+        font-weight: 700;
+        font-size: 18px;
+        color: #f00;
+        margin-bottom: 4px;
+    }
+    .product-cashback {
+        color: #00ab00;
+        font-weight: 500;
+        font-size: 14px;
+        margin-bottom: 4px;
+    }
+    .credit-label,
+    .discount-label {
+        display: inline-block;
+        background-color: #007bff; /* Синий */
+        color: #fff;
+        padding: 0 6px;
+        border-radius: 4px;
+        font-size: 12px;
+        margin-bottom: 4px;
+    }
+    .discount-label {
+        background-color: #ff007b; /* Ярко-розовый */
+    }
+    .cart-icon-btn {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        color: #333;
+        background: none;
+        border: none;
+        font-size: 18px;
+        transition: color 0.2s ease;
+    }
+    .cart-icon-btn:hover {
+        color: #007bff;
+    }
+    /* Настраиваем стрелки карусели, чтобы не заслонять карточки */
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 40px;
+    }
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        background-size: 30px 30px;
+    }
+</style>
+
+
 <!-- Меню категорий и баннер -->
 <div class="container mt-3">
     <div class="row">
@@ -16,12 +153,24 @@
                         <a href="{{ category.get_absolute_url }}" class="text-decoration-none text-dark">
                             <i class="{{ category.icon }}"></i> {{ category.name }}
                         </a>
+                        {% if category.subcategories.all %}
+                            <ul class="subcategories">
+                                {% for subcategory in category.subcategories.all %}
+                                    <li>
+                                        <a href="{{ subcategory.get_absolute_url }}">
+                                            <i class="{{ subcategory.icon|default:'' }}"></i> {{ subcategory.name }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
                     </li>
                 {% empty %}
                     <li class="list-group-item">Категорий нет.</li>
                 {% endfor %}
             </ul>
         </div>
+
         <!-- Баннер -->
         <div class="col-md-9">
             <div id="mainBanner" class="carousel slide" data-ride="carousel">
@@ -55,37 +204,105 @@
     </div>
 </div>
 
-<!-- Популярные товары -->
-<main class="container mt-5">
-    <h2 class="mb-4">Популярные товары</h2>
-    <div class="row">
-        {% for product in featured_products %}
-            <div class="col-md-3 col-sm-6 mb-4">
-                <div class="card h-100">
-                    <a href="{% url 'products:product_detail' product.id %}">
-                        <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}">
-                    </a>
-                    <div class="card-body text-center">
-                        <h5 class="card-title">{{ product.name }}</h5>
-                        <p class="card-text">{{ product.price }} руб.</p>
-                        <form action="{% url 'products:add_to_cart' product.id %}" method="post">
-                            {% csrf_token %}
-                            <input type="hidden" name="quantity" value="1">
-                            <button type="submit" class="btn btn-primary">
-                                <i class="fas fa-shopping-cart"></i> В корзину
-                            </button>
-                        </form>
-                    </div>
+<!-- Топ продаж (карусель с карточками) -->
+<div class="container top-sales-container">
+    <h2 class="mb-4">Топ продаж</h2>
+
+    <div id="topSalesCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+        <!-- Если хотите точки-индикаторы -->
+        <ol class="carousel-indicators">
+            <li data-target="#topSalesCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#topSalesCarousel" data-slide-to="1"></li>
+        </ol>
+
+        <div class="carousel-inner">
+            <!-- Первый слайд -->
+            <div class="carousel-item active">
+                <div class="row">
+                    {% for product in featured_products|slice:":4" %}
+                        <div class="col-md-3">
+                            <div class="product-card">
+                                <!-- Пример метки рассрочки или скидки -->
+                                <div class="credit-label">0% 8 мес.</div>
+                                <!-- Или <div class="discount-label">-10%</div> -->
+
+                                <div class="product-image">
+                                    <a href="{% url 'products:product_detail' product.id %}">
+                                        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                                    </a>
+                                </div>
+                                <div class="product-info">
+                                    <h5 class="product-title">{{ product.name }}</h5>
+                                    <div class="product-subtitle">
+                                        {{ product.short_description|default:"" }}
+                                    </div>
+                                    <!-- Имитация старой цены, скидки -->
+                                    <div class="product-price">{{ product.price }} лей</div>
+                                </div>
+
+                                <form action="{% url 'products:add_to_cart' product.id %}" method="post">
+                                    {% csrf_token %}
+                                    <button type="submit" class="cart-icon-btn" title="Добавить в корзину">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
-        {% endfor %}
+
+            <!-- Второй слайд (ещё 4 товара) -->
+            <div class="carousel-item">
+                <div class="row">
+                    {% for product in featured_products|slice:"4:8" %}
+                        <div class="col-md-3">
+                            <div class="product-card">
+                                <!-- Можно по-другому: скидочная метка -->
+                                <div class="discount-label">-5%</div>
+
+                                <div class="product-image">
+                                    <a href="{% url 'products:product_detail' product.id %}">
+                                        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                                    </a>
+                                </div>
+                                <div class="product-info">
+                                    <h5 class="product-title">{{ product.name }}</h5>
+                                    <div class="product-subtitle">
+                                        ...
+                                    </div>
+                                    <span class="product-old-price">525 лей</span>
+                                    <span class="product-discount-amount">-26 лей</span>
+                                    <div class="product-price">{{ product.price }} лей</div>
+                                </div>
+                                <form action="{% url 'products:add_to_cart' product.id %}" method="post">
+                                    {% csrf_token %}
+                                    <button type="submit" class="cart-icon-btn">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Стрелки переключения -->
+        <a class="carousel-control-prev" href="#topSalesCarousel" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#topSalesCarousel" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
     </div>
-</main>
+</div>
 
 <!-- Чат поддержки -->
-<div class="chat-widget">
+<div class="chat-widget text-right mt-5 mr-3">
     <button class="btn btn-primary">
-        <i class="fas fa-comments"></i> Вам нужна помощь?
+        <i class="fa-solid fa-comments"></i> Вам нужна помощь?
     </button>
 </div>
+
 {% endblock %}

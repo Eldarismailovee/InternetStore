@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'crispy_bootstrap5',
     'imagekit',
+    'widget_tweaks',
 ]
 
 JAZZMIN_SETTINGS = {
@@ -72,7 +73,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
-    'accounts.middleware.UpdateLastActivityMiddleware',
+    'accounts.middleware.TimezoneMiddleware',
+    'accounts.middleware.LastActivityMiddleware',
 ]
 
 ROOT_URLCONF = 'InternetStore.urls'
@@ -319,6 +321,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 LOG_DIR = os.path.join(BASE_DIR, 'logs')
 os.makedirs(LOG_DIR, exist_ok=True)
+
+SESSION_COOKIE_AGE=3600
+
+SESSION_SAVE_EVERY_REQUEST=True
+
 
 LOGGING = {
     'version': 1,
