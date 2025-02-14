@@ -6,6 +6,7 @@ import re
 from django import forms
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth.models import User
+from django.core.exceptions import ValidationError
 from django.core.files.base import ContentFile
 from django.forms import ClearableFileInput
 
@@ -106,7 +107,9 @@ class ProfileForm(forms.ModelForm):
 
     def clean_avatar(self):
         avatar = self.cleaned_data.get('avatar')
-        # Дополнительная валидация, если требуется
+        if avatar:
+            if avatar.content_type not in ['image/jpeg', 'image/png']:
+                raise ValidationError("Допустимы только JPEG и PNG.")
         return avatar
 
     def clean_cropped_avatar(self):

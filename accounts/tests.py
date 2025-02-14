@@ -1,6 +1,5 @@
 # accounts/tests/test_admin.py
 
-import io
 from unittest.mock import patch, MagicMock
 
 from django.contrib.admin.sites import site
@@ -9,7 +8,7 @@ from django.test import TestCase, Client
 from django.urls import reverse
 from django.utils import timezone
 
-from accounts.admin import CustomUserAdmin, AdminSettingsAdmin, OnlineFilter
+from accounts.admin import CustomUserAdmin
 from accounts.models import (
     Profile,
     UserLoginHistory,

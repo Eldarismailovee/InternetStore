@@ -2,6 +2,7 @@ import logging
 import ipaddress
 from zoneinfo import available_timezones  # Для формирования списка часовых поясов
 
+import requests
 from django.contrib import admin
 from django.contrib.auth import get_user_model
 from django.contrib.auth.admin import UserAdmin as DefaultUserAdmin
@@ -63,16 +64,10 @@ class UserLoginHistoryInline(admin.TabularInline):
 
         if not location:
             try:
-                geolocator = Nominatim(user_agent="InternetStoreApp/1.0 (your-email@example.com)")
-                location_result = geolocator.geocode(ip)
-                if location_result:
-                    location_str = f"{location_result.latitude}, {location_result.longitude}"
-                else:
-                    location_str = "Location not found"
-                cache.set(cache_key, location_str, 60 * 60 * 24)  # Кэшируем на 24 часа
-                return location_str
-            except (GeocoderTimedOut, GeocoderUnavailable):
-                return "Geocoding service issue"
+                response = requests.get(f"http://ip-api.com/json/{ip}?fields=lat,lon")
+                if response.status_code == 200:
+                    data = response.json()
+                    location_str = f"{data['lat']}, {data['lon']}"
             except Exception as e:
                 logger.error(f"Geocoding error: {e}")
                 return "Geocoding error"

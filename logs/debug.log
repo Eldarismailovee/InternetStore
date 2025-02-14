@@ -3739,3 +3739,43 @@ INFO 2025-02-15 00:46:30,656 basehttp 23664 18076 "GET /product/4/ HTTP/1.1" 200
 ERROR 2025-02-15 00:46:35,385 basehttp 23664 18076 "POST /product/4/add_review/ HTTP/1.1" 500 127952
 INFO 2025-02-15 00:46:41,802 basehttp 23664 18076 "GET /product/4/ HTTP/1.1" 200 35428
 INFO 2025-02-15 00:46:52,089 basehttp 23664 18076 "GET / HTTP/1.1" 200 41826
+INFO 2025-02-15 00:56:56,445 autoreload 23664 13068 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\admin.py changed, reloading.
+INFO 2025-02-15 00:57:00,758 autoreload 13696 22108 Watching for file changes with StatReloader
+INFO 2025-02-15 00:57:05,671 autoreload 13696 22108 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\admin.py changed, reloading.
+INFO 2025-02-15 00:57:08,607 autoreload 3092 15620 Watching for file changes with StatReloader
+INFO 2025-02-15 00:58:39,567 autoreload 3092 15620 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\views.py changed, reloading.
+INFO 2025-02-15 00:58:42,369 autoreload 22676 13728 Watching for file changes with StatReloader
+INFO 2025-02-15 00:59:05,026 autoreload 22676 13728 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\views.py changed, reloading.
+INFO 2025-02-15 00:59:06,545 autoreload 8136 22088 Watching for file changes with StatReloader
+INFO 2025-02-15 00:59:52,568 autoreload 8136 22088 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\views.py changed, reloading.
+INFO 2025-02-15 00:59:57,472 autoreload 17548 3176 Watching for file changes with StatReloader
+INFO 2025-02-15 01:00:29,188 autoreload 17548 3176 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\views.py changed, reloading.
+INFO 2025-02-15 01:00:35,824 autoreload 14288 21588 Watching for file changes with StatReloader
+INFO 2025-02-15 01:00:58,427 autoreload 14288 21588 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\views.py changed, reloading.
+INFO 2025-02-15 01:01:02,063 autoreload 7580 16276 Watching for file changes with StatReloader
+INFO 2025-02-15 01:01:53,003 autoreload 7580 16276 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\views.py changed, reloading.
+INFO 2025-02-15 01:01:54,428 autoreload 16004 12148 Watching for file changes with StatReloader
+INFO 2025-02-15 01:03:12,088 autoreload 16004 12148 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\forms.py changed, reloading.
+INFO 2025-02-15 01:03:15,982 autoreload 13536 17704 Watching for file changes with StatReloader
+INFO 2025-02-15 01:03:44,400 autoreload 13536 17704 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\signals.py changed, reloading.
+INFO 2025-02-15 01:03:45,995 autoreload 18220 5988 Watching for file changes with StatReloader
+INFO 2025-02-15 01:04:13,539 autoreload 18220 5988 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\views.py changed, reloading.
+INFO 2025-02-15 01:04:15,528 autoreload 18996 18180 Watching for file changes with StatReloader
+INFO 2025-02-15 01:04:55,578 autoreload 18996 18180 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\middleware.py changed, reloading.
+INFO 2025-02-15 01:04:57,364 autoreload 22424 23356 Watching for file changes with StatReloader
+INFO 2025-02-15 01:05:38,267 autoreload 22424 23356 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\views.py changed, reloading.
+INFO 2025-02-15 01:05:43,800 autoreload 20976 18764 Watching for file changes with StatReloader
+INFO 2025-02-15 01:05:57,533 autoreload 20976 18764 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\views.py changed, reloading.
+INFO 2025-02-15 01:06:00,471 autoreload 3608 22976 Watching for file changes with StatReloader
+INFO 2025-02-15 01:06:02,515 autoreload 3608 22976 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\views.py changed, reloading.
+INFO 2025-02-15 01:06:08,208 autoreload 8024 288 Watching for file changes with StatReloader
+INFO 2025-02-15 01:06:11,111 autoreload 8024 288 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\views.py changed, reloading.
+INFO 2025-02-15 01:06:13,022 autoreload 15924 7304 Watching for file changes with StatReloader
+INFO 2025-02-15 01:06:17,688 autoreload 15924 7304 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\views.py changed, reloading.
+INFO 2025-02-15 01:06:20,496 autoreload 20068 8032 Watching for file changes with StatReloader
+INFO 2025-02-15 01:06:52,764 autoreload 20068 8032 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\views.py changed, reloading.
+INFO 2025-02-15 01:06:56,958 autoreload 7308 20212 Watching for file changes with StatReloader
+INFO 2025-02-15 01:07:06,389 autoreload 7308 20212 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\views.py changed, reloading.
+INFO 2025-02-15 01:07:07,905 autoreload 19060 18376 Watching for file changes with StatReloader
+INFO 2025-02-15 01:08:41,291 autoreload 19060 18376 C:\Users\fgghy\PycharmProjects\InternetStore\accounts\forms.py changed, reloading.
+INFO 2025-02-15 01:08:42,922 autoreload 15188 3044 Watching for file changes with StatReloader

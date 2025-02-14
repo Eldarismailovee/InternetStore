@@ -2,16 +2,20 @@
 
 from django.contrib import messages
 from django.contrib.auth import login, authenticate
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.forms import AuthenticationForm
+from django.core.mail import send_mail
+from django.core.paginator import Paginator
 from django.shortcuts import redirect, render, get_object_or_404
+from django.utils.crypto import get_random_string
 
 from accounts.models import Address, NotificationSettings, Subscription, UserLoginHistory
 from products.models import Order, Wishlist, Product
 from .forms import UserRegisterForm, UserForm, ProfileForm, AddressForm, NotificationSettingsForm, SubscriptionForm
 from .utils import get_client_ip
 
-
+def is_owner(user, subscription_id):
+    return Subscription.objects.filter(id=subscription_id, user=user).exists()
 def register(request):
     """
     Представление для регистрации нового пользователя.
@@ -19,8 +23,17 @@ def register(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
         if form.is_valid():
-            user = form.save()  # UserCreationForm автоматически хеширует пароль
-            login(request, user)
+            user = form.save()
+            user.is_active = False
+            token = get_random_string(50)
+            user.profile.email_confirm_token = token
+            send_mail(
+                'Подтвердите email',
+                f'Ссылка для подтверждения: {request.build_absolute_uri(f"/confirm-email/{token}/")}',
+                'noreply@example.com',
+                [user.email]
+            )
+            user.save()
             messages.success(request, 'Вы успешно зарегистрировались!')
             return redirect('home')  # Убедитесь, что у вас есть маршрут 'home'
         else:
@@ -93,7 +106,9 @@ def order_history(request):
     """
     Представление для отображения истории заказов пользователя.
     """
-    orders = Order.objects.filter(user=request.user).select_related('user').prefetch_related('items__product').order_by('-created_at')
+    orders = Order.objects.filter(user=request.user).prefetch_related(
+        'items__product__category'
+    ).order_by('-created_at')
     return render(request, 'accounts/order_history.html', {'orders': orders})
 
 @login_required
@@ -168,8 +183,11 @@ def notification_settings(request):
 
 @login_required
 def activity_history(request):
-    activities = request.user.activities.all().order_by('-timestamp')
-    return render(request, 'accounts/activity_history.html', {'activities': activities})
+    activities = request.user.activities.order_by('-timestamp')
+    paginator = Paginator(activities, 10)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'accounts/activity_history.html', {'page_obj': page_obj})
 
 @login_required
 def manage_subscriptions(request):
@@ -189,6 +207,7 @@ def manage_subscriptions(request):
 # accounts/views.py
 
 @login_required
+@user_passes_test(lambda u: is_owner(u,subscription_id=1))
 def unsubscribe(request, subscription_id):
     subscription = get_object_or_404(Subscription, id=subscription_id, user=request.user)
     if request.method == 'POST':
@@ -197,6 +216,7 @@ def unsubscribe(request, subscription_id):
     return redirect('accounts:manage_subscriptions')
 
 def login_view(request):
+    global form
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')

@@ -12,13 +12,12 @@ User = get_user_model()
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
-    """Создание профиля при регистрации нового пользователя"""
-    if created:
-        try:
+    try:
+        if created:
             Profile.objects.create(user=instance)
-            logger.info(f"Создан профиль для пользователя {instance.username}")
-        except Exception as e:
-            logger.error(f"Ошибка создания профиля: {e}", exc_info=True)
+            logger.info(f"Профиль создан для {instance.username}")
+    except Exception as e:
+        logger.error(f"Ошибка: {e}", exc_info=True, extra={'user_id': instance.id})
 
 @receiver(post_save, sender=User)
 def save_user_profile(sender, instance, **kwargs):

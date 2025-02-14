@@ -1,4 +1,5 @@
 # accounts/middleware.py
+from django.conf import settings
 from django.utils import timezone
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 import logging
@@ -22,6 +23,8 @@ class TimezoneMiddleware:
             except (Profile.DoesNotExist, AttributeError, ZoneInfoNotFoundError) as e:
                 timezone.deactivate()
                 logger.warning(f"Timezone error for user {request.user}: {e}")
+            except ZoneInfoNotFoundError:
+                timezone.activate(settings.TIME_ZONE)
         else:
             timezone.deactivate()
 
